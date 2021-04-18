@@ -2,11 +2,13 @@
 
 namespace Dev4Press\Plugin\ArchivesPress\Dates;
 
+use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Load {
+class Load implements iLoad {
 	private $post_type;
 
 	public function __construct() {

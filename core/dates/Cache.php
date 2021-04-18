@@ -2,11 +2,13 @@
 
 namespace Dev4Press\Plugin\ArchivesPress\Dates;
 
+use Dev4Press\Plugin\ArchivesPress\Base\iCache;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Cache {
+class Cache implements iCache {
 	private $key = 'archivespress-dates-data-' . ARCHIVESPRESS_VERSION;
 	private $period = WEEK_IN_SECONDS;
 
