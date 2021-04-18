@@ -52,19 +52,19 @@ class Layouts implements iLayouts {
 	}
 
 	protected function get_year_link( $post_type, $year ) : string {
-		$url = apply_filters( 'gd-data-archive-get-year-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-year-link-' . $post_type, null, $year );
 
 		return is_null( $url ) ? get_year_link( $year ) : $url;
 	}
 
 	protected function get_month_link( $post_type, $year, $month ) {
-		$url = apply_filters( 'gd-data-archive-get-month-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-month-link-' . $post_type, null, $year );
 
 		return is_null( $url ) ? get_month_link( $year, $month ) : $url;
 	}
 
 	protected function get_day_link( $post_type, $year, $month, $day ) {
-		$url = apply_filters( 'gd-data-archive-get-day-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-day-link-' . $post_type, null, $year );
 
 		return is_null( $url ) ? get_day_link( $year, $month, $day ) : $url;
 	}

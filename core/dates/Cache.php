@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Cache {
-	private $key = 'gd-date-archive-data-' . ARCHIVESPRESS_VERSION;
+	private $key = 'archivespress-dates-data-' . ARCHIVESPRESS_VERSION;
 	private $period = WEEK_IN_SECONDS;
 
 	public function __construct() {

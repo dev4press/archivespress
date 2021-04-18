@@ -6,7 +6,7 @@ Plugin URI:        https://plugins.dev4press.com/archivespress/
 Description:       Display the matrix with the years, months and days based on the post archives for quick navigation with various customization options available.
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
-Text Domain:       gd-date-archives
+Text Domain:       archivespress
 Version:           1.0
 Requires at least: 5.0
 Tested up to:      5.7

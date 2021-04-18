@@ -29,7 +29,7 @@ class Load {
 	}
 
 	public function init() {
-		$this->post_type = apply_filters( 'gd-date-archives-post-types', 'post' );
+		$this->post_type = apply_filters( 'archivespress-dates-post-types', 'post' );
 
 		add_shortcode( 'archivespress-dates', array( $this, 'shortcode' ) );
 	}
@@ -74,7 +74,7 @@ class Load {
 
 		$data = Cache::instance()->get( $atts['post_type'] );
 
-		wp_enqueue_style( 'gd-date-archive' );
+		wp_enqueue_style( 'archivespress' );
 
 		return $this->layouts()->render( $data, $atts );
 	}
