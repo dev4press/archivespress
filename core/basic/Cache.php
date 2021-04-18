@@ -23,33 +23,36 @@ class Cache {
 		return $instance;
 	}
 
-	public function clear() {
-		delete_transient( $this->key );
+	public function clear( $post_type = 'post' ) {
+		delete_transient( $this->key( $post_type ) );
 	}
 
-	public function get( $post_type = array() ) {
-		$data = get_transient( $this->key );
+	public function get( $post_type = 'post' ) {
+		$key  = $this->key( $post_type );
+		$data = get_transient( $key );
 
 		if ( ! is_array( $data ) ) {
 			$data = $this->query( $post_type );
 
-			set_transient( $this->key, $data, $this->period );
+			set_transient( $key, $data, $this->period );
 		}
 
 		return $data;
 	}
 
-	private function query( $post_type = array() ) : array {
+	private function key( $post_type ) : string {
+		return $this->key . '-' . $post_type;
+	}
+
+	private function query( $post_type = 'post' ) : array {
 		global $wpdb;
 
 		if ( empty( $post_type ) ) {
-			$post_type = array( 'post' );
+			$post_type = 'post';
 		}
 
-		$types = "'" . join( "','", $post_type ) . "'";
-
 		$sql =
-			"SELECT 
+			$wpdb->prepare( "SELECT 
 	YEAR(`post_date`) AS `year`, 
 	MONTH(`post_date`) AS `month`, 
     DAY(`post_date`) AS `day`, 
@@ -57,12 +60,12 @@ class Cache {
 FROM 
     $wpdb->posts 
 WHERE 
-    `post_type` IN ($types) AND 
+    `post_type` = %s AND 
     `post_status` = 'publish'
 GROUP BY 
     `year`, `month`, `day` 
 ORDER BY 
-    `year` DESC, `month` DESC, `day` DESC";
+    `year` DESC, `month` DESC, `day` DESC", $post_type );
 		$raw = $wpdb->get_results( $sql );
 
 		$data = array();

@@ -11,40 +11,33 @@
 .date-archives-wrapper {
   font-size: var(--gd-date-archives-base-font-size);
 }
-.date-archives-wrapper.date-archives-layout-basic .info-counts {
+.date-archives-wrapper .info-counts {
   float: right;
   font-weight: 300;
 }
-.date-archives-wrapper.date-archives-layout-basic .info-counts:before {
+.date-archives-wrapper .info-counts:before {
   content: "(";
 }
-.date-archives-wrapper.date-archives-layout-basic .info-counts:after {
+.date-archives-wrapper .info-counts:after {
   content: ")";
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper {
-  display: flex;
-}
-.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-year {
-  margin: 0 1.66em 0 0;
-}
-.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .link-year {
+
+.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .link-year, .date-archives-wrapper.date-archives-layout-compact .date-archives-year-wrapper .link-year {
   background: var(--gd-date-archives-base-year-background);
   color: var(--gd-date-archives-base-year-color);
   padding: 0.33em 1em;
   font-weight: bold;
   display: inline-block;
   min-width: 10em;
+  text-align: left;
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-months {
-  padding: 0 0 1em;
-}
-.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper {
+.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper, .date-archives-wrapper.date-archives-layout-compact .date-archives-month-wrapper {
   display: flex;
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .date-archives-month {
+.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .date-archives-month, .date-archives-wrapper.date-archives-layout-compact .date-archives-month-wrapper .date-archives-month {
   margin: 0 1.66em 0 0;
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .link-month {
+.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .link-month, .date-archives-wrapper.date-archives-layout-compact .date-archives-month-wrapper .link-month {
   background: var(--gd-date-archives-base-month-background);
   color: var(--gd-date-archives-base-month-color);
   padding: 0.33em 1em;
@@ -53,33 +46,38 @@
   min-width: 15em;
   text-align: left;
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .date-archives-days {
+.date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .date-archives-days, .date-archives-wrapper.date-archives-layout-compact .date-archives-month-wrapper .date-archives-days {
   padding: 0;
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-day-wrapper {
+.date-archives-wrapper.date-archives-layout-basic .date-archives-day-wrapper, .date-archives-wrapper.date-archives-layout-compact .date-archives-day-wrapper {
   display: inline-block;
 }
-.date-archives-wrapper.date-archives-layout-basic .date-archives-day-wrapper .link-day {
+.date-archives-wrapper.date-archives-layout-basic .date-archives-day-wrapper .link-day, .date-archives-wrapper.date-archives-layout-compact .date-archives-day-wrapper .link-day {
   background: var(--gd-date-archives-base-day-background);
   color: var(--gd-date-archives-base-day-color);
-  padding: 0.33em 0.66em;
-  margin: 0 0.66em 0.66em 0;
   font-weight: bold;
   display: inline-block;
   min-width: 2.5em;
   text-align: center;
+  padding: 0.33em 0.66em;
+  margin: 0 0.66em 0.66em 0;
 }
-
 @media screen and (max-width: 600px) {
-  .date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-year .link-year {
-    width: 100%;
-  }
-  .date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper {
+  .date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper, .date-archives-wrapper.date-archives-layout-compact .date-archives-month-wrapper {
     display: block;
   }
-  .date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .date-archives-days {
+  .date-archives-wrapper.date-archives-layout-basic .date-archives-month-wrapper .date-archives-days, .date-archives-wrapper.date-archives-layout-compact .date-archives-month-wrapper .date-archives-days {
     padding: 0.66em 0 0;
   }
+}
+.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper {
+  display: flex;
+}
+.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-year {
+  margin: 0 1.66em 0 0;
+}
+.date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-months {
+  padding: 0 0 1em;
 }
 @media screen and (max-width: 800px) {
   .date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper {
@@ -90,5 +88,22 @@
   }
   .date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-months {
     padding: 1em 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .date-archives-wrapper.date-archives-layout-basic .date-archives-year-wrapper .date-archives-year .link-year {
+    width: 100%;
+  }
+}
+.date-archives-wrapper.date-archives-layout-compact .date-archives-year-wrapper .date-archives-year .link-year {
+  width: 100%;
+  max-width: 30em;
+}
+.date-archives-wrapper.date-archives-layout-compact .date-archives-year-wrapper .date-archives-months {
+  padding: 1em 0;
+}
+@media screen and (max-width: 600px) {
+  .date-archives-wrapper.date-archives-layout-compact .date-archives-year-wrapper .date-archives-year .link-year {
+    max-width: 100%;
   }
 }

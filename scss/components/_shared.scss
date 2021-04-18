@@ -1,0 +1,21 @@
+.date-archives-wrapper {
+    font-size: var(--gd-date-archives-base-font-size);
+
+    .info-counts {
+        @include ltr {
+            float: right;
+        }
+        @include rtl {
+            float: left;
+        }
+        font-weight: 300;
+
+        &:before {
+            content: "(";
+        }
+
+        &:after {
+            content: ")";
+        }
+    }
+}

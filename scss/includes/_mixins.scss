@@ -1,0 +1,45 @@
+@mixin button-link-year {
+    background: var(--gd-date-archives-base-year-background);
+    color: var(--gd-date-archives-base-year-color);
+    padding: .33em 1em;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 10em;
+    @include ltr {
+        text-align: left;
+    }
+    @include rtl {
+        text-align: right;
+    }
+}
+
+@mixin button-link-month {
+    background: var(--gd-date-archives-base-month-background);
+    color: var(--gd-date-archives-base-month-color);
+    padding: .33em 1em;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 15em;
+    @include ltr {
+        text-align: left;
+    }
+    @include rtl {
+        text-align: right;
+    }
+}
+
+@mixin button-link-day {
+    background: var(--gd-date-archives-base-day-background);
+    color: var(--gd-date-archives-base-day-color);
+    font-weight: bold;
+    display: inline-block;
+    min-width: 2.5em;
+    text-align: center;
+    padding: .33em .66em;
+    @include ltr {
+        margin: 0 .66em .66em 0;
+    }
+    @include rtl {
+        margin: 0 0 .66em .66em;
+    }
+}
