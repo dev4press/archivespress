@@ -11,6 +11,9 @@
 .date-archives-wrapper {
   font-size: var(--gd-date-archives-base-font-size);
 }
+.date-archives-wrapper * > {
+  box-sizing: border-box;
+}
 .date-archives-wrapper .info-counts {
   float: right;
   font-weight: 300;

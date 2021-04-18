@@ -9,6 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Layouts implements iLayouts {
+	private $id = 0;
+
 	public function __construct() {
 	}
 
@@ -67,6 +69,23 @@ class Layouts implements iLayouts {
 		return is_null( $url ) ? get_day_link( $year, $month, $day ) : $url;
 	}
 
+	protected function style( $id, $args = array() ) {
+		$supported = array( 'font-size', 'year-background', 'year-color', 'month-background', 'month-color', 'day-background', 'day-color' );
+		$vars      = array();
+
+		foreach ( $supported as $key ) {
+			if ( isset( $args[ 'var-' . $key ] ) && ! empty( $args[ 'var-' . $key ] ) ) {
+				$vars[] = '--gd-date-archives-base-' . $key . ': ' . $args[ 'var-' . $key ] . ';';
+			}
+		}
+
+		if ( ! empty( $vars ) ) {
+			return '<style>#' . $id . '{' . join( '', $vars ) . '}</style>';
+		}
+
+		return '';
+	}
+
 	protected function basic( $data, $args = array() ) : string {
 		$args['layout'] = $args['layout'] === 'compact' && $args['year'] === 'hide' ? 'basic' : $args['layout'];
 
@@ -79,7 +98,9 @@ class Layouts implements iLayouts {
 			$classes[] = $args['class'];
 		}
 
-		$render = '<div class="' . join( ' ', $classes ) . '">';
+		$id = 'date-archives-block-' . ( ++ $this->id );
+
+		$render = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
 
 		foreach ( $data as $year => $elyear ) {
 			if ( empty( $args['years'] ) || in_array( $year, $args['years'] ) ) {
@@ -119,6 +140,7 @@ class Layouts implements iLayouts {
 		}
 
 		$render .= '</div>';
+		$render .= $this->style( $id, $args );
 
 		return $render;
 	}

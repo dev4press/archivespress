@@ -59,11 +59,18 @@ class Plugin {
 
 	public function shortcode( $atts = array() ) : string {
 		$defaults = array(
-			'layout'    => 'basic',
-			'post_type' => $this->post_type,
-			'years'     => array(),
-			'year'      => 'show',
-			'class'     => ''
+			'layout'               => 'basic',
+			'post_type'            => $this->post_type,
+			'years'                => array(),
+			'year'                 => 'show',
+			'class'                => '',
+			'var-font-size'        => '',
+			'var-year-background'  => '',
+			'var-year-color'       => '',
+			'var-month-background' => '',
+			'var-month-color'      => '',
+			'var-day-background'   => '',
+			'var-day-color'        => ''
 		);
 
 		$atts = shortcode_atts( $defaults, $atts );

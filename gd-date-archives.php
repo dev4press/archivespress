@@ -3,10 +3,10 @@
 /*
 Plugin Name:       GD Date Archives
 Plugin URI:        https://plugins.dev4press.com/gd-date-archives/
-Description:       Breadcrumbs based navigation, fully responsive and customizable, supporting post types, all types of archives, 404 pages, search results and third party plugins.
+Description:       Display the matrix with the years, months and days based on the post archives for quick navigation with various customization options available.
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
-Text Domain:       breadcrumbspress
+Text Domain:       gd-date-archives
 Version:           1.0
 Requires at least: 5.0
 Tested up to:      5.7

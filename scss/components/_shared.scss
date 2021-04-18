@@ -1,6 +1,10 @@
 .date-archives-wrapper {
     font-size: var(--gd-date-archives-base-font-size);
 
+    * > {
+        box-sizing: border-box;
+    }
+
     .info-counts {
         @include ltr {
             float: right;
