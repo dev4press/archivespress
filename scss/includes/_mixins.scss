@@ -1,6 +1,6 @@
 @mixin button-link-year {
-    background: var(--gd-date-archives-base-year-background);
-    color: var(--gd-date-archives-base-year-color);
+    background: var(--archivespress-dates-year-background);
+    color: var(--archivespress-dates-year-color);
     padding: .33em 1em;
     font-weight: bold;
     display: inline-block;
@@ -14,8 +14,8 @@
 }
 
 @mixin button-link-month {
-    background: var(--gd-date-archives-base-month-background);
-    color: var(--gd-date-archives-base-month-color);
+    background: var(--archivespress-dates-month-background);
+    color: var(--archivespress-dates-month-color);
     padding: .33em 1em;
     font-weight: bold;
     display: inline-block;
@@ -29,8 +29,8 @@
 }
 
 @mixin button-link-day {
-    background: var(--gd-date-archives-base-day-background);
-    color: var(--gd-date-archives-base-day-color);
+    background: var(--archivespress-dates-day-background);
+    color: var(--archivespress-dates-day-color);
     font-weight: bold;
     display: inline-block;
     min-width: 2.5em;

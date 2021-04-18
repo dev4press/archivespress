@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function d4p_plugin_gddta_autoload( $class ) {
 	$path = dirname( __FILE__ ) . '/';
-	$base = 'Dev4Press\\Plugin\\GDDTA\\';
+	$base = 'Dev4Press\\Plugin\\ArchivesPress\\';
 
 	if ( substr( $class, 0, strlen( $base ) ) == $base ) {
 		$clean = substr( $class, strlen( $base ) );

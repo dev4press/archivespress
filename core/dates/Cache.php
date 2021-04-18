@@ -1,13 +1,13 @@
 <?php
 
-namespace Dev4Press\Plugin\GDDTA\Basic;
+namespace Dev4Press\Plugin\ArchivesPress\Dates;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 class Cache {
-	private $key = 'gd-date-archive-data-' . GDDTA_VERSION;
+	private $key = 'gd-date-archive-data-' . ARCHIVESPRESS_VERSION;
 	private $period = WEEK_IN_SECONDS;
 
 	public function __construct() {

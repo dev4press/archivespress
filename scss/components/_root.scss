@@ -1,9 +1,9 @@
 :root {
-    --gd-date-archives-base-font-size: #{$base-font-size};
-    --gd-date-archives-base-year-background: #{$base-year-background};
-    --gd-date-archives-base-year-color: #{$base-year-color};
-    --gd-date-archives-base-month-background: #{$base-month-background};
-    --gd-date-archives-base-month-color: #{$base-month-color};
-    --gd-date-archives-base-day-background: #{$base-day-background};
-    --gd-date-archives-base-day-color: #{$base-day-color};
+    --archivespress-dates-font-size: #{$dates-font-size};
+    --archivespress-dates-year-background: #{$dates-year-background};
+    --archivespress-dates-year-color: #{$dates-year-color};
+    --archivespress-dates-month-background: #{$dates-month-background};
+    --archivespress-dates-month-color: #{$dates-month-color};
+    --archivespress-dates-day-background: #{$dates-day-background};
+    --archivespress-dates-day-color: #{$dates-day-color};
 }

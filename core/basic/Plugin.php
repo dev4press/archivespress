@@ -1,14 +1,14 @@
 <?php
 
-namespace Dev4Press\Plugin\GDDTA\Basic;
+namespace Dev4Press\Plugin\ArchivesPress\Basic;
+
+use Dev4Press\Plugin\ArchivesPress\Dates\Load as LoadDates;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 class Plugin {
-	private $post_type;
-
 	public function __construct() {
 	}
 
@@ -24,67 +24,28 @@ class Plugin {
 	}
 
 	private function run() {
-		add_shortcode( 'gd-date-archives', array( $this, 'shortcode' ) );
+		LoadDates::instance();
 
+		add_action( 'init', array( $this, 'styles' ), 15 );
 		add_action( 'init', array( $this, 'init' ), 20 );
 		add_filter( 'transition_post_status', array( $this, 'post_status' ), 10, 3 );
 	}
 
-	public function init() {
-		$this->post_type = apply_filters( 'gd-date-archives-post-types', 'post' );
-
+	public function styles() {
 		$_rtl   = is_rtl() ? '-rtl' : '';
 		$_debug = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$_file  = ARCHIVESPRESS_URL . 'css/styles' . $_rtl . $_debug . '.css';
 
-		$_file = GDDTA_URL . 'css/archives' . $_rtl . $_debug . '.css';
+		wp_register_style( 'archivespress', $_file, array(), ARCHIVESPRESS_VERSION );
+	}
 
-		wp_register_style( 'gd-date-archive', $_file, array(), GDDTA_VERSION );
+	public function init() {
+		do_action( 'archivespress-init' );
 	}
 
 	public function post_status( $new_status, $old_status, $post ) {
 		if ( $new_status !== $old_status && ( $new_status == 'publish' || $old_status == 'publish' ) ) {
-			Cache::instance()->clear( $post->post_type );
+			do_action( 'archivespress-clear-cache', $post->post_type );
 		}
-	}
-
-	public function layouts() {
-		$obj = apply_filters( 'gd-data-archive-layouts-object', null );
-
-		if ( ! $obj ) {
-			$obj = Layouts::instance();
-		}
-
-		return $obj;
-	}
-
-	public function shortcode( $atts = array() ) : string {
-		$defaults = array(
-			'layout'               => 'basic',
-			'post_type'            => $this->post_type,
-			'years'                => array(),
-			'year'                 => 'show',
-			'class'                => '',
-			'var-font-size'        => '',
-			'var-year-background'  => '',
-			'var-year-color'       => '',
-			'var-month-background' => '',
-			'var-month-color'      => '',
-			'var-day-background'   => '',
-			'var-day-color'        => ''
-		);
-
-		$atts = shortcode_atts( $defaults, $atts );
-
-		if ( ! empty( $atts['years'] ) && is_string( $atts['years'] ) ) {
-			$atts['years'] = explode( ',', $atts['years'] );
-			$atts['years'] = array_map( 'absint', $atts['years'] );
-			$atts['years'] = array_filter( $atts['years'] );
-		}
-
-		$data = Cache::instance()->get( $atts['post_type'] );
-
-		wp_enqueue_style( 'gd-date-archive' );
-
-		return $this->layouts()->render( $data, $atts );
 	}
 }

@@ -1,5 +1,4 @@
-.date-archives-wrapper {
-    font-size: var(--gd-date-archives-base-font-size);
+.archivespress-wrapper {
 
     * > {
         box-sizing: border-box;
@@ -22,4 +21,8 @@
             content: ")";
         }
     }
+}
+
+.archivespress-dates-wrapper {
+    font-size: var(--archivespress-dates-font-size);
 }
