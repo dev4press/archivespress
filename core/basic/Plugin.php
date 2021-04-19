@@ -2,6 +2,7 @@
 
 namespace Dev4Press\Plugin\ArchivesPress\Basic;
 
+use Dev4Press\Plugin\ArchivesPress\Authors\Load as LoadAuthors;
 use Dev4Press\Plugin\ArchivesPress\Dates\Load as LoadDates;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,9 +26,11 @@ class Plugin {
 
 	private function run() {
 		LoadDates::instance();
+		LoadAuthors::instance();
 
 		add_action( 'init', array( $this, 'styles' ), 15 );
 		add_action( 'init', array( $this, 'init' ), 20 );
+
 		add_filter( 'transition_post_status', array( $this, 'post_status' ), 10, 3 );
 	}
 

@@ -1,5 +1,93 @@
 .archivespress-authors-wrapper {
     &.archivespress-authors-layout-basic {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: calc(100% + 1em);
+        @include ltr {
+            margin: 0 0 0 -1em;
+        }
+        @include rtl {
+            margin: 0 -1em 0 0;
+        }
 
+        .archivespress-authors-author {
+            flex: 0 0 calc(33.3333% - 1em);
+            @include ltr {
+                margin: 0 0 1em 1em;
+            }
+            @include rtl {
+                margin: 0 1em 1em 0;
+            }
+
+            &.has-avatar {
+                .link-name {
+                    display: block;
+                    @include ltr {
+                        margin-left: 2em;
+                    }
+                    @include rtl {
+                        margin-right: 2em;
+                    }
+                }
+            }
+
+            @media screen and (max-width: #{$responsive-break-large}) {
+                flex: 0 0 calc(50% - 1em);
+            }
+
+            @media screen and (max-width: #{$responsive-break-small}) {
+                flex: 0 0 calc(100% - 1em);
+            }
+        }
+    }
+
+    &.archivespress-authors-layout-compact {
+        display: inline-flex;
+        flex-wrap: wrap;
+
+        .archivespress-authors-author {
+            @include ltr {
+                margin: 0 1em 1em 0;
+            }
+            @include rtl {
+                margin: 0 0 1em 1em;
+            }
+        }
+    }
+
+    &.archivespress-authors-layout-compact,
+    &.archivespress-authors-layout-basic {
+        .archivespress-authors-author {
+            background: var(--archivespress-authors-background);
+            color: var(--archivespress-authors-color);
+            padding: .66em;
+            font-weight: bold;
+
+            .link-avatar {
+                display: block;
+                @include ltr {
+                    float: left;
+                    margin: 0 .66em 0 0;
+                }
+                @include rtl {
+                    float: right;
+                    margin: 0 0 0 .66em;
+                }
+
+                img {
+                    display: block;
+                }
+            }
+
+            .link-name {
+                color: var(--archivespress-authors-color);
+                @include ltr {
+                    margin: 0 1em 0 0;
+                }
+                @include rtl {
+                    margin: 0 0 0 1em;
+                }
+            }
+        }
     }
 }
