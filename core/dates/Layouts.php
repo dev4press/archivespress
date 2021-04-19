@@ -70,8 +70,10 @@ class Layouts implements iLayouts {
 	}
 
 	protected function style( $id, $args = array() ) : string {
+		$vars      = array();
 		$supported = array(
 			'font-size',
+			'line-height',
 			'year-background',
 			'year-color',
 			'month-background',
@@ -79,7 +81,6 @@ class Layouts implements iLayouts {
 			'day-background',
 			'day-color'
 		);
-		$vars      = array();
 
 		foreach ( $supported as $key ) {
 			if ( isset( $args[ 'var-' . $key ] ) && ! empty( $args[ 'var-' . $key ] ) ) {
@@ -107,11 +108,14 @@ class Layouts implements iLayouts {
 			$classes[] = $args['class'];
 		}
 
-		$id = 'archivespress-dates-block-' . ( ++ $this->id );
+		$id    = 'archivespress-dates-block-' . ( ++ $this->id );
+		$order = isset( $args['order'] ) && $args['order'] === 'asc' ? 'asc' : 'desc';
 
 		$render = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
 
-		foreach ( $data as $year => $elyear ) {
+		$_years = $order === 'asc' ? array_reverse( $data, true ) : $data;
+
+		foreach ( $_years as $year => $elyear ) {
 			if ( empty( $args['years'] ) || in_array( $year, $args['years'] ) ) {
 				$count  = $elyear['posts'];
 				$render .= '<div class="archivespress-dates-year-wrapper">';
@@ -124,7 +128,9 @@ class Layouts implements iLayouts {
 
 				$render .= '<div class="archivespress-dates-months">';
 
-				foreach ( $elyear['months'] as $month => $elmonth ) {
+				$_months = $order === 'asc' ? array_reverse( $elyear['months'], true ) : $elyear['months'];
+
+				foreach ( $_months as $month => $elmonth ) {
 					$count  = $elmonth['posts'];
 					$render .= '<div class="archivespress-dates-month-wrapper">';
 					$render .= '<div class="archivespress-dates-month">';
@@ -132,7 +138,9 @@ class Layouts implements iLayouts {
 					$render .= '</div>';
 					$render .= '<div class="archivespress-dates-days">';
 
-					foreach ( $elmonth['days'] as $day => $elday ) {
+					$_days = $order === 'asc' ? array_reverse( $elmonth['days'], true ) : $elmonth['days'];
+
+					foreach ( $_days as $day => $elday ) {
 						$count  = $elday['posts'];
 						$render .= '<div class="archivespress-dates-day-wrapper">';
 						$render .= '<a title="' . sprintf( _n( "%s: %s Post", "%s: %s Posts", $count ), $this->full_day_title( $year, $month, $day ), $count ) . '" class="link-day" href="' . $this->get_day_link( $args['post_type'], $year, $month, $day ) . '">' . $day . '</a>';

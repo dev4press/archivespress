@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\ArchivesPress\Dates;
+namespace Dev4Press\Plugin\ArchivesPress\Authors;
 
 use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
@@ -33,9 +33,9 @@ class Load implements iLoad {
 	}
 
 	public function init() {
-		$this->post_type = apply_filters( 'archivespress-dates-post-types', 'post' );
+		$this->post_type = apply_filters( 'archivespress-authors-post-types', 'post' );
 
-		add_shortcode( 'archivespress-dates', array( $this, 'shortcode' ) );
+		add_shortcode( 'archivespress-authors', array( $this, 'shortcode' ) );
 	}
 
 	public function clear_cache( $post_type ) {
@@ -43,7 +43,7 @@ class Load implements iLoad {
 	}
 
 	public function cache() : iCache {
-		$obj = apply_filters( 'archivespress-dates-cache-object', null );
+		$obj = apply_filters( 'archivespress-authors-cache-object', null );
 
 		if ( ! $obj ) {
 			$obj = Cache::instance();
@@ -53,7 +53,7 @@ class Load implements iLoad {
 	}
 
 	public function layouts() : iLayouts {
-		$obj = apply_filters( 'archivespress-dates-layouts-object', null );
+		$obj = apply_filters( 'archivespress-authors-layouts-object', null );
 
 		if ( ! $obj ) {
 			$obj = Layouts::instance();
@@ -64,29 +64,18 @@ class Load implements iLoad {
 
 	public function shortcode( $atts = array() ) : string {
 		$defaults = array(
-			'layout'               => 'basic',
-			'post_type'            => $this->post_type,
-			'order'                => 'desc',
-			'years'                => array(),
-			'year'                 => 'show',
-			'class'                => '',
-			'var-font-size'        => '',
-			'var-line-height'      => '',
-			'var-year-background'  => '',
-			'var-year-color'       => '',
-			'var-month-background' => '',
-			'var-month-color'      => '',
-			'var-day-background'   => '',
-			'var-day-color'        => ''
+			'layout'         => 'basic',
+			'post_type'      => $this->post_type,
+			'orderby'        => 'posts',
+			'order'          => 'desc',
+			'avatar'         => 24,
+			'class'          => '',
+			'var-font-size'  => '',
+			'var-background' => '',
+			'var-color'      => '',
 		);
 
 		$atts = shortcode_atts( $defaults, $atts );
-
-		if ( ! empty( $atts['years'] ) && is_string( $atts['years'] ) ) {
-			$atts['years'] = explode( ',', $atts['years'] );
-			$atts['years'] = array_map( 'absint', $atts['years'] );
-			$atts['years'] = array_filter( $atts['years'] );
-		}
 
 		$data = $this->cache()->get( $atts['post_type'] );
 

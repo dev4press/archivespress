@@ -1,11 +1,18 @@
-// vars //
-$dates-font-size: 15px !default;
+// dates vars //
+$dates-font-size: 16px !default;
+$dates-line-height: 1.5 !default;
 $dates-year-background: #111 !default;
 $dates-year-color: #FFF !default;
 $dates-month-background: #444 !default;
 $dates-month-color: #FFF !default;
 $dates-day-background: #777 !default;
 $dates-day-color: #FFF !default;
+
+// authors vars //
+$authors-font-size: 16px !default;
+$authors-line-height: 1.5 !default;
+$authors-background: #111 !default;
+$authors-color: #FFF !default;
 
 // layout //
 $responsive-break-small: 600px;

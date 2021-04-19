@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\ArchivesPress\Dates;
+namespace Dev4Press\Plugin\ArchivesPress\Authors;
 
 use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Cache implements iCache {
-	protected $key = 'archivespress-dates-data-' . ARCHIVESPRESS_VERSION;
+	protected $key = 'archivespress-authors-data-' . ARCHIVESPRESS_VERSION;
 	protected $period = WEEK_IN_SECONDS;
 
 	public function __construct() {
@@ -54,39 +54,28 @@ class Cache implements iCache {
 		}
 
 		$sql = $wpdb->prepare( "SELECT 
-	YEAR(`post_date`) AS `year`, 
-	MONTH(`post_date`) AS `month`, 
-    DAY(`post_date`) AS `day`, 
+	p.`post_author` as `id`, 
+    u.`display_name` as `name`, 
+    u.`user_nicename` as `slug`, 
+    u.`user_email` as `email`, 
     COUNT(*) AS `posts` 
 FROM 
-    $wpdb->posts 
+    $wpdb->posts p 
+    INNER JOIN $wpdb->users u ON u.`ID` = p.`post_author` 
 WHERE 
-    `post_type` = %s AND 
-    `post_status` = 'publish'
+      p.`post_type` = %s AND 
+      p.`post_status` = 'publish'
 GROUP BY 
-    `year`, `month`, `day` 
+      `id` 
 ORDER BY 
-    `year` DESC, `month` DESC, `day` DESC", $post_type );
-		$raw = $wpdb->get_results( $sql );
+      `posts` DESC", $post_type );
+
+		$raw = $wpdb->get_results( $sql, ARRAY_A );
 
 		$data = array();
 
 		foreach ( $raw as $row ) {
-			if ( ! isset( $data[ $row->year ] ) ) {
-				$data[ $row->year ] = array( 'posts' => 0, 'months' => array() );
-			}
-
-			if ( ! isset( $data[ $row->year ]['months'][ $row->month ] ) ) {
-				$data[ $row->year ]['months'][ $row->month ] = array( 'posts' => 0, 'days' => array() );
-			}
-
-			if ( ! isset( $data[ $row->year ]['months'][ $row->month ]['days'][ $row->day ] ) ) {
-				$data[ $row->year ]['months'][ $row->month ]['days'][ $row->day ] = array( 'posts' => 0 );
-			}
-
-			$data[ $row->year ]['posts']                                               += $row->posts;
-			$data[ $row->year ]['months'][ $row->month ]['posts']                      += $row->posts;
-			$data[ $row->year ]['months'][ $row->month ]['days'][ $row->day ]['posts'] += $row->posts;
+			$data[ $row['id'] ] = $row;
 		}
 
 		return $data;

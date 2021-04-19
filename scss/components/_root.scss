@@ -1,9 +1,15 @@
 :root {
     --archivespress-dates-font-size: #{$dates-font-size};
+    --archivespress-dates-line-height: #{$dates-line-height};
     --archivespress-dates-year-background: #{$dates-year-background};
     --archivespress-dates-year-color: #{$dates-year-color};
     --archivespress-dates-month-background: #{$dates-month-background};
     --archivespress-dates-month-color: #{$dates-month-color};
     --archivespress-dates-day-background: #{$dates-day-background};
     --archivespress-dates-day-color: #{$dates-day-color};
+
+    --archivespress-authors-font-size: #{$authors-font-size};
+    --archivespress-authors-line-height: #{$authors-line-height};
+    --archivespress-authors-background: #{$authors-background};
+    --archivespress-authors-color: #{$authors-color};
 }

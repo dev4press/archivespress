@@ -1,11 +1,16 @@
 :root {
-  --archivespress-dates-font-size: 15px;
+  --archivespress-dates-font-size: 16px;
+  --archivespress-dates-line-height: 1.5;
   --archivespress-dates-year-background: #111;
   --archivespress-dates-year-color: #FFF;
   --archivespress-dates-month-background: #444;
   --archivespress-dates-month-color: #FFF;
   --archivespress-dates-day-background: #777;
   --archivespress-dates-day-color: #FFF;
+  --archivespress-authors-font-size: 16px;
+  --archivespress-authors-line-height: 1.5;
+  --archivespress-authors-background: #111;
+  --archivespress-authors-color: #FFF;
 }
 
 .archivespress-wrapper * > {
@@ -24,6 +29,12 @@
 
 .archivespress-dates-wrapper {
   font-size: var(--archivespress-dates-font-size);
+  line-height: var(--archivespress-dates-line-height);
+}
+
+.archivespress-authors-wrapper {
+  font-size: var(--archivespress-authors-font-size);
+  line-height: var(--archivespress-authors-line-height);
 }
 
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .link-year, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .link-year {
