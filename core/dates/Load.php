@@ -2,6 +2,8 @@
 
 namespace Dev4Press\Plugin\ArchivesPress\Dates;
 
+use Dev4Press\Plugin\ArchivesPress\Base\iCache;
+use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -9,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Load implements iLoad {
-	private $post_type;
+	protected $post_type;
 
 	public function __construct() {
 	}
@@ -25,7 +27,7 @@ class Load implements iLoad {
 		return $instance;
 	}
 
-	private function run() {
+	protected function run() {
 		add_action( 'archivespress-init', array( $this, 'init' ) );
 		add_action( 'archivespress-clear-cache', array( $this, 'clear_cache' ) );
 	}
@@ -37,10 +39,20 @@ class Load implements iLoad {
 	}
 
 	public function clear_cache( $post_type ) {
-		Cache::instance()->clear( $post_type );
+		$this->cache()->clear( $post_type );
 	}
 
-	public function layouts() {
+	public function cache() : iCache {
+		$obj = apply_filters( 'archivespress-dates-cache-object', null );
+
+		if ( ! $obj ) {
+			$obj = Cache::instance();
+		}
+
+		return $obj;
+	}
+
+	public function layouts() : iLayouts {
 		$obj = apply_filters( 'archivespress-dates-layouts-object', null );
 
 		if ( ! $obj ) {
@@ -74,7 +86,7 @@ class Load implements iLoad {
 			$atts['years'] = array_filter( $atts['years'] );
 		}
 
-		$data = Cache::instance()->get( $atts['post_type'] );
+		$data = $this->cache()->get( $atts['post_type'] );
 
 		wp_enqueue_style( 'archivespress' );
 

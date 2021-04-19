@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Layouts implements iLayouts {
-	private $id = 0;
+	protected $id = 0;
 
 	public function __construct() {
 	}
@@ -57,19 +57,19 @@ class Layouts implements iLayouts {
 		return is_null( $url ) ? get_year_link( $year ) : $url;
 	}
 
-	protected function get_month_link( $post_type, $year, $month ) {
+	protected function get_month_link( $post_type, $year, $month ) : string {
 		$url = apply_filters( 'archivespress-dates-get-month-link-' . $post_type, null, $year );
 
-		return is_null( $url ) ? get_month_link( $year, $month ) : $url;
+		return is_null( $url ) && ! is_string( $url ) ? get_month_link( $year, $month ) : $url;
 	}
 
-	protected function get_day_link( $post_type, $year, $month, $day ) {
+	protected function get_day_link( $post_type, $year, $month, $day ) : string {
 		$url = apply_filters( 'archivespress-dates-get-day-link-' . $post_type, null, $year );
 
-		return is_null( $url ) ? get_day_link( $year, $month, $day ) : $url;
+		return is_null( $url ) && ! is_string( $url ) ? get_day_link( $year, $month, $day ) : $url;
 	}
 
-	protected function style( $id, $args = array() ) {
+	protected function style( $id, $args = array() ) : string {
 		$supported = array(
 			'font-size',
 			'year-background',

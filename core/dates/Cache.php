@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Cache implements iCache {
-	private $key = 'archivespress-dates-data-' . ARCHIVESPRESS_VERSION;
-	private $period = WEEK_IN_SECONDS;
+	protected $key = 'archivespress-dates-data-' . ARCHIVESPRESS_VERSION;
+	protected $period = WEEK_IN_SECONDS;
 
 	public function __construct() {
 	}
@@ -29,7 +29,7 @@ class Cache implements iCache {
 		delete_transient( $this->key( $post_type ) );
 	}
 
-	public function get( $post_type = 'post' ) {
+	public function get( $post_type = 'post' ) : array {
 		$key  = $this->key( $post_type );
 		$data = get_transient( $key );
 
@@ -39,14 +39,14 @@ class Cache implements iCache {
 			set_transient( $key, $data, $this->period );
 		}
 
-		return $data;
+		return (array)$data;
 	}
 
-	private function key( $post_type ) : string {
+	protected function key( $post_type ) : string {
 		return $this->key . '-' . $post_type;
 	}
 
-	private function query( $post_type = 'post' ) : array {
+	protected function query( $post_type = 'post' ) : array {
 		global $wpdb;
 
 		if ( empty( $post_type ) ) {
