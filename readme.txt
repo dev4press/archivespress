@@ -9,14 +9,22 @@ Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Display the matrix with the years, months and days based on the post archives for quick navigation with various customization options available.
+Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts.
 
 == Description ==
-Display the matrix with the years, months and days based on the post archives for quick navigation with various customization options available.
+Display indexes based on the dates (years, months and days archives), authors and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode used.
 
-= Features Overview =
-* Shortcode to display the archive matrix
-* Support for RTL orienation
+The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling.
+
+= Shortcodes =
+* Dates archives: `[archivespress-dates]`
+* Authors archives: `[archivespress-authors]`
+* Terms archives `[archivespress-terms]`
+
+= Other Features Overview =
+* SASS based styling
+* CSS using variable and flex
+* Support for RTL orientation
 * Fully responsive styling
 
 = Home and GitHub =

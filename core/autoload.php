@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function d4p_plugin_gddta_autoload( $class ) {
+function d4p_plugin_archivespress_autoload( $class ) {
 	$path = dirname( __FILE__ ) . '/';
 	$base = 'Dev4Press\\Plugin\\ArchivesPress\\';
 
@@ -27,4 +27,4 @@ function d4p_plugin_gddta_autoload( $class ) {
 	}
 }
 
-spl_autoload_register( 'd4p_plugin_gddta_autoload' );
+spl_autoload_register( 'd4p_plugin_archivespress_autoload' );

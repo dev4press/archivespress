@@ -69,6 +69,7 @@ class Load implements iLoad {
 			'taxonomy'        => 'category',
 			'orderby'         => 'posts',
 			'order'           => 'desc',
+			'columns'         => 4,
 			'class'           => '',
 			'var-font-size'   => '',
 			'var-line-height' => '',
@@ -76,7 +77,8 @@ class Load implements iLoad {
 			'var-color'       => '',
 		);
 
-		$atts = shortcode_atts( $defaults, $atts );
+		$atts            = shortcode_atts( $defaults, $atts );
+		$atts['columns'] = absint( $atts['columns'] );
 
 		$data  = $this->cache()->get( $atts['post_type'] );
 		$terms = $data[ $atts['taxonomy'] ] ?? array();

@@ -189,16 +189,33 @@
   margin: 0 -1em 0 0;
 }
 .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
-  flex: 0 0 calc(25% - 1em);
   margin: 0 1em 1em 0;
 }
+.archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-1 .archivespress-terms-term {
+  flex: 0 0 calc(100% - 1em);
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-2 .archivespress-terms-term {
+  flex: 0 0 calc(50% - 1em);
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-3 .archivespress-terms-term {
+  flex: 0 0 calc(33.3333% - 1em);
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-4 .archivespress-terms-term {
+  flex: 0 0 calc(25% - 1em);
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-5 .archivespress-terms-term {
+  flex: 0 0 calc(20% - 1em);
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-6 .archivespress-terms-term {
+  flex: 0 0 calc(16.6666% - 1em);
+}
 @media screen and (max-width: 960px) {
-  .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
+  .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-3 .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-4 .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-5 .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-6 .archivespress-terms-term {
     flex: 0 0 calc(50% - 1em);
   }
 }
 @media screen and (max-width: 640px) {
-  .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
+  .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-3 .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-4 .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-5 .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic.archivespress-terms-columns-6 .archivespress-terms-term {
     flex: 0 0 calc(100% - 1em);
   }
 }

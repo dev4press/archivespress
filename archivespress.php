@@ -3,7 +3,7 @@
 /*
 Plugin Name:       ArchivesPress
 Plugin URI:        https://plugins.dev4press.com/archivespress/
-Description:       Display the matrix with the years, months and days based on the post archives for quick navigation with various customization options available.
+Description:       Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts.
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
 Text Domain:       archivespress
@@ -33,13 +33,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 
 use Dev4Press\Plugin\ArchivesPress\Basic\Plugin;
 
-$gddta_dirname_basic = dirname( __FILE__ ) . '/';
-$gddta_urlname_basic = plugins_url( '/', __FILE__ );
+$archivespress_dirname_basic = dirname( __FILE__ ) . '/';
+$archivespress_urlname_basic = plugins_url( '/', __FILE__ );
 
 define( 'ARCHIVESPRESS_VERSION', '1.0' );
 define( 'ARCHIVESPRESS_FILE', __FILE__ );
-define( 'ARCHIVESPRESS_PATH', $gddta_dirname_basic );
-define( 'ARCHIVESPRESS_URL', $gddta_urlname_basic );
+define( 'ARCHIVESPRESS_PATH', $archivespress_dirname_basic );
+define( 'ARCHIVESPRESS_URL', $archivespress_urlname_basic );
 
 require_once( ARCHIVESPRESS_PATH . 'core/autoload.php' );
 

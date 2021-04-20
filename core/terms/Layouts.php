@@ -73,6 +73,12 @@ class Layouts implements iLayouts {
 			'archivespress-terms-taxonomy-' . $args['taxonomy']
 		);
 
+		$columns = $args['columns'] ?? 4;
+		$columns = $columns < 1 ? 1 : $columns;
+		$columns = $columns > 6 ? 6 : $columns;
+
+		$classes[] = 'archivespress-terms-columns-' . $columns;
+
 		if ( ! empty( $args['class'] ) ) {
 			$classes[] = $args['class'];
 		}
@@ -85,7 +91,7 @@ class Layouts implements iLayouts {
 			$term = get_term_by( 'id', $term_id, $args['taxonomy'] );
 
 			$render .= '<div class="archivespress-terms-term">';
-			$render .= '<a class="link-name" href="' . '#' . '">' . $term->name . '</a>';
+			$render .= '<a class="link-name" href="' . $this->get_term_link( $args['post_type'], $term ) . '">' . $term->name . '</a>';
 			$render .= $this->posts_count( $_count );
 			$render .= '</div>';
 		}
