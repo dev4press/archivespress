@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\ArchivesPress\Dates;
+namespace Dev4Press\Plugin\ArchivesPress\Terms;
 
 use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
@@ -33,9 +33,9 @@ class Load implements iLoad {
 	}
 
 	public function init() {
-		$this->post_type = apply_filters( 'archivespress-dates-post-types', 'post' );
+		$this->post_type = apply_filters( 'archivespress-terms-post-types', 'post' );
 
-		add_shortcode( 'archivespress-dates', array( $this, 'shortcode' ) );
+		add_shortcode( 'archivespress-terms', array( $this, 'shortcode' ) );
 	}
 
 	public function clear_cache( $post_type ) {
@@ -43,7 +43,7 @@ class Load implements iLoad {
 	}
 
 	public function cache() : iCache {
-		$obj = apply_filters( 'archivespress-dates-cache-object', null );
+		$obj = apply_filters( 'archivespress-terms-cache-object', null );
 
 		if ( ! $obj ) {
 			$obj = Cache::instance();
@@ -53,7 +53,7 @@ class Load implements iLoad {
 	}
 
 	public function layouts() : iLayouts {
-		$obj = apply_filters( 'archivespress-dates-layouts-object', null );
+		$obj = apply_filters( 'archivespress-terms-layouts-object', null );
 
 		if ( ! $obj ) {
 			$obj = Layouts::instance();
@@ -64,36 +64,29 @@ class Load implements iLoad {
 
 	public function shortcode( $atts = array() ) : string {
 		$defaults = array(
-			'layout'               => 'basic',
-			'post_type'            => $this->post_type,
-			'order'                => 'desc',
-			'years'                => array(),
-			'year'                 => 'show',
-			'class'                => '',
-			'var-font-size'        => '',
-			'var-line-height'      => '',
-			'var-year-background'  => '',
-			'var-year-color'       => '',
-			'var-month-background' => '',
-			'var-month-color'      => '',
-			'var-day-background'   => '',
-			'var-day-color'        => ''
+			'layout'          => 'basic',
+			'post_type'       => $this->post_type,
+			'taxonomy'        => 'category',
+			'orderby'         => 'posts',
+			'order'           => 'desc',
+			'class'           => '',
+			'var-font-size'   => '',
+			'var-line-height' => '',
+			'var-background'  => '',
+			'var-color'       => '',
 		);
 
 		$atts = shortcode_atts( $defaults, $atts );
 
-		if ( ! empty( $atts['years'] ) && is_string( $atts['years'] ) ) {
-			$atts['years'] = explode( ',', $atts['years'] );
-			$atts['years'] = array_map( 'absint', $atts['years'] );
-			$atts['years'] = array_filter( $atts['years'] );
-		}
-
-		$data = $this->cache()->get( $atts['post_type'] );
+		$data  = $this->cache()->get( $atts['post_type'] );
+		$terms = $data[ $atts['taxonomy'] ] ?? array();
 
 		wp_enqueue_style( 'archivespress' );
 
-		if ( ! empty( $data ) ) {
-			return $this->layouts()->render( $data, $atts );
+		if ( ! empty( $terms ) ) {
+			_prime_term_caches( array_keys( $terms ) );
+
+			return $this->layouts()->render( $terms, $atts );
 		}
 
 		return '';

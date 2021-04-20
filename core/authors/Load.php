@@ -64,15 +64,16 @@ class Load implements iLoad {
 
 	public function shortcode( $atts = array() ) : string {
 		$defaults = array(
-			'layout'         => 'basic',
-			'post_type'      => $this->post_type,
-			'orderby'        => 'posts',
-			'order'          => 'desc',
-			'avatar'         => 24,
-			'class'          => '',
-			'var-font-size'  => '',
-			'var-background' => '',
-			'var-color'      => '',
+			'layout'          => 'basic',
+			'post_type'       => $this->post_type,
+			'orderby'         => 'posts',
+			'order'           => 'desc',
+			'avatar'          => 24,
+			'class'           => '',
+			'var-font-size'   => '',
+			'var-line-height' => '',
+			'var-background'  => '',
+			'var-color'       => '',
 		);
 
 		$atts = shortcode_atts( $defaults, $atts );
@@ -81,6 +82,10 @@ class Load implements iLoad {
 
 		wp_enqueue_style( 'archivespress' );
 
-		return $this->layouts()->render( $data, $atts );
+		if ( ! empty( $data ) ) {
+			return $this->layouts()->render( $data, $atts );
+		}
+
+		return '';
 	}
 }

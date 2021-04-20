@@ -11,6 +11,10 @@
   --archivespress-authors-line-height: 1.5;
   --archivespress-authors-background: #111;
   --archivespress-authors-color: #FFF;
+  --archivespress-terms-font-size: 16px;
+  --archivespress-terms-line-height: 1.5;
+  --archivespress-terms-background: #111;
+  --archivespress-terms-color: #FFF;
 }
 
 .archivespress-wrapper * > {
@@ -37,10 +41,15 @@
   line-height: var(--archivespress-authors-line-height);
 }
 
+.archivespress-terms-wrapper {
+  font-size: var(--archivespress-terms-font-size);
+  line-height: var(--archivespress-terms-line-height);
+}
+
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .link-year, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .link-year {
   background: var(--archivespress-dates-year-background);
   color: var(--archivespress-dates-year-color);
-  padding: 0.33em 1em;
+  padding: 0.33em 0.66em;
   font-weight: bold;
   display: inline-block;
   min-width: 10em;
@@ -55,7 +64,7 @@
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper .link-month, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper .link-month {
   background: var(--archivespress-dates-month-background);
   color: var(--archivespress-dates-month-color);
-  padding: 0.33em 1em;
+  padding: 0.33em 0.66em;
   font-weight: bold;
   display: inline-block;
   min-width: 15em;
@@ -70,11 +79,11 @@
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-day-wrapper .link-day, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-day-wrapper .link-day {
   background: var(--archivespress-dates-day-background);
   color: var(--archivespress-dates-day-color);
+  padding: 0.33em 0.66em;
   font-weight: bold;
   display: inline-block;
   min-width: 2.5em;
   text-align: center;
-  padding: 0.33em 0.66em;
   margin: 0 0.66em 0.66em 0;
 }
 @media screen and (max-width: 640px) {
@@ -170,5 +179,43 @@
 }
 .archivespress-authors-wrapper.archivespress-authors-layout-compact .archivespress-authors-author .link-name, .archivespress-authors-wrapper.archivespress-authors-layout-basic .archivespress-authors-author .link-name {
   color: var(--archivespress-authors-color);
+  margin: 0 1em 0 0;
+}
+
+.archivespress-terms-wrapper.archivespress-terms-layout-basic {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: calc(100% + 1em);
+  margin: 0 0 0 -1em;
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
+  flex: 0 0 calc(25% - 1em);
+  margin: 0 0 1em 1em;
+}
+@media screen and (max-width: 960px) {
+  .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
+    flex: 0 0 calc(50% - 1em);
+  }
+}
+@media screen and (max-width: 640px) {
+  .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
+    flex: 0 0 calc(100% - 1em);
+  }
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-compact {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-authors-author {
+  margin: 0 1em 1em 0;
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
+  background: var(--archivespress-terms-background);
+  color: var(--archivespress-terms-color);
+  padding: 0.33em 0.66em;
+  font-weight: bold;
+}
+.archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-terms-term .link-name, .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term .link-name {
+  color: var(--archivespress-terms-color);
   margin: 0 1em 0 0;
 }

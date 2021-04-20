@@ -4,6 +4,7 @@ namespace Dev4Press\Plugin\ArchivesPress\Basic;
 
 use Dev4Press\Plugin\ArchivesPress\Authors\Load as LoadAuthors;
 use Dev4Press\Plugin\ArchivesPress\Dates\Load as LoadDates;
+use Dev4Press\Plugin\ArchivesPress\Terms\Load as LoadTerms;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -27,6 +28,7 @@ class Plugin {
 	private function run() {
 		LoadDates::instance();
 		LoadAuthors::instance();
+		LoadTerms::instance();
 
 		add_action( 'init', array( $this, 'styles' ), 15 );
 		add_action( 'init', array( $this, 'init' ), 20 );

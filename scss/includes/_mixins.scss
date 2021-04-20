@@ -1,7 +1,7 @@
 @mixin button-link-year {
     background: var(--archivespress-dates-year-background);
     color: var(--archivespress-dates-year-color);
-    padding: .33em 1em;
+    padding: .33em .66em;
     font-weight: bold;
     display: inline-block;
     min-width: 10em;
@@ -16,7 +16,7 @@
 @mixin button-link-month {
     background: var(--archivespress-dates-month-background);
     color: var(--archivespress-dates-month-color);
-    padding: .33em 1em;
+    padding: .33em .66em;
     font-weight: bold;
     display: inline-block;
     min-width: 15em;
@@ -31,11 +31,11 @@
 @mixin button-link-day {
     background: var(--archivespress-dates-day-background);
     color: var(--archivespress-dates-day-color);
+    padding: .33em .66em;
     font-weight: bold;
     display: inline-block;
     min-width: 2.5em;
     text-align: center;
-    padding: .33em .66em;
     @include ltr {
         margin: 0 .66em .66em 0;
     }
