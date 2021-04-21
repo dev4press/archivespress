@@ -67,4 +67,6 @@ The plugin doesn't have any global settings or configuration panels.
 First official version
 
 == Screenshots ==
-1. Example of the archive shortcode
+1. Examples for the Dates Archives Index Shortcode
+2. Examples for the Author Archives Index Shortcode
+3. Examples for the Terms Archives Index Shortcode

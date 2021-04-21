@@ -117,10 +117,10 @@ class Layouts implements iLayouts {
 
 			$render .= '<div class="' . $_class . '">';
 			if ( ! empty( $_avatar ) ) {
-				$render .= '<a title="' . sprintf( _n( "%s: %s Post", "%s: %s Posts", $_count ), $info['name'], $_count ) . '" class="link-avatar" href="' . $_archive . '">' . $_avatar . '</a>';
+				$render .= '<a title="' . sprintf( _nx( "%s: %s Post", "%s: %s Posts", $_count, "Author name and posts count", "archivespress" ), $info['name'], $_count ) . '" class="link-avatar" href="' . $_archive . '">' . $_avatar . '</a>';
 			}
 			$render .= $this->posts_count( $_count );
-			$render .= '<a title="' . sprintf( _n( "%s: %s Post", "%s: %s Posts", $_count ), $info['name'], $_count ) . '" class="link-name" href="' . $_archive . '">' . $info['name'] . '</a>';
+			$render .= '<a title="' . sprintf( _nx( "%s: %s Post", "%s: %s Posts", $_count, "Author name and posts count", "archivespress" ), $info['name'], $_count ) . '" class="link-name" href="' . $_archive . '">' . $info['name'] . '</a>';
 			$render .= '</div>';
 		}
 

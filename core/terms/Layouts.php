@@ -59,10 +59,10 @@ class Layouts implements iLayouts {
 		return '<span class="info-counts">' . $count . '</span>';
 	}
 
-	protected function get_term_link( $post_type, $term ) : string {
+	protected function get_term_link( $post_type, $term, $taxonomy ) : string {
 		$url = apply_filters( 'archivespress-terms-get-term-link-' . $post_type, null, $term );
 
-		return is_null( $url ) && ! is_string( $url ) ? get_term_link( $term ) : $url;
+		return is_null( $url ) && ! is_string( $url ) ? get_term_link( $term, $taxonomy ) : $url;
 	}
 
 	protected function basic( $data, $args = array() ) : string {
@@ -85,14 +85,13 @@ class Layouts implements iLayouts {
 
 		$id = 'archivespress-terms-block-' . ( ++ $this->id );
 
-		$render = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render   = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$taxonomy = get_taxonomy( $args['taxonomy'] );
 
-		foreach ( $data as $term_id => $_count ) {
-			$term = get_term_by( 'id', $term_id, $args['taxonomy'] );
-
+		foreach ( $data as $term_id => $object ) {
 			$render .= '<div class="archivespress-terms-term">';
-			$render .= '<a class="link-name" href="' . $this->get_term_link( $args['post_type'], $term ) . '">' . $term->name . '</a>';
-			$render .= $this->posts_count( $_count );
+			$render .= '<a title="' . sprintf( _nx( "%s '%s': %s Post", "%s '%s': %s Posts", $object['posts'], "Taxonomy, term name and posts count", "archivespress" ), $taxonomy->labels->singular_name, $object['name'], $object['posts'] ) . '" class="link-name" href="' . $this->get_term_link( $args['post_type'], $term_id, $object['taxonomy'] ) . '">' . $object['name'] . '</a>';
+			$render .= $this->posts_count( $object['posts'] );
 			$render .= '</div>';
 		}
 

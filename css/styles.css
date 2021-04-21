@@ -240,7 +240,7 @@
   display: inline-flex;
   flex-wrap: wrap;
 }
-.archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-authors-author {
+.archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-terms-term {
   margin: 0 1em 1em 0;
 }
 .archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-terms-term, .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term {
