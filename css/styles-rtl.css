@@ -139,20 +139,37 @@
   margin: 0 -1em 0 0;
 }
 .archivespress-authors-wrapper.archivespress-authors-layout-basic .archivespress-authors-author {
-  flex: 0 0 calc(33.3333% - 1em);
   margin: 0 1em 1em 0;
 }
 .archivespress-authors-wrapper.archivespress-authors-layout-basic .archivespress-authors-author.has-avatar .link-name {
   display: block;
   margin-right: 2em;
 }
+.archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-1 .archivespress-authors-author {
+  flex: 0 0 calc(100% - 1em);
+}
+.archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-2 .archivespress-authors-author {
+  flex: 0 0 calc(50% - 1em);
+}
+.archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-3 .archivespress-authors-author {
+  flex: 0 0 calc(33.3333% - 1em);
+}
+.archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-4 .archivespress-authors-author {
+  flex: 0 0 calc(25% - 1em);
+}
+.archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-5 .archivespress-authors-author {
+  flex: 0 0 calc(20% - 1em);
+}
+.archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-6 .archivespress-authors-author {
+  flex: 0 0 calc(16.6666% - 1em);
+}
 @media screen and (max-width: 960px) {
-  .archivespress-authors-wrapper.archivespress-authors-layout-basic .archivespress-authors-author {
+  .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-3 .archivespress-authors-author, .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-4 .archivespress-authors-author, .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-5 .archivespress-authors-author, .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-6 .archivespress-authors-author {
     flex: 0 0 calc(50% - 1em);
   }
 }
 @media screen and (max-width: 640px) {
-  .archivespress-authors-wrapper.archivespress-authors-layout-basic .archivespress-authors-author {
+  .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-3 .archivespress-authors-author, .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-4 .archivespress-authors-author, .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-5 .archivespress-authors-author, .archivespress-authors-wrapper.archivespress-authors-layout-basic.archivespress-authors-columns-6 .archivespress-authors-author {
     flex: 0 0 calc(100% - 1em);
   }
 }

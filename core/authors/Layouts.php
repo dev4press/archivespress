@@ -91,6 +91,12 @@ class Layouts implements iLayouts {
 			'archivespress-authors-layout-' . $args['layout']
 		);
 
+		$columns = $args['columns'] ?? 4;
+		$columns = $columns < 1 ? 1 : $columns;
+		$columns = $columns > 6 ? 6 : $columns;
+
+		$classes[] = 'archivespress-authors-columns-' . $columns;
+
 		if ( ! empty( $args['class'] ) ) {
 			$classes[] = $args['class'];
 		}

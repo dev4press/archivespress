@@ -5,6 +5,7 @@ namespace Dev4Press\Plugin\ArchivesPress\Authors;
 use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
+use Dev4Press\Plugin\ArchivesPress\Basic\ObjectsSort;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -69,6 +70,7 @@ class Load implements iLoad {
 			'orderby'         => 'posts',
 			'order'           => 'desc',
 			'avatar'          => 24,
+			'columns'         => 3,
 			'class'           => '',
 			'var-font-size'   => '',
 			'var-line-height' => '',
@@ -79,13 +81,37 @@ class Load implements iLoad {
 		$atts = shortcode_atts( $defaults, $atts );
 
 		$data = $this->cache()->get( $atts['post_type'] );
-
-		wp_enqueue_style( 'archivespress' );
+		$data = $this->prepare_data( $data, $atts['orderby'], $atts['order'] );
 
 		if ( ! empty( $data ) ) {
+			wp_enqueue_style( 'archivespress' );
+
 			return $this->layouts()->render( $data, $atts );
 		}
 
 		return '';
+	}
+
+	private function prepare_data( $data, $orderby, $order ) : array {
+		$valid = array( 'id', 'name', 'slug', 'email', 'posts' );
+
+		if ( in_array( $orderby, $valid ) ) {
+			$input  = array();
+			$output = array();
+
+			foreach ( $data as $key => $item ) {
+				$input[ $key ] = (object) $item;
+			}
+
+			$sort = new ObjectsSort( $input, array( array( 'property' => $orderby, 'order' => $order ) ), true );
+
+			foreach ( $sort->sorted as $key => $item ) {
+				$output[ $key ] = (array) $item;
+			}
+
+			return $output;
+		}
+
+		return $data;
 	}
 }
