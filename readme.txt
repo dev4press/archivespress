@@ -1,7 +1,7 @@
 === ArchivesPress ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/archivespress/
-Tags: dev4press, archives, navigation, dates, years, months
+Tags: dev4press, archives, navigation, index, dates, years, months, days, terms, authors
 Stable tag: 1.0
 Requires at least: 5.0
 Tested up to: 5.7
@@ -24,18 +24,17 @@ The plugin uses shortcodes for each of the archive indexes. This includes three 
 = Other Features Overview =
 * SASS based styling
 * CSS using variable and flex
+* Two layouts for every shortcode
+* Change colors and font via shortcode
 * Support for RTL orientation
 * Fully responsive styling
+* Load styling file only when needed
 
-= Home and GitHub =
-* Learn more about the plugin: [ArchivesPress Website](https://plugins.dev4press.com/archivespress/)
-* Contribute to plugin development: [ArchivesPress on GitHub](https://github.com/dev4press/archivespress)
-
-= Documentation and Support =
-To get help with the plugin, you can use WordPress.org support forums, or you can use Dev4Press.com support forums.
-
-* Plugin Documentation: [ArchivesPress Website](https://support.dev4press.com/kb/product/archivespress/)
-* Support Forum: [Dev4Press Support](https://support.dev4press.com/forums/forum/plugins/archivespress/)
+= Home, Knowledge Base, Support and GitHub =
+* Learn more About the Plugin: [ArchivesPress Website](https://plugins.dev4press.com/archivespress/)
+* Shortcodes Configuration: [ArchivesPress Website](https://support.dev4press.com/kb/product/archivespress/)
+* Support Forum: [Dev4Press Support](https://support.dev4press.com/forums/forum/plugins-free/archivespress/)
+* Contribute to Plugin Development: [ArchivesPress on GitHub](https://github.com/dev4press/archivespress)
 
 == Installation ==
 = General Requirements =

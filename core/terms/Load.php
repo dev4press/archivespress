@@ -6,6 +6,7 @@ use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
 use Dev4Press\Plugin\ArchivesPress\Basic\ObjectsSort;
+use WP_Term;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -103,7 +104,7 @@ class Load implements iLoad {
 		foreach ( $data as $term_id => $count ) {
 			$term = get_term_by( 'id', $term_id, $taxonomy );
 
-			if ( $term instanceof \WP_Term ) {
+			if ( $term instanceof WP_Term ) {
 				$input[ $term_id ] = (object) array(
 					'id'       => $term->term_id,
 					'name'     => $term->name,
