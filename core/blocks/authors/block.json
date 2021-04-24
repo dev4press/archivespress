@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "archivespress/authors",
+  "title": "Authors Index",
+  "category": "archivespress",
+  "icon": "id-alt",
+  "description": "Display authors archives index.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "archivespress",
+  "editorScript": "file:../../../build/index.js",
+  "editorStyle": "file:../../../build/index.css"
+}

@@ -53,19 +53,19 @@ class Cache implements iCache {
 			$post_type = 'post';
 		}
 
-		$sql = $wpdb->prepare( "SELECT 
-	YEAR(`post_date`) AS `year`, 
-	MONTH(`post_date`) AS `month`, 
-    DAY(`post_date`) AS `day`, 
-    COUNT(*) AS `posts` 
-FROM 
-    $wpdb->posts 
-WHERE 
-    `post_type` = %s AND 
+		$sql = $wpdb->prepare( "SELECT
+	YEAR(`post_date`) AS `year`,
+	MONTH(`post_date`) AS `month`,
+    DAY(`post_date`) AS `day`,
+    COUNT(*) AS `posts`
+FROM
+    $wpdb->posts
+WHERE
+    `post_type` = %s AND
     `post_status` = 'publish'
-GROUP BY 
-    `year`, `month`, `day` 
-ORDER BY 
+GROUP BY
+    `year`, `month`, `day`
+ORDER BY
     `year` DESC, `month` DESC, `day` DESC", $post_type );
 		$raw = $wpdb->get_results( $sql );
 

@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "archivespress/terms",
+  "title": "Terms Index",
+  "category": "archivespress",
+  "icon": "index-card",
+  "description": "Display terms archives index.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "archivespress",
+  "editorScript": "file:../../../build/index.js",
+  "editorStyle": "file:../../../build/index.css"
+}

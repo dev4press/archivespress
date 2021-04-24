@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "archivespress/dates",
+  "title": "Dates Index",
+  "category": "archivespress",
+  "icon": "calendar",
+  "description": "Display dates archives index.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "archivespress",
+  "editorScript": "file:../../../build/index.js",
+  "editorStyle": "file:../../../build/index.css"
+}

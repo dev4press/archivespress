@@ -10,7 +10,7 @@ class Blocks {
 	public function __construct() {
 	}
 
-	public static function instance(): Blocks {
+	public static function instance() : Blocks {
 		static $instance = null;
 
 		if ( ! isset( $instance ) ) {
@@ -22,50 +22,11 @@ class Blocks {
 	}
 
 	private function run() {
-		add_action( 'archivespress-init', array( $this, 'register' ) );
-		add_filter( 'block_categories', array( $this, 'blocks_categories' ), 10, 2 );
+		add_filter( 'block_categories', array( $this, 'categories' ) );
+		add_action( 'archivespress-init', array( $this, 'blocks' ) );
 	}
 
-	public function register() {
-		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', array(
-			'wp-blocks',
-			'wp-i18n',
-			'wp-element'
-		), ARCHIVESPRESS_VERSION );
-		wp_register_style( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.css', array(), ARCHIVESPRESS_VERSION );
-
-		register_block_type( 'archivespress/authors', array(
-			'title'         => 'Authors Index',
-			'category'      => 'archivespress',
-			'icon'          => 'id-alt',
-			'textdomain'    => 'archivespress',
-			'editor_script' => 'archivespress-blocks-editor',
-			'editor_style'  => 'archivespress-blocks-editor',
-			'style'         => 'archivespress',
-		) );
-
-		register_block_type( 'archivespress/dates', array(
-			'title'         => 'Dates Index',
-			'category'      => 'archivespress',
-			'icon'          => 'calendar',
-			'textdomain'    => 'archivespress',
-			'editor_script' => 'archivespress-blocks-editor',
-			'editor_style'  => 'archivespress-blocks-editor',
-			'style'         => 'archivespress',
-		) );
-
-		register_block_type( 'archivespress/terms', array(
-			'title'         => 'Terms Index',
-			'category'      => 'archivespress',
-			'icon'          => 'index-card',
-			'textdomain'    => 'archivespress',
-			'editor_script' => 'archivespress-blocks-editor',
-			'editor_style'  => 'archivespress-blocks-editor',
-			'style'         => 'archivespress',
-		) );
-	}
-
-	public function blocks_categories( $categories, $post ) {
+	public function categories( $categories ) {
 		return array_merge(
 			$categories,
 			array(
@@ -75,5 +36,11 @@ class Blocks {
 				)
 			)
 		);
+	}
+
+	public function blocks() {
+		register_block_type_from_metadata( ARCHIVESPRESS_PATH . 'core/blocks/authors' );
+		register_block_type_from_metadata( ARCHIVESPRESS_PATH . 'core/blocks/dates' );
+		register_block_type_from_metadata( ARCHIVESPRESS_PATH . 'core/blocks/terms' );
 	}
 }

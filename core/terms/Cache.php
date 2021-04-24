@@ -53,22 +53,22 @@ class Cache implements iCache {
 			$post_type = 'post';
 		}
 
-		$sql = $wpdb->prepare( "SELECT 
-	tt.`taxonomy`, 
-    tt.`term_id`, 
-    COUNT(*) AS `posts` 
-FROM 
-    $wpdb->term_taxonomy tt 
+		$sql = $wpdb->prepare( "SELECT
+	tt.`taxonomy`,
+    tt.`term_id`,
+    COUNT(*) AS `posts`
+FROM
+    $wpdb->term_taxonomy tt
     INNER JOIN $wpdb->term_relationships tr ON tr.`term_taxonomy_id` = tt.`term_taxonomy_id`
-	INNER JOIN $wpdb->posts p ON p.`ID` = tr.`object_id` 
-WHERE 
-    p.`post_type` = %s AND 
+	INNER JOIN $wpdb->posts p ON p.`ID` = tr.`object_id`
+WHERE
+    p.`post_type` = %s AND
     p.`post_status` = 'publish'
-GROUP BY 
-    tt.`taxonomy`, 
-    tt.`term_id` 
-ORDER BY 
-    tt.`taxonomy` ASC, 
+GROUP BY
+    tt.`taxonomy`,
+    tt.`term_id`
+ORDER BY
+    tt.`taxonomy` ASC,
     `posts` DESC", $post_type );
 
 		$raw = $wpdb->get_results( $sql );
