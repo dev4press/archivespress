@@ -21,9 +21,11 @@ The plugin uses shortcodes for each of the archive indexes. This includes three 
 * Authors archives: `[archivespress-authors]`
 * Terms archives `[archivespress-terms]`
 
+To learn more about each shortcode, available attributes and get some examples, make sure to check out the [knowledge base](https://support.dev4press.com/kb/product/archivespress/) for this plugin.
+
 = Other Features Overview =
 * SASS based styling
-* CSS using variable and flex
+* CSS using variables and flex
 * Two layouts for every shortcode
 * Change colors and font via shortcode
 * Support for RTL orientation
@@ -32,7 +34,7 @@ The plugin uses shortcodes for each of the archive indexes. This includes three 
 
 = Home, Knowledge Base, Support and GitHub =
 * Learn more About the Plugin: [ArchivesPress Website](https://plugins.dev4press.com/archivespress/)
-* Shortcodes Configuration: [ArchivesPress Website](https://support.dev4press.com/kb/product/archivespress/)
+* Shortcodes Configuration: [ArchivesPress Knowledge Base](https://support.dev4press.com/kb/product/archivespress/)
 * Support Forum: [Dev4Press Support](https://support.dev4press.com/forums/forum/plugins-free/archivespress/)
 * Contribute to Plugin Development: [ArchivesPress on GitHub](https://github.com/dev4press/archivespress)
 
