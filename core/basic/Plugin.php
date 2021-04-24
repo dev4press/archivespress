@@ -30,6 +30,8 @@ class Plugin {
 		LoadAuthors::instance();
 		LoadTerms::instance();
 
+		Blocks::instance();
+
 		add_action( 'init', array( $this, 'styles' ), 15 );
 		add_action( 'init', array( $this, 'init' ), 20 );
 
