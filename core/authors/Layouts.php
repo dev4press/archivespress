@@ -103,7 +103,8 @@ class Layouts implements iLayouts {
 
 		$id = 'archivespress-authors-block-' . ( ++ $this->id );
 
-		$render = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render = '<div class="wp-' . $args['_source'] . '-archivespress-authors">';
+		$render .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
 
 		foreach ( $data as $user_id => $info ) {
 			$_count   = $info['posts'];
@@ -128,6 +129,7 @@ class Layouts implements iLayouts {
 
 		$render .= '</div>';
 		$render .= $this->style( $id, $args );
+		$render .= '</div>';
 
 		return $render;
 	}

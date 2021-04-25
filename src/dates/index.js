@@ -7,6 +7,10 @@ import {FontSizePicker, PanelBody, SelectControl, TextControl} from "@wordpress/
 
 registerBlockType('archivespress/dates', {
     apiVersion: 2,
+    name: 'archivespress/dates',
+    title: __('Dates Archives Index', 'archivespress'),
+    description: __('Display dates archives index.', 'archivespress'),
+    icon: 'calendar',
     attributes: {
         'layout': {
             'type': 'string',
@@ -119,20 +123,20 @@ registerBlockType('archivespress/dates', {
                             label={__('Layout', 'archivespress')}
                             value={attributes.layout}
                             options={[
-                                {label: __("Basic"), value: 'basic'},
-                                {label: __("Compact"), value: 'compact'}
+                                {label: __('Basic', 'archivespress'), value: 'basic'},
+                                {label: __('Compact', 'archivespress'), value: 'compact'}
                             ]}
                             onChange={(value) => setAttributes({layout: value})}
                         />
-						<SelectControl
-							label={__('Years', 'archivespress')}
-							value={attributes.year}
-							options={[
-								{label: __("Show"), value: 'show'},
-								{label: __("Hide"), value: 'hide'}
-							]}
-							onChange={(value) => setAttributes({year: value})}
-						/>
+                        <SelectControl
+                            label={__('Years', 'archivespress')}
+                            value={attributes.year}
+                            options={[
+                                {label: __('Show', 'archivespress'), value: 'show'},
+                                {label: __('Hide', 'archivespress'), value: 'hide'}
+                            ]}
+                            onChange={(value) => setAttributes({year: value})}
+                        />
                     </PanelBody>
                     <PanelBody title={__('Data', 'archivespress')}>
                         <SelectControl

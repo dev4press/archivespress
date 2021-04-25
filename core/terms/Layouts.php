@@ -85,7 +85,8 @@ class Layouts implements iLayouts {
 
 		$id = 'archivespress-terms-block-' . ( ++ $this->id );
 
-		$render   = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render   = '<div class="wp-' . $args['_source'] . '-archivespress-terms">';
+		$render   .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
 		$taxonomy = get_taxonomy( $args['taxonomy'] );
 
 		foreach ( $data as $term_id => $object ) {
@@ -98,6 +99,7 @@ class Layouts implements iLayouts {
 
 		$render .= '</div>';
 		$render .= $this->style( $id, $args );
+		$render .= '</div>';
 
 		return $render;
 	}

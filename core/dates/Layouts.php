@@ -111,7 +111,8 @@ class Layouts implements iLayouts {
 		$id    = 'archivespress-dates-block-' . ( ++ $this->id );
 		$order = isset( $args['order'] ) && $args['order'] === 'asc' ? 'asc' : 'desc';
 
-		$render = '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render = '<div class="wp-' . $args['_source'] . '-archivespress-dates">';
+		$render .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
 
 		$_years = $order === 'asc' ? array_reverse( $data, true ) : $data;
 
@@ -161,6 +162,7 @@ class Layouts implements iLayouts {
 
 		$render .= '</div>';
 		$render .= $this->style( $id, $args );
+		$render .= '</div>';
 
 		return $render;
 	}

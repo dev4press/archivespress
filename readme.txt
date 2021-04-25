@@ -1,10 +1,10 @@
 === ArchivesPress ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/archivespress/
-Tags: dev4press, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 1.0
+Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
+Stable tag: 2.0
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,14 +12,19 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts.
 
 == Description ==
-Display indexes based on the dates (years, months and days archives), authors and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode used.
+Display indexes based on the dates (years, months and days archives), authors and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode or block used.
 
-The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling.
+The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling. And, the plugin also includes three blocks for the Gutenberg Block Editor. Each block can be configured via the Block Sidebar.
+
+= Block Editor Blocks =
+* Dates Archives Index
+* Authors Archives Index
+* Terms Archives Index
 
 = Shortcodes =
-* Dates archives: `[archivespress-dates]`
-* Authors archives: `[archivespress-authors]`
-* Terms archives `[archivespress-terms]`
+* Dates Archives Index: `[archivespress-dates]`
+* Authors Archives Index: `[archivespress-authors]`
+* Terms Archives Index: `[archivespress-terms]`
 
 To learn more about each shortcode, available attributes and get some examples, make sure to check out the [knowledge base](https://support.dev4press.com/kb/product/archivespress/) for this plugin.
 
@@ -56,10 +61,17 @@ To learn more about each shortcode, available attributes and get some examples, 
 * Plugin doesn't have any settings and it doesn't add any panels to WordPress administration.
 
 == Frequently Asked Questions ==
+= How can I add blocks to my posts? =
+All three blocks registered by this plugin are listed under 'ArchivesPress' block category.
+
 = Where can I configure the plugin? =
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 2.0 / may 3 2021 =
+* New: gutenberg block editor blocks
+* New: additional wrapper for each index block
+
 = Version: 1.0 / april 22 2021 =
 * New: first official version
 

@@ -50,26 +50,8 @@ class Blocks {
 		), ARCHIVESPRESS_VERSION );
 
 		wp_localize_script( 'archivespress-blocks-editor', 'archivespress', array(
-			'post_types' => array(
-				array(
-					'label' => 'Posts',
-					'value' => 'post'
-				),
-				array(
-					'label' => 'Pages',
-					'value' => 'page'
-				)
-			),
-			'taxonomies' => array(
-				array(
-					'label' => 'Categories',
-					'value' => 'category'
-				),
-				array(
-					'label' => 'Tags',
-					'value' => 'post_tag'
-				)
-			)
+			'post_types' => Helpers::instance()->list_post_types( array( 'public' => true ) ),
+			'taxonomies' => Helpers::instance()->list_taxonomies( array( 'public' => true ) )
 		) );
 
 		wp_set_script_translations( 'archivespress-blocks-editor', 'archivespress' );
@@ -77,10 +59,10 @@ class Blocks {
 		register_block_type( 'archivespress/authors', array(
 			'apiVersion'      => 2,
 			'name'            => 'archivespress/authors',
-			'title'           => __( 'Authors Index' ),
+			'title'           => __( 'Authors Archives Index', 'archivespress' ),
+			'description'     => __( 'Display authors archives index.', 'archivespress' ),
 			'category'        => 'archivespress',
 			'icon'            => 'id-alt',
-			'description'     => __( 'Display authors archives index.' ),
 			'render_callback' => array( $this, 'callback_authors' ),
 			'attributes'      => array(
 				'layout'        => array(
@@ -158,10 +140,10 @@ class Blocks {
 		register_block_type( 'archivespress/dates', array(
 			'apiVersion'      => 2,
 			'name'            => 'archivespress/dates',
-			'title'           => __( 'Dates Index' ),
+			'title'           => __( 'Dates Archives Index', 'archivespress' ),
+			'description'     => __( 'Display dates archives index.', 'archivespress' ),
 			'category'        => 'archivespress',
 			'icon'            => 'calendar',
-			'description'     => __( 'Display dates archives index.' ),
 			'render_callback' => array( $this, 'callback_dates' ),
 			'attributes'      => array(
 				'layout'             => array(
@@ -237,10 +219,10 @@ class Blocks {
 		register_block_type( 'archivespress/terms', array(
 			'apiVersion'      => 2,
 			'name'            => 'archivespress/terms',
-			'title'           => __( 'Terms Index' ),
+			'title'           => __( 'Terms Archives Index', 'archivespress' ),
+			'description'     => __( 'Display taxonomy terms archives index.', 'archivespress' ),
 			'category'        => 'archivespress',
 			'icon'            => 'index-card',
-			'description'     => __( 'Display dates archives index.' ),
 			'render_callback' => array( $this, 'callback_terms' ),
 			'attributes'      => array(
 				'layout'        => array(
@@ -253,7 +235,7 @@ class Blocks {
 				),
 				'taxonomy'      => array(
 					'type'    => 'string',
-					'default' => 'post'
+					'default' => 'category'
 				),
 				'postType'      => array(
 					'type'    => 'string',
@@ -311,8 +293,11 @@ class Blocks {
 	}
 
 	private function normalize_attributes( $attributes ) {
-		$output = array();
-		$map    = array(
+		$output = array(
+			'_source' => 'block'
+		);
+
+		$map = array(
 			'postType'           => 'post_type',
 			'orderBy'            => 'orderby',
 			'varLineHeight'      => 'var-line-height',

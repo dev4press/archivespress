@@ -66,6 +66,7 @@ class Load implements iLoad {
 
 	public function shortcode( $atts = array() ) : string {
 		$defaults = array(
+			'_source'         => 'shortcode',
 			'layout'          => 'basic',
 			'post_type'       => $this->post_type,
 			'taxonomy'        => 'category',

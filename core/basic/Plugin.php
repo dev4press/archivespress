@@ -30,7 +30,9 @@ class Plugin {
 		LoadAuthors::instance();
 		LoadTerms::instance();
 
-		Blocks::instance();
+		if ( function_exists( 'register_block_type' ) ) {
+			Blocks::instance();
+		}
 
 		add_action( 'init', array( $this, 'styles' ), 15 );
 		add_action( 'init', array( $this, 'init' ), 20 );

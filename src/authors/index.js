@@ -14,6 +14,10 @@ import {__} from "@wordpress/i18n";
 
 registerBlockType('archivespress/authors', {
     apiVersion: 2,
+    name: 'archivespress/authors',
+    title: __('Authors Archives Index', 'archivespress'),
+    description: __('Display authors archives index.', 'archivespress'),
+    icon: 'id-alt',
     attributes: {
         'layout': {
             'type': 'string',
@@ -118,8 +122,8 @@ registerBlockType('archivespress/authors', {
                             label={__('Layout', 'archivespress')}
                             value={attributes.layout}
                             options={[
-                                {label: __("Basic"), value: 'basic'},
-                                {label: __("Compact"), value: 'compact'}
+                                {label: __('Basic', 'archivespress'), value: 'basic'},
+                                {label: __('Compact', 'archivespress'), value: 'compact'}
                             ]}
                             onChange={(value) => setAttributes({layout: value})}
                         />
