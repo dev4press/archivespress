@@ -95,12 +95,6 @@
 
             .link-name {
                 color: var(--archivespress-terms-color);
-                @include ltr {
-                    margin: 0 1em 0 0;
-                }
-                @include rtl {
-                    margin: 0 0 0 1em;
-                }
             }
         }
     }

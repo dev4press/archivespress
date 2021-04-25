@@ -121,7 +121,9 @@ class Layouts implements iLayouts {
 				/* translators: 1. Author Name, 2. Number of Posts */
 				$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, "Author name and posts count", "archivespress" ), $info['name'], $_count ) . '" class="link-avatar" href="' . $_archive . '">' . $_avatar . '</a>';
 			}
-			$render .= $this->posts_count( $_count );
+			if ( $args['show-counts'] ) {
+				$render .= $this->posts_count( $_count );
+			}
 			/* translators: 1. Author Name, 2. Number of Posts */
 			$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, "Author name and posts count", "archivespress" ), $info['name'], $_count ) . '" class="link-name" href="' . $_archive . '">' . $info['name'] . '</a>';
 			$render .= '</div>';

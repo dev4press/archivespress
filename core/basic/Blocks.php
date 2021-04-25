@@ -30,7 +30,7 @@ class Blocks {
 		add_action( 'init', array( $this, 'blocks' ), 30 );
 	}
 
-	public function categories( $categories ) {
+	public function categories( $categories ) : array {
 		return array_merge(
 			$categories,
 			array(
@@ -43,11 +43,9 @@ class Blocks {
 	}
 
 	public function blocks() {
-		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', array(
-			'wp-blocks',
-			'wp-i18n',
-			'wp-element'
-		), ARCHIVESPRESS_VERSION );
+		$asset_file = include( ARCHIVESPRESS_PATH . 'build/index.asset.php' );
+
+		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version'] );
 
 		wp_localize_script( 'archivespress-blocks-editor', 'archivespress', array(
 			'post_types' => Helpers::instance()->list_post_types( array( 'public' => true ) ),
@@ -99,6 +97,10 @@ class Blocks {
 				'class'         => array(
 					'type'    => 'string',
 					'default' => ''
+				),
+				'showCounts'    => array(
+					'type'    => 'bool',
+					'default' => true
 				),
 				'avatar'        => array(
 					'type'    => 'bool',
@@ -263,6 +265,10 @@ class Blocks {
 					'type'    => 'string',
 					'default' => ''
 				),
+				'showCounts'    => array(
+					'type'    => 'bool',
+					'default' => true
+				),
 				'columns'       => array(
 					'type'    => 'integer',
 					'default' => 3,
@@ -292,7 +298,7 @@ class Blocks {
 		) );
 	}
 
-	private function normalize_attributes( $attributes ) {
+	private function normalize_attributes( $attributes ) : array {
 		$output = array(
 			'_source' => 'block'
 		);
@@ -300,6 +306,10 @@ class Blocks {
 		$map = array(
 			'postType'           => 'post_type',
 			'orderBy'            => 'orderby',
+			'showCounts'         => 'show-counts',
+			'showYearCounts'     => 'show-year-counts',
+			'showMonthCounts'    => 'show-month-counts',
+			'showDayCounts'      => 'show-day-counts',
 			'varLineHeight'      => 'var-line-height',
 			'varFontSize'        => 'var-font-size',
 			'varBackground'      => 'var-background',
@@ -329,19 +339,19 @@ class Blocks {
 		return $output;
 	}
 
-	public function callback_authors( $attributes ) {
+	public function callback_authors( $attributes ) : string {
 		$atts = $this->normalize_attributes( $attributes );
 
 		return LoadAuthors::instance()->shortcode( $atts );
 	}
 
-	public function callback_dates( $attributes ) {
+	public function callback_dates( $attributes ) : string {
 		$atts = $this->normalize_attributes( $attributes );
 
 		return LoadDates::instance()->shortcode( $atts );
 	}
 
-	public function callback_terms( $attributes ) {
+	public function callback_terms( $attributes ) : string {
 		$atts = $this->normalize_attributes( $attributes );
 
 		return LoadTerms::instance()->shortcode( $atts );

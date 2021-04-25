@@ -54,6 +54,10 @@ registerBlockType('archivespress/authors', {
             'type': 'string',
             'default': ''
         },
+        'showCounts': {
+            'type': 'bool',
+            'default': true
+        },
         'avatar': {
             'type': 'bool',
             'default': true
@@ -139,6 +143,13 @@ registerBlockType('archivespress/authors', {
                             withInputField={true}
                             separatorType="none"
                             isShiftStepEnabled
+                        />
+                    </PanelBody>
+                    <PanelBody title={__('Posts Counts', 'archivespress')}>
+                        <ToggleControl
+                            label={__('Show Counts', 'archivespress')}
+                            checked={attributes.showCounts}
+                            onChange={(value) => setAttributes({showCounts: value})}
                         />
                     </PanelBody>
                     <PanelBody title={__('Author Avatar', 'archivespress')}>

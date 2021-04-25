@@ -71,6 +71,7 @@ The plugin doesn't have any global settings or configuration panels.
 = Version: 2.0 / may 3 2021 =
 * New: gutenberg block editor blocks
 * New: additional wrapper for each index block
+* New: options to hide posts counts
 
 = Version: 1.0 / april 22 2021 =
 * New: first official version

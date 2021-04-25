@@ -2,7 +2,14 @@ import {registerBlockType} from '@wordpress/blocks';
 import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
 import ServerSideRender from '@wordpress/server-side-render';
 import {InspectorControls} from "@wordpress/editor";
-import {FontSizePicker, PanelBody, RangeControl, SelectControl, TextControl} from "@wordpress/components";
+import {
+    FontSizePicker,
+    PanelBody,
+    RangeControl,
+    SelectControl,
+    TextControl,
+    ToggleControl
+} from "@wordpress/components";
 import {__} from "@wordpress/i18n";
 
 registerBlockType('archivespress/terms', {
@@ -49,6 +56,10 @@ registerBlockType('archivespress/terms', {
         'class': {
             'type': 'string',
             'default': ''
+        },
+        'showCounts': {
+            'type': 'bool',
+            'default': true
         },
         'columns': {
             'type': 'integer',
@@ -132,6 +143,13 @@ registerBlockType('archivespress/terms', {
                             withInputField={true}
                             separatorType="none"
                             isShiftStepEnabled
+                        />
+                    </PanelBody>
+                    <PanelBody title={__('Posts Counts', 'archivespress')}>
+                        <ToggleControl
+                            label={__('Show Counts', 'archivespress')}
+                            checked={attributes.showCounts}
+                            onChange={(value) => setAttributes({showCounts: value})}
                         />
                     </PanelBody>
                     <PanelBody title={__('Data', 'archivespress')}>

@@ -74,14 +74,16 @@ class Load implements iLoad {
 			'order'           => 'desc',
 			'columns'         => 4,
 			'class'           => '',
+			'show-counts'     => true,
 			'var-font-size'   => '',
 			'var-line-height' => '',
 			'var-background'  => '',
 			'var-color'       => '',
 		);
 
-		$atts            = shortcode_atts( $defaults, $atts );
-		$atts['columns'] = absint( $atts['columns'] );
+		$atts                = shortcode_atts( $defaults, $atts );
+		$atts['columns']     = absint( $atts['columns'] );
+		$atts['show-counts'] = is_bool( $atts['show-counts'] ) ? $atts['show-counts'] : $atts['show-counts'] === 'true';
 
 		$data  = $this->cache()->get( $atts['post_type'] );
 		$terms = $data[ $atts['taxonomy'] ] ?? array();

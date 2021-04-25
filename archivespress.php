@@ -33,11 +33,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 
 use Dev4Press\Plugin\ArchivesPress\Basic\Plugin;
 
+const ARCHIVESPRESS_VERSION = '2.0';
+
 $archivespress_dirname_basic = dirname( __FILE__ ) . '/';
 $archivespress_urlname_basic = plugins_url( '/', __FILE__ );
 
-define( 'ARCHIVESPRESS_VERSION', '1.0' );
-define( 'ARCHIVESPRESS_FILE', __FILE__ );
 define( 'ARCHIVESPRESS_PATH', $archivespress_dirname_basic );
 define( 'ARCHIVESPRESS_URL', $archivespress_urlname_basic );
 
