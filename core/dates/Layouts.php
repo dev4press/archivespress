@@ -122,7 +122,8 @@ class Layouts implements iLayouts {
 
 				if ( $args['year'] === 'show' ) {
 					$render .= '<div class="archivespress-dates-year">';
-					$render .= '<a title="' . sprintf( _nx( "Year %s: %s Post", "Year %s: %s Posts", $count, "Year and posts count", "archivespress" ), $year, $count ) . '" class="link-year" href="' . $this->get_year_link( $args['post_type'], $year ) . '">' . $year . $this->posts_count( $count ) . '</a>';
+					/* translators: 1. Year, 2. Number of Posts */
+					$render .= '<a title="' . sprintf( _nx( 'Year %1$s: %2$d Post', 'Year %1$s: %2$d Posts', $count, "Year and posts count", "archivespress" ), $year, $count ) . '" class="link-year" href="' . $this->get_year_link( $args['post_type'], $year ) . '">' . $year . $this->posts_count( $count ) . '</a>';
 					$render .= '</div>';
 				}
 
@@ -134,7 +135,8 @@ class Layouts implements iLayouts {
 					$count  = $elmonth['posts'];
 					$render .= '<div class="archivespress-dates-month-wrapper">';
 					$render .= '<div class="archivespress-dates-month">';
-					$render .= '<a title="' . sprintf( _nx( "%s: %s Post", "%s: %s Posts", $count, "Month and posts count", "archivespress" ), $this->full_month_title( $year, $month, 1 ), $count ) . '" class="link-month" href="' . $this->get_month_link( $args['post_type'], $year, $month ) . '">' . $this->month_title( $month ) . $this->posts_count( $count ) . '</a>';
+					/* translators: 1. Month, 2. Number of Posts */
+					$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, "Month and posts count", "archivespress" ), $this->full_month_title( $year, $month, 1 ), $count ) . '" class="link-month" href="' . $this->get_month_link( $args['post_type'], $year, $month ) . '">' . $this->month_title( $month ) . $this->posts_count( $count ) . '</a>';
 					$render .= '</div>';
 					$render .= '<div class="archivespress-dates-days">';
 
@@ -143,7 +145,8 @@ class Layouts implements iLayouts {
 					foreach ( $_days as $day => $elday ) {
 						$count  = $elday['posts'];
 						$render .= '<div class="archivespress-dates-day-wrapper">';
-						$render .= '<a title="' . sprintf( _nx( "%s: %s Post", "%s: %s Posts", $count, "Date and posts count", "archivespress" ), $this->full_day_title( $year, $month, $day ), $count ) . '" class="link-day" href="' . $this->get_day_link( $args['post_type'], $year, $month, $day ) . '">' . $day . '</a>';
+						/* translators: 1. Date, 2. Number of Posts */
+						$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, "Date and posts count", "archivespress" ), $this->full_day_title( $year, $month, $day ), $count ) . '" class="link-day" href="' . $this->get_day_link( $args['post_type'], $year, $month, $day ) . '">' . $day . '</a>';
 						$render .= '</div>';
 					}
 

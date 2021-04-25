@@ -90,7 +90,8 @@ class Layouts implements iLayouts {
 
 		foreach ( $data as $term_id => $object ) {
 			$render .= '<div class="archivespress-terms-term">';
-			$render .= '<a title="' . sprintf( _nx( "%s '%s': %s Post", "%s '%s': %s Posts", $object['posts'], "Taxonomy, term name and posts count", "archivespress" ), $taxonomy->labels->singular_name, $object['name'], $object['posts'] ) . '" class="link-name" href="' . $this->get_term_link( $args['post_type'], $term_id, $object['taxonomy'] ) . '">' . $object['name'] . '</a>';
+			/* translators: 1. Taxonomy Name, 2. Term Name, 3. Number of Posts */
+			$render .= '<a title="' . sprintf( _nx( '%1$s %2$s: %3$d Post', '%1$s %2$s: %3$d Posts', $object['posts'], "Taxonomy, term name and posts count", "archivespress" ), $taxonomy->labels->singular_name, $object['name'], $object['posts'] ) . '" class="link-name" href="' . $this->get_term_link( $args['post_type'], $term_id, $object['taxonomy'] ) . '">' . $object['name'] . '</a>';
 			$render .= $this->posts_count( $object['posts'] );
 			$render .= '</div>';
 		}

@@ -1,48 +1,303 @@
-#, fuzzy
+# Copyright (C) 2021 Milan Petrovic
+# This file is distributed under the same license as the ArchivesPress plugin.
 msgid ""
 msgstr ""
-"Plural - Forms: nplurals = INTEGER; plural = EXPRESSION;\n"
-"Project-Id-Version: ArchivesPress\n"
-"POT-Creation-Date: 04/21/2021 08:47:23 PM\n"
-"Language-Team: Milan Petrovic <support@dev4press.com>\n"
+"Project-Id-Version: ArchivesPress 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/archivespress\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: GD i18n 2.7; www.dev4press.com\n"
+"POT-Creation-Date: 2021-04-25T07:34:34+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: archivespress\n"
 
-#: core/authors/Layouts.php:119
-#: core/authors/Layouts.php:122
+#. Plugin Name of the plugin
+msgid "ArchivesPress"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://plugins.dev4press.com/archivespress/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts."
+msgstr ""
+
+#. Author of the plugin
+msgid "Milan Petrovic"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.dev4press.com/"
+msgstr ""
+
+#. translators: 1. Author Name, 2. Number of Posts
+#: core/authors/Layouts.php:121
+#: core/authors/Layouts.php:125
 msgctxt "Author name and posts count"
-msgid "%s: %s Post"
-msgid_plural "%s: %s Posts"
+msgid "%1$s: %2$d Post"
+msgid_plural "%1$s: %2$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dates/Layouts.php:124
+#. translators: 1. Year, 2. Number of Posts
+#: core/dates/Layouts.php:126
 msgctxt "Year and posts count"
-msgid "Year %s: %s Post"
-msgid_plural "Year %s: %s Posts"
+msgid "Year %1$s: %2$d Post"
+msgid_plural "Year %1$s: %2$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dates/Layouts.php:136
+#. translators: 1. Month, 2. Number of Posts
+#: core/dates/Layouts.php:139
 msgctxt "Month and posts count"
-msgid "%s: %s Post"
-msgid_plural "%s: %s Posts"
+msgid "%1$s: %2$d Post"
+msgid_plural "%1$s: %2$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dates/Layouts.php:145
+#. translators: 1. Date, 2. Number of Posts
+#: core/dates/Layouts.php:149
 msgctxt "Date and posts count"
-msgid "%s: %s Post"
-msgid_plural "%s: %s Posts"
+msgid "%1$s: %2$d Post"
+msgid_plural "%1$s: %2$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/terms/Layouts.php:92
+#. translators: 1. Taxonomy Name, 2. Term Name, 3. Number of Posts
+#: core/terms/Layouts.php:94
 msgctxt "Taxonomy, term name and posts count"
-msgid "%s '%s': %s Post"
-msgid_plural "%s '%s': %s Posts"
+msgid "%1$s %2$s: %3$d Post"
+msgid_plural "%1$s %2$s: %3$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
+#: build/index.js:186
+#: build/index.js:477
+#: build/index.js:751
+#: src/authors/index.js:93
+#: src/dates/index.js:94
+#: src/terms/index.js:80
+msgid "Small"
+msgstr ""
+
+#: build/index.js:190
+#: build/index.js:481
+#: build/index.js:755
+#: src/authors/index.js:98
+#: src/dates/index.js:99
+#: src/terms/index.js:85
+msgid "Normal"
+msgstr ""
+
+#: build/index.js:194
+#: build/index.js:485
+#: build/index.js:759
+#: src/authors/index.js:103
+#: src/dates/index.js:104
+#: src/terms/index.js:90
+msgid "Big"
+msgstr ""
+
+#: build/index.js:204
+#: build/index.js:495
+#: build/index.js:769
+#: src/authors/index.js:116
+#: src/dates/index.js:117
+#: src/terms/index.js:103
+msgid "Display"
+msgstr ""
+
+#: build/index.js:206
+#: build/index.js:497
+#: build/index.js:771
+#: src/authors/index.js:118
+#: src/dates/index.js:119
+#: src/terms/index.js:105
+msgid "Layout"
+msgstr ""
+
+#: build/index.js:221
+#: build/index.js:795
+#: src/authors/index.js:127
+#: src/terms/index.js:120
+msgid "Columns"
+msgstr ""
+
+#: build/index.js:237
+#: src/authors/index.js:140
+msgid "Author Avatar"
+msgstr ""
+
+#: build/index.js:239
+#: src/authors/index.js:142
+msgid "Show Author Avatar"
+msgstr ""
+
+#: build/index.js:247
+#: src/authors/index.js:147
+msgid "Avatar Size"
+msgstr ""
+
+#: build/index.js:263
+#: build/index.js:527
+#: build/index.js:811
+#: src/authors/index.js:160
+#: src/dates/index.js:137
+#: src/terms/index.js:133
+msgid "Data"
+msgstr ""
+
+#: build/index.js:265
+#: build/index.js:529
+#: build/index.js:813
+#: src/authors/index.js:162
+#: src/dates/index.js:139
+#: src/terms/index.js:135
+msgid "Post Type"
+msgstr ""
+
+#: build/index.js:274
+#: build/index.js:822
+#: src/authors/index.js:168
+#: src/terms/index.js:141
+msgid "Order By"
+msgstr ""
+
+#: build/index.js:298
+#: build/index.js:538
+#: build/index.js:846
+#: src/authors/index.js:180
+#: src/dates/index.js:145
+#: src/terms/index.js:153
+msgid "Order"
+msgstr ""
+
+#: build/index.js:301
+#: build/index.js:541
+#: build/index.js:849
+#: src/authors/index.js:183
+#: src/dates/index.js:148
+#: src/terms/index.js:156
+msgid "Ascending"
+msgstr ""
+
+#: build/index.js:304
+#: build/index.js:544
+#: build/index.js:852
+#: src/authors/index.js:184
+#: src/dates/index.js:149
+#: src/terms/index.js:157
+msgid "Descending"
+msgstr ""
+
+#: build/index.js:313
+#: build/index.js:553
+#: build/index.js:861
+#: src/authors/index.js:189
+#: src/dates/index.js:154
+#: src/terms/index.js:162
+msgid "Typography"
+msgstr ""
+
+#: build/index.js:315
+#: build/index.js:555
+#: build/index.js:863
+#: src/authors/index.js:191
+#: src/dates/index.js:156
+#: src/terms/index.js:164
+msgid "Font Size"
+msgstr ""
+
+#: build/index.js:325
+#: build/index.js:565
+#: build/index.js:873
+#: src/authors/index.js:198
+#: src/dates/index.js:163
+#: src/terms/index.js:171
+msgid "Line Height"
+msgstr ""
+
+#: build/index.js:333
+#: build/index.js:573
+#: build/index.js:881
+#: src/authors/index.js:203
+#: src/dates/index.js:168
+#: src/terms/index.js:176
+msgid "Colors"
+msgstr ""
+
+#: build/index.js:335
+#: build/index.js:883
+#: src/authors/index.js:205
+#: src/terms/index.js:178
+msgid "Background"
+msgstr ""
+
+#: build/index.js:343
+#: build/index.js:891
+#: src/authors/index.js:210
+#: src/terms/index.js:183
+msgid "Text"
+msgstr ""
+
+#: build/index.js:351
+#: build/index.js:623
+#: build/index.js:899
+#: src/authors/index.js:215
+#: src/dates/index.js:200
+#: src/terms/index.js:188
+msgid "Advanced"
+msgstr ""
+
+#: build/index.js:353
+#: build/index.js:625
+#: build/index.js:901
+#: src/authors/index.js:217
+#: src/dates/index.js:202
+#: src/terms/index.js:190
+msgid "Additional CSS Class"
+msgstr ""
+
+#: build/index.js:512
+#: src/dates/index.js:128
+msgid "Years"
+msgstr ""
+
+#: build/index.js:575
+#: src/dates/index.js:170
+msgid "Years Background"
+msgstr ""
+
+#: build/index.js:583
+#: src/dates/index.js:175
+msgid "Years Text"
+msgstr ""
+
+#: build/index.js:591
+#: src/dates/index.js:180
+msgid "Months Background"
+msgstr ""
+
+#: build/index.js:599
+#: src/dates/index.js:185
+msgid "Months Text"
+msgstr ""
+
+#: build/index.js:607
+#: src/dates/index.js:190
+msgid "Days Background"
+msgstr ""
+
+#: build/index.js:615
+#: src/dates/index.js:195
+msgid "Days Text"
+msgstr ""
+
+#: build/index.js:786
+#: src/terms/index.js:114
+msgid "Taxonomy"
+msgstr ""
