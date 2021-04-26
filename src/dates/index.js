@@ -32,12 +32,6 @@ registerBlockType('archivespress/dates', {
             ],
             'default': 'desc'
         },
-        'years': {
-            'type': 'array',
-            'items': {
-                'type': 'string'
-            }
-        },
         'year': {
             'type': 'string',
             'enum': [
@@ -45,6 +39,14 @@ registerBlockType('archivespress/dates', {
                 'hide'
             ],
             'default': 'show'
+        },
+        'month': {
+            'type': 'string',
+            'enum': [
+                'auto',
+                'number'
+            ],
+            'default': 'auto'
         },
         'class': {
             'type': 'string',
@@ -148,6 +150,15 @@ registerBlockType('archivespress/dates', {
                                 {label: __('Hide', 'archivespress'), value: 'hide'}
                             ]}
                             onChange={(value) => setAttributes({year: value})}
+                        />
+                        <SelectControl
+                            label={__('Months', 'archivespress')}
+                            value={attributes.month}
+                            options={[
+                                {label: __('Auto', 'archivespress'), value: 'auto'},
+                                {label: __('Number only', 'archivespress'), value: 'number'}
+                            ]}
+                            onChange={(value) => setAttributes({month: value})}
                         />
                     </PanelBody>
                     <PanelBody title={__('Data', 'archivespress')}>

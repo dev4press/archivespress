@@ -172,6 +172,22 @@ class Blocks {
 					'type'    => 'string',
 					'default' => ''
 				),
+				'year'               => array(
+					'type'    => 'string',
+					'enum'    => array(
+						'show',
+						'hide'
+					),
+					'default' => 'show'
+				),
+				'month'              => array(
+					'type'    => 'string',
+					'enum'    => array(
+						'auto',
+						'number'
+					),
+					'default' => 'auto'
+				),
 				'showYearCounts'     => array(
 					'type'    => 'boolean',
 					'default' => true
@@ -183,14 +199,6 @@ class Blocks {
 				'showDayCounts'      => array(
 					'type'    => 'boolean',
 					'default' => false
-				),
-				'year'               => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'show',
-						'hide'
-					),
-					'default' => 'show'
 				),
 				'varFontSize'        => array(
 					'type'    => 'string',

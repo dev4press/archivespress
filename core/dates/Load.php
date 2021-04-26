@@ -70,6 +70,7 @@ class Load implements iLoad {
 			'order'                => 'desc',
 			'years'                => array(),
 			'year'                 => 'show',
+			'month'                => 'auto',
 			'class'                => '',
 			'show-year-counts'     => true,
 			'show-month-counts'    => true,

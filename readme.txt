@@ -75,6 +75,7 @@ The plugin doesn't have any global settings or configuration panels.
 * New: additional wrapper for each index block
 * New: options/attributes to hide posts counts
 * New: show post counts for the dates index days
+* New: show months using names or numbers only
 * Edit: various tweaks and improvements to rendering
 * Edit: several smaller styling improvements
 * Edit: translation strings include extra information

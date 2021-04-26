@@ -140,12 +140,14 @@ class Layouts implements iLayouts {
 				$_months = $order === 'asc' ? array_reverse( $elyear['months'], true ) : $elyear['months'];
 
 				foreach ( $_months as $month => $elmonth ) {
+					$_month_title = $args['month'] == 'number' ? str_pad( $month, '2', '0', STR_PAD_LEFT ) : $this->month_title( $month );
+
 					$count  = $elmonth['posts'];
 					$render .= '<div class="archivespress-dates-month-wrapper">';
 					$render .= '<div class="archivespress-dates-month">';
 					$render .= '<div class="inner-month">';
 					/* translators: 1. Month, 2. Number of Posts */
-					$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, "Month and posts count", "archivespress" ), $this->full_month_title( $year, $month, 1 ), $count ) . '" class="link-month" href="' . $this->get_month_link( $args['post_type'], $year, $month ) . '">' . $this->month_title( $month ) . '</a>';
+					$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, "Month and posts count", "archivespress" ), $this->full_month_title( $year, $month, 1 ), $count ) . '" class="link-month" href="' . $this->get_month_link( $args['post_type'], $year, $month ) . '">' . $_month_title . '</a>';
 
 					if ( $args['show-month-counts'] ) {
 						$render .= $this->posts_count( $count );
