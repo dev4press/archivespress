@@ -99,11 +99,11 @@ class Blocks {
 					'default' => ''
 				),
 				'showCounts'    => array(
-					'type'    => 'bool',
+					'type'    => 'boolean',
 					'default' => true
 				),
 				'avatar'        => array(
-					'type'    => 'bool',
+					'type'    => 'boolean',
 					'default' => true
 				),
 				'avatarSize'    => array(
@@ -171,6 +171,18 @@ class Blocks {
 				'class'              => array(
 					'type'    => 'string',
 					'default' => ''
+				),
+				'showYearCounts'     => array(
+					'type'    => 'boolean',
+					'default' => true
+				),
+				'showMonthCounts'    => array(
+					'type'    => 'boolean',
+					'default' => true
+				),
+				'showDayCounts'      => array(
+					'type'    => 'boolean',
+					'default' => false
 				),
 				'year'               => array(
 					'type'    => 'string',
@@ -266,7 +278,7 @@ class Blocks {
 					'default' => ''
 				),
 				'showCounts'    => array(
-					'type'    => 'bool',
+					'type'    => 'boolean',
 					'default' => true
 				),
 				'columns'       => array(

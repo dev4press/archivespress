@@ -21,8 +21,9 @@
   box-sizing: border-box;
 }
 .archivespress-wrapper .info-counts {
-  float: left;
   font-weight: 300;
+  float: left;
+  margin: 0 1em 0 0;
 }
 .archivespress-wrapper .info-counts:before {
   content: "(";
@@ -46,7 +47,7 @@
   line-height: var(--archivespress-terms-line-height);
 }
 
-.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .link-year, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .link-year {
+.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .inner-year, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .inner-year {
   background: var(--archivespress-dates-year-background);
   color: var(--archivespress-dates-year-color);
   padding: 0.33em 0.66em;
@@ -55,13 +56,16 @@
   min-width: 10em;
   text-align: right;
 }
+.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .inner-year a, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .inner-year a {
+  color: var(--archivespress-dates-year-color);
+}
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper {
   display: flex;
 }
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper .archivespress-dates-month, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper .archivespress-dates-month {
   margin: 0 0 0 1.66em;
 }
-.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper .link-month, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper .link-month {
+.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper .inner-month, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper .inner-month {
   background: var(--archivespress-dates-month-background);
   color: var(--archivespress-dates-month-color);
   padding: 0.33em 0.66em;
@@ -70,13 +74,16 @@
   min-width: 15em;
   text-align: right;
 }
+.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper .inner-month a, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper .inner-month a {
+  color: var(--archivespress-dates-month-color);
+}
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper .archivespress-dates-days, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper .archivespress-dates-days {
   padding: 0;
 }
 .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-day-wrapper, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-day-wrapper {
   display: inline-block;
 }
-.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-day-wrapper .link-day, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-day-wrapper .link-day {
+.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-day-wrapper .inner-day, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-day-wrapper .inner-day {
   background: var(--archivespress-dates-day-background);
   color: var(--archivespress-dates-day-color);
   padding: 0.33em 0.66em;
@@ -85,6 +92,9 @@
   min-width: 2.5em;
   text-align: center;
   margin: 0 0 0.66em 0.66em;
+}
+.archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-day-wrapper .inner-day a, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-day-wrapper .inner-day a {
+  color: var(--archivespress-dates-day-color);
 }
 @media screen and (max-width: 640px) {
   .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-month-wrapper, .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-month-wrapper {
@@ -115,11 +125,11 @@
   }
 }
 @media screen and (max-width: 640px) {
-  .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .archivespress-dates-year .link-year {
+  .archivespress-dates-wrapper.archivespress-dates-layout-basic .archivespress-dates-year-wrapper .archivespress-dates-year .inner-year {
     width: 100%;
   }
 }
-.archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .archivespress-dates-year .link-year {
+.archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .archivespress-dates-year .inner-year {
   width: 100%;
   max-width: 30em;
 }
@@ -127,7 +137,7 @@
   padding: 1em 0;
 }
 @media screen and (max-width: 640px) {
-  .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .archivespress-dates-year .link-year {
+  .archivespress-dates-wrapper.archivespress-dates-layout-compact .archivespress-dates-year-wrapper .archivespress-dates-year .inner-year {
     max-width: 100%;
   }
 }
@@ -196,7 +206,6 @@
 }
 .archivespress-authors-wrapper.archivespress-authors-layout-compact .archivespress-authors-author .link-name, .archivespress-authors-wrapper.archivespress-authors-layout-basic .archivespress-authors-author .link-name {
   color: var(--archivespress-authors-color);
-  margin: 0 0 0 1em;
 }
 
 .archivespress-terms-wrapper.archivespress-terms-layout-basic {
@@ -251,5 +260,4 @@
 }
 .archivespress-terms-wrapper.archivespress-terms-layout-compact .archivespress-terms-term .link-name, .archivespress-terms-wrapper.archivespress-terms-layout-basic .archivespress-terms-term .link-name {
   color: var(--archivespress-terms-color);
-  margin: 0 0 0 1em;
 }

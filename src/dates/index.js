@@ -3,7 +3,7 @@ import {__} from "@wordpress/i18n";
 import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
 import ServerSideRender from "@wordpress/server-side-render";
 import {InspectorControls} from "@wordpress/editor";
-import {FontSizePicker, PanelBody, SelectControl, TextControl} from "@wordpress/components";
+import {FontSizePicker, PanelBody, SelectControl, TextControl, ToggleControl} from "@wordpress/components";
 
 registerBlockType('archivespress/dates', {
     apiVersion: 2,
@@ -49,6 +49,18 @@ registerBlockType('archivespress/dates', {
         'class': {
             'type': 'string',
             'default': ''
+        },
+        'showYearCounts': {
+            'type': 'boolean',
+            'default': true
+        },
+        'showMonthCounts': {
+            'type': 'boolean',
+            'default': true
+        },
+        'showDayCounts': {
+            'type': 'boolean',
+            'default': false
         },
         'varFontSize': {
             'type': 'string',
@@ -153,6 +165,23 @@ registerBlockType('archivespress/dates', {
                                 {label: __('Descending', 'archivespress'), value: 'desc'}
                             ]}
                             onChange={(value) => setAttributes({order: value})}
+                        />
+                    </PanelBody>
+                    <PanelBody title={__('Posts Counts', 'archivespress')}>
+                        <ToggleControl
+                            label={__('Show Year Counts', 'archivespress')}
+                            checked={attributes.showYearCounts}
+                            onChange={(value) => setAttributes({showYearCounts: value})}
+                        />
+                        <ToggleControl
+                            label={__('Show Month Counts', 'archivespress')}
+                            checked={attributes.showMonthCounts}
+                            onChange={(value) => setAttributes({showMonthCounts: value})}
+                        />
+                        <ToggleControl
+                            label={__('Show Day Counts', 'archivespress')}
+                            checked={attributes.showDayCounts}
+                            onChange={(value) => setAttributes({showDayCounts: value})}
                         />
                     </PanelBody>
                     <PanelBody title={__('Typography', 'archivespress')}>

@@ -71,6 +71,9 @@ class Load implements iLoad {
 			'years'                => array(),
 			'year'                 => 'show',
 			'class'                => '',
+			'show-year-counts'     => true,
+			'show-month-counts'    => true,
+			'show-day-counts'      => false,
 			'var-font-size'        => '',
 			'var-line-height'      => '',
 			'var-year-background'  => '',
@@ -81,7 +84,10 @@ class Load implements iLoad {
 			'var-day-color'        => ''
 		);
 
-		$atts = shortcode_atts( $defaults, $atts );
+		$atts                      = shortcode_atts( $defaults, $atts );
+		$atts['show-year-counts']  = is_bool( $atts['show-year-counts'] ) ? $atts['show-year-counts'] : $atts['show-year-counts'] === 'true';
+		$atts['show-month-counts'] = is_bool( $atts['show-month-counts'] ) ? $atts['show-month-counts'] : $atts['show-month-counts'] === 'true';
+		$atts['show-day-counts']   = is_bool( $atts['show-day-counts'] ) ? $atts['show-day-counts'] : $atts['show-day-counts'] === 'true';
 
 		if ( ! empty( $atts['years'] ) && is_string( $atts['years'] ) ) {
 			$atts['years'] = explode( ',', $atts['years'] );

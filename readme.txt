@@ -21,6 +21,8 @@ The plugin uses shortcodes for each of the archive indexes. This includes three 
 * Authors Archives Index
 * Terms Archives Index
 
+All blocks are available under 'ArchivesPress' block category.
+
 = Shortcodes =
 * Dates Archives Index: `[archivespress-dates]`
 * Authors Archives Index: `[archivespress-authors]`
@@ -69,9 +71,13 @@ The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
 = Version: 2.0 / may 3 2021 =
-* New: gutenberg block editor blocks
+* New: blocks for the gutenberg block editor
 * New: additional wrapper for each index block
-* New: options to hide posts counts
+* New: options/attributes to hide posts counts
+* New: show post counts for the dates index days
+* Edit: various tweaks and improvements to rendering
+* Edit: several smaller styling improvements
+* Edit: translation strings include extra information
 
 = Version: 1.0 / april 22 2021 =
 * New: first official version
@@ -81,6 +87,6 @@ The plugin doesn't have any global settings or configuration panels.
 First official version
 
 == Screenshots ==
-1. Examples for the Dates Archives Index Shortcode
-2. Examples for the Author Archives Index Shortcode
-3. Examples for the Terms Archives Index Shortcode
+1. Examples for the Dates Archives Index
+2. Examples for the Author Archives Index
+3. Examples for the Terms Archives Index

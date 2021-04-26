@@ -58,7 +58,7 @@ registerBlockType('archivespress/terms', {
             'default': ''
         },
         'showCounts': {
-            'type': 'bool',
+            'type': 'boolean',
             'default': true
         },
         'columns': {
@@ -145,13 +145,6 @@ registerBlockType('archivespress/terms', {
                             isShiftStepEnabled
                         />
                     </PanelBody>
-                    <PanelBody title={__('Posts Counts', 'archivespress')}>
-                        <ToggleControl
-                            label={__('Show Counts', 'archivespress')}
-                            checked={attributes.showCounts}
-                            onChange={(value) => setAttributes({showCounts: value})}
-                        />
-                    </PanelBody>
                     <PanelBody title={__('Data', 'archivespress')}>
                         <SelectControl
                             label={__('Post Type', 'archivespress')}
@@ -179,6 +172,13 @@ registerBlockType('archivespress/terms', {
                                 {label: __('Descending', 'archivespress'), value: 'desc'}
                             ]}
                             onChange={(value) => setAttributes({order: value})}
+                        />
+                    </PanelBody>
+                    <PanelBody title={__('Posts Counts', 'archivespress')}>
+                        <ToggleControl
+                            label={__('Show Counts', 'archivespress')}
+                            checked={attributes.showCounts}
+                            onChange={(value) => setAttributes({showCounts: value})}
                         />
                     </PanelBody>
                     <PanelBody title={__('Typography', 'archivespress')}>

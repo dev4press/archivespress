@@ -55,11 +55,11 @@ registerBlockType('archivespress/authors', {
             'default': ''
         },
         'showCounts': {
-            'type': 'bool',
+            'type': 'boolean',
             'default': true
         },
         'avatar': {
-            'type': 'bool',
+            'type': 'boolean',
             'default': true
         },
         'avatarSize': {
@@ -145,33 +145,6 @@ registerBlockType('archivespress/authors', {
                             isShiftStepEnabled
                         />
                     </PanelBody>
-                    <PanelBody title={__('Posts Counts', 'archivespress')}>
-                        <ToggleControl
-                            label={__('Show Counts', 'archivespress')}
-                            checked={attributes.showCounts}
-                            onChange={(value) => setAttributes({showCounts: value})}
-                        />
-                    </PanelBody>
-                    <PanelBody title={__('Author Avatar', 'archivespress')}>
-                        <ToggleControl
-                            label={__('Show Author Avatar', 'archivespress')}
-                            checked={attributes.avatar}
-                            onChange={(value) => setAttributes({avatar: value})}
-                        />
-                        <RangeControl
-                            label={__('Avatar Size', 'archivespress')}
-                            value={attributes.avatarSize}
-                            onChange={(value) => setAttributes({avatarSize: value})}
-                            min={1}
-                            max={96}
-                            allowReset
-                            resetFallbackValue={24}
-                            step={1}
-                            withInputField={true}
-                            separatorType="none"
-                            isShiftStepEnabled
-                        />
-                    </PanelBody>
                     <PanelBody title={__('Data', 'archivespress')}>
                         <SelectControl
                             label={__('Post Type', 'archivespress')}
@@ -199,6 +172,33 @@ registerBlockType('archivespress/authors', {
                                 {label: __('Descending', 'archivespress'), value: 'desc'}
                             ]}
                             onChange={(value) => setAttributes({order: value})}
+                        />
+                    </PanelBody>
+                    <PanelBody title={__('Author Avatar', 'archivespress')}>
+                        <ToggleControl
+                            label={__('Show Author Avatar', 'archivespress')}
+                            checked={attributes.avatar}
+                            onChange={(value) => setAttributes({avatar: value})}
+                        />
+                        <RangeControl
+                            label={__('Avatar Size', 'archivespress')}
+                            value={attributes.avatarSize}
+                            onChange={(value) => setAttributes({avatarSize: value})}
+                            min={1}
+                            max={96}
+                            allowReset
+                            resetFallbackValue={24}
+                            step={1}
+                            withInputField={true}
+                            separatorType="none"
+                            isShiftStepEnabled
+                        />
+                    </PanelBody>
+                    <PanelBody title={__('Posts Counts', 'archivespress')}>
+                        <ToggleControl
+                            label={__('Show Counts', 'archivespress')}
+                            checked={attributes.showCounts}
+                            onChange={(value) => setAttributes({showCounts: value})}
                         />
                     </PanelBody>
                     <PanelBody title={__('Typography', 'archivespress')}>
