@@ -1,9 +1,9 @@
 {
 	"name": "archivespress",
-	"version": "0.1.0",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
+	"version": "2.0.0",
+	"description": "WordPress plugin for generating archives indexes using shortcodes and blocks.",
+	"author": "Milan Petrovic",
+	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
