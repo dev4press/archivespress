@@ -1,7 +1,5 @@
-import {registerBlockType} from '@wordpress/blocks';
-import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
 import ServerSideRender from '@wordpress/server-side-render';
-import {InspectorControls} from "@wordpress/editor";
+import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
 import {
     FontSizePicker,
     PanelBody,
@@ -10,6 +8,8 @@ import {
     TextControl,
     ToggleControl
 } from "@wordpress/components";
+import {registerBlockType} from '@wordpress/blocks';
+import {InspectorControls} from "@wordpress/editor";
 import {__} from "@wordpress/i18n";
 
 registerBlockType('archivespress/terms', {
@@ -211,7 +211,7 @@ registerBlockType('archivespress/terms', {
                         <TextControl
                             label={__("Additional CSS Class", "archivespress")}
                             value={attributes.class}
-                            onChange={(value) => setAttributes({layout: value})}
+                            onChange={(value) => setAttributes({class: value})}
                         />
                     </PanelBody>
                 </InspectorControls>
