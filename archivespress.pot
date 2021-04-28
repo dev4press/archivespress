@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the ArchivesPress plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: ArchivesPress 1.0\n"
+"Project-Id-Version: ArchivesPress 2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/archivespress\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-25T08:47:52+00:00\n"
+"POT-Creation-Date: 2021-04-28T19:53:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: archivespress\n"
 
 #. Plugin Name of the plugin
+#: core/basic/Blocks.php:39
 msgid "ArchivesPress"
 msgstr ""
 
@@ -35,52 +36,52 @@ msgid "https://www.dev4press.com/"
 msgstr ""
 
 #. translators: 1. Author Name, 2. Number of Posts
-#: core/authors/Layouts.php:121
-#: core/authors/Layouts.php:125
+#: core/authors/Layouts.php:122
+#: core/authors/Layouts.php:130
 msgctxt "Author name and posts count"
 msgid "%1$s: %2$d Post"
 msgid_plural "%1$s: %2$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/basic/Blocks.php:62
+#: core/basic/Blocks.php:60
 #: build/index.js:1
 #: src/authors/index.js:18
 msgid "Authors Archives Index"
 msgstr ""
 
-#: core/basic/Blocks.php:63
+#: core/basic/Blocks.php:61
 #: build/index.js:1
 #: src/authors/index.js:19
 msgid "Display authors archives index."
 msgstr ""
 
-#: core/basic/Blocks.php:143
+#: core/basic/Blocks.php:146
 #: build/index.js:1
 #: src/dates/index.js:11
 msgid "Dates Archives Index"
 msgstr ""
 
-#: core/basic/Blocks.php:144
+#: core/basic/Blocks.php:147
 #: build/index.js:1
 #: src/dates/index.js:12
 msgid "Display dates archives index."
 msgstr ""
 
-#: core/basic/Blocks.php:222
+#: core/basic/Blocks.php:246
 #: build/index.js:1
-#: src/terms/index.js:11
+#: src/terms/index.js:18
 msgid "Terms Archives Index"
 msgstr ""
 
-#: core/basic/Blocks.php:223
+#: core/basic/Blocks.php:247
 #: build/index.js:1
-#: src/terms/index.js:12
+#: src/terms/index.js:19
 msgid "Display taxonomy terms archives index."
 msgstr ""
 
 #. translators: 1. Year, 2. Number of Posts
-#: core/dates/Layouts.php:126
+#: core/dates/Layouts.php:128
 msgctxt "Year and posts count"
 msgid "Year %1$s: %2$d Post"
 msgid_plural "Year %1$s: %2$d Posts"
@@ -88,7 +89,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1. Month, 2. Number of Posts
-#: core/dates/Layouts.php:139
+#: core/dates/Layouts.php:150
 msgctxt "Month and posts count"
 msgid "%1$s: %2$d Post"
 msgid_plural "%1$s: %2$d Posts"
@@ -96,7 +97,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1. Date, 2. Number of Posts
-#: core/dates/Layouts.php:149
+#: core/dates/Layouts.php:167
 msgctxt "Date and posts count"
 msgid "%1$s: %2$d Post"
 msgid_plural "%1$s: %2$d Posts"
@@ -104,7 +105,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1. Taxonomy Name, 2. Term Name, 3. Number of Posts
-#: core/terms/Layouts.php:94
+#: core/terms/Layouts.php:95
 msgctxt "Taxonomy, term name and posts count"
 msgid "%1$s %2$s: %3$d Post"
 msgid_plural "%1$s %2$s: %3$d Posts"
@@ -112,216 +113,259 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/index.js:1
-#: src/authors/index.js:97
-#: src/dates/index.js:98
-#: src/terms/index.js:84
+#: src/authors/index.js:102
+#: src/dates/index.js:113
+#: src/terms/index.js:96
 msgid "Small"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:102
-#: src/dates/index.js:103
-#: src/terms/index.js:89
+#: src/authors/index.js:107
+#: src/dates/index.js:118
+#: src/terms/index.js:101
 msgid "Normal"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:107
-#: src/dates/index.js:108
-#: src/terms/index.js:94
+#: src/authors/index.js:112
+#: src/dates/index.js:123
+#: src/terms/index.js:106
 msgid "Big"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:120
-#: src/dates/index.js:121
-#: src/terms/index.js:107
+#: src/authors/index.js:125
+#: src/dates/index.js:136
+#: src/terms/index.js:119
 msgid "Display"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:122
-#: src/dates/index.js:123
-#: src/terms/index.js:109
+#: src/authors/index.js:127
+#: src/dates/index.js:138
+#: src/terms/index.js:121
 msgid "Layout"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:125
-#: src/dates/index.js:126
-#: src/terms/index.js:112
+#: src/authors/index.js:130
+#: src/dates/index.js:141
+#: src/terms/index.js:124
 msgid "Basic"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:126
-#: src/dates/index.js:127
-#: src/terms/index.js:113
+#: src/authors/index.js:131
+#: src/dates/index.js:142
+#: src/terms/index.js:125
 msgid "Compact"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:131
-#: src/terms/index.js:124
+#: src/authors/index.js:136
+#: src/terms/index.js:136
 msgid "Columns"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:144
-msgid "Author Avatar"
-msgstr ""
-
-#: build/index.js:1
-#: src/authors/index.js:146
-msgid "Show Author Avatar"
-msgstr ""
-
-#: build/index.js:1
-#: src/authors/index.js:151
-msgid "Avatar Size"
-msgstr ""
-
-#: build/index.js:1
-#: src/authors/index.js:164
-#: src/dates/index.js:141
-#: src/terms/index.js:137
+#: src/authors/index.js:149
+#: src/dates/index.js:165
+#: src/terms/index.js:149
 msgid "Data"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:166
-#: src/dates/index.js:143
-#: src/terms/index.js:139
+#: src/authors/index.js:151
+#: src/dates/index.js:167
+#: src/terms/index.js:151
 msgid "Post Type"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:172
-#: src/terms/index.js:145
+#: src/authors/index.js:157
+#: src/terms/index.js:157
 msgid "Order By"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:184
-#: src/dates/index.js:149
-#: src/terms/index.js:157
+#: src/authors/index.js:169
+#: src/dates/index.js:173
+#: src/terms/index.js:169
 msgid "Order"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:187
-#: src/dates/index.js:152
-#: src/terms/index.js:160
+#: src/authors/index.js:172
+#: src/dates/index.js:176
+#: src/terms/index.js:172
 msgid "Ascending"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:188
-#: src/dates/index.js:153
-#: src/terms/index.js:161
+#: src/authors/index.js:173
+#: src/dates/index.js:177
+#: src/terms/index.js:173
 msgid "Descending"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:193
-#: src/dates/index.js:158
-#: src/terms/index.js:166
+#: src/authors/index.js:178
+msgid "Author Avatar"
+msgstr ""
+
+#: build/index.js:1
+#: src/authors/index.js:180
+msgid "Show Author Avatar"
+msgstr ""
+
+#: build/index.js:1
+#: src/authors/index.js:185
+msgid "Avatar Size"
+msgstr ""
+
+#: build/index.js:1
+#: src/authors/index.js:198
+#: src/dates/index.js:182
+#: src/terms/index.js:178
+msgid "Posts Counts"
+msgstr ""
+
+#: build/index.js:1
+#: src/authors/index.js:200
+#: src/terms/index.js:180
+msgid "Show Counts"
+msgstr ""
+
+#: build/index.js:1
+#: src/authors/index.js:205
+#: src/dates/index.js:199
+#: src/terms/index.js:185
 msgid "Typography"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:195
-#: src/dates/index.js:160
-#: src/terms/index.js:168
+#: src/authors/index.js:207
+#: src/dates/index.js:201
+#: src/terms/index.js:187
 msgid "Font Size"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:202
-#: src/dates/index.js:167
-#: src/terms/index.js:175
+#: src/authors/index.js:214
+#: src/dates/index.js:208
+#: src/terms/index.js:194
 msgid "Line Height"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:207
-#: src/dates/index.js:172
-#: src/terms/index.js:180
+#: src/authors/index.js:219
+#: src/dates/index.js:213
+#: src/terms/index.js:199
 msgid "Colors"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:209
-#: src/terms/index.js:182
+#: src/authors/index.js:221
+#: src/terms/index.js:201
 msgid "Background"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:214
-#: src/terms/index.js:187
+#: src/authors/index.js:226
+#: src/terms/index.js:206
 msgid "Text"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:219
-#: src/dates/index.js:204
-#: src/terms/index.js:192
+#: src/authors/index.js:231
+#: src/dates/index.js:245
+#: src/terms/index.js:211
 msgid "Advanced"
 msgstr ""
 
 #: build/index.js:1
-#: src/authors/index.js:221
-#: src/dates/index.js:206
-#: src/terms/index.js:194
+#: src/authors/index.js:233
+#: src/dates/index.js:247
+#: src/terms/index.js:213
 msgid "Additional CSS Class"
 msgstr ""
 
 #: build/index.js:1
-#: src/dates/index.js:132
+#: src/dates/index.js:147
 msgid "Years"
 msgstr ""
 
 #: build/index.js:1
-#: src/dates/index.js:135
+#: src/dates/index.js:150
 msgid "Show"
 msgstr ""
 
 #: build/index.js:1
-#: src/dates/index.js:136
+#: src/dates/index.js:151
 msgid "Hide"
 msgstr ""
 
 #: build/index.js:1
-#: src/dates/index.js:174
-msgid "Years Background"
+#: src/dates/index.js:156
+msgid "Months"
 msgstr ""
 
 #: build/index.js:1
-#: src/dates/index.js:179
-msgid "Years Text"
+#: src/dates/index.js:159
+msgid "Auto"
+msgstr ""
+
+#: build/index.js:1
+#: src/dates/index.js:160
+msgid "Number only"
 msgstr ""
 
 #: build/index.js:1
 #: src/dates/index.js:184
-msgid "Months Background"
+msgid "Show Year Counts"
 msgstr ""
 
 #: build/index.js:1
 #: src/dates/index.js:189
-msgid "Months Text"
+msgid "Show Month Counts"
 msgstr ""
 
 #: build/index.js:1
 #: src/dates/index.js:194
+msgid "Show Day Counts"
+msgstr ""
+
+#: build/index.js:1
+#: src/dates/index.js:215
+msgid "Years Background"
+msgstr ""
+
+#: build/index.js:1
+#: src/dates/index.js:220
+msgid "Years Text"
+msgstr ""
+
+#: build/index.js:1
+#: src/dates/index.js:225
+msgid "Months Background"
+msgstr ""
+
+#: build/index.js:1
+#: src/dates/index.js:230
+msgid "Months Text"
+msgstr ""
+
+#: build/index.js:1
+#: src/dates/index.js:235
 msgid "Days Background"
 msgstr ""
 
 #: build/index.js:1
-#: src/dates/index.js:199
+#: src/dates/index.js:240
 msgid "Days Text"
 msgstr ""
 
 #: build/index.js:1
-#: src/terms/index.js:118
+#: src/terms/index.js:130
 msgid "Taxonomy"
 msgstr ""

@@ -36,7 +36,7 @@ class Blocks {
 			array(
 				array(
 					'slug'  => 'archivespress',
-					'title' => __( 'ArchivesPress' )
+					'title' => __( "ArchivesPress", "archivespress" )
 				)
 			)
 		);
@@ -57,8 +57,8 @@ class Blocks {
 		register_block_type( 'archivespress/authors', array(
 			'apiVersion'      => 2,
 			'name'            => 'archivespress/authors',
-			'title'           => __( 'Authors Archives Index', 'archivespress' ),
-			'description'     => __( 'Display authors archives index.', 'archivespress' ),
+			'title'           => __( "Authors Archives Index", "archivespress" ),
+			'description'     => __( "Display authors archives index.", "archivespress" ),
 			'category'        => 'archivespress',
 			'icon'            => 'id-alt',
 			'render_callback' => array( $this, 'callback_authors' ),
@@ -118,8 +118,9 @@ class Blocks {
 					'maximum' => 6
 				),
 				'varFontSize'   => array(
-					'type'    => 'string',
-					'default' => ''
+					'type'    => 'integer',
+					'default' => '',
+					'minimal' => 1
 				),
 				'varLineHeight' => array(
 					'type'    => 'string',
@@ -142,8 +143,8 @@ class Blocks {
 		register_block_type( 'archivespress/dates', array(
 			'apiVersion'      => 2,
 			'name'            => 'archivespress/dates',
-			'title'           => __( 'Dates Archives Index', 'archivespress' ),
-			'description'     => __( 'Display dates archives index.', 'archivespress' ),
+			'title'           => __( "Dates Archives Index", "archivespress" ),
+			'description'     => __( "Display dates archives index.", "archivespress" ),
 			'category'        => 'archivespress',
 			'icon'            => 'calendar',
 			'render_callback' => array( $this, 'callback_dates' ),
@@ -201,8 +202,9 @@ class Blocks {
 					'default' => false
 				),
 				'varFontSize'        => array(
-					'type'    => 'string',
-					'default' => ''
+					'type'    => 'integer',
+					'default' => '',
+					'minimal' => 1
 				),
 				'varLineHeight'      => array(
 					'type'    => 'string',
@@ -241,8 +243,8 @@ class Blocks {
 		register_block_type( 'archivespress/terms', array(
 			'apiVersion'      => 2,
 			'name'            => 'archivespress/terms',
-			'title'           => __( 'Terms Archives Index', 'archivespress' ),
-			'description'     => __( 'Display taxonomy terms archives index.', 'archivespress' ),
+			'title'           => __( "Terms Archives Index", "archivespress" ),
+			'description'     => __( "Display taxonomy terms archives index.", "archivespress" ),
 			'category'        => 'archivespress',
 			'icon'            => 'index-card',
 			'render_callback' => array( $this, 'callback_terms' ),
@@ -296,8 +298,9 @@ class Blocks {
 					'maximum' => 6
 				),
 				'varFontSize'   => array(
-					'type'    => 'string',
-					'default' => ''
+					'type'    => 'integer',
+					'default' => '',
+					'minimal' => 1
 				),
 				'varLineHeight' => array(
 					'type'    => 'string',

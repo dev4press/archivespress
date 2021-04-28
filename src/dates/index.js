@@ -65,8 +65,9 @@ registerBlockType('archivespress/dates', {
             'default': false
         },
         'varFontSize': {
-            'type': 'string',
-            'default': ''
+            'type': 'integer',
+            'default': '',
+            'minimal': 1
         },
         'varLineHeight': {
             'type': 'string',

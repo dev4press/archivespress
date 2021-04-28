@@ -68,8 +68,9 @@ registerBlockType('archivespress/terms', {
             'maximum': 6
         },
         'varFontSize': {
-            'type': 'string',
-            'default': ''
+            'type': 'integer',
+            'default': '',
+            'minimal': 1
         },
         'varLineHeight': {
             'type': 'string',

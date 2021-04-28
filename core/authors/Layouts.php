@@ -119,7 +119,7 @@ class Layouts implements iLayouts {
 			$render .= '<div class="' . $_class . '">';
 			if ( ! empty( $_avatar ) ) {
 				/* translators: 1. Author Name, 2. Number of Posts */
-				$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, "Author name and posts count", "archivespress" ), $info['name'], $_count ) . '" class="link-avatar" href="' . $_archive . '">' . $_avatar . '</a>';
+				$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, 'Author name and posts count', "archivespress" ), $info['name'], $_count ) . '" class="link-avatar" href="' . $_archive . '">' . $_avatar . '</a>';
 			}
 
 			if ( $args['show-counts'] ) {
@@ -127,7 +127,7 @@ class Layouts implements iLayouts {
 			}
 
 			/* translators: 1. Author Name, 2. Number of Posts */
-			$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, "Author name and posts count", "archivespress" ), $info['name'], $_count ) . '" class="link-name" href="' . $_archive . '">' . $info['name'] . '</a>';
+			$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, 'Author name and posts count', "archivespress" ), $info['name'], $_count ) . '" class="link-name" href="' . $_archive . '">' . $info['name'] . '</a>';
 			$render .= '</div>';
 		}
 
