@@ -119,7 +119,7 @@ class Blocks {
 				),
 				'varFontSize'   => array(
 					'type'    => 'integer',
-					'default' => '',
+					'default' => 16,
 					'minimal' => 1
 				),
 				'varLineHeight' => array(
@@ -203,7 +203,7 @@ class Blocks {
 				),
 				'varFontSize'        => array(
 					'type'    => 'integer',
-					'default' => '',
+					'default' => 16,
 					'minimal' => 1
 				),
 				'varLineHeight'      => array(
@@ -299,7 +299,7 @@ class Blocks {
 				),
 				'varFontSize'   => array(
 					'type'    => 'integer',
-					'default' => '',
+					'default' => 16,
 					'minimal' => 1
 				),
 				'varLineHeight' => array(

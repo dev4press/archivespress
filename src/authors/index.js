@@ -75,7 +75,7 @@ registerBlockType('archivespress/authors', {
         },
         'varFontSize': {
             'type': 'integer',
-            'default': '',
+            'default': 16,
             'minimal': 1
         },
         'varLineHeight': {
