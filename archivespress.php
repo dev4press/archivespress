@@ -8,7 +8,7 @@ Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
 Text Domain:       archivespress
 Version:           2.0
-Requires at least: 5.0
+Requires at least: 5.3
 Tested up to:      5.8
 Requires PHP:      7.0
 License:           GPLv3 or later
