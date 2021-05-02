@@ -92,3 +92,4 @@ First official version
 1. Examples for the Dates Archives Index
 2. Examples for the Author Archives Index
 3. Examples for the Terms Archives Index
+4. Blocks with Settings in Block Editor
