@@ -2,7 +2,7 @@
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/archivespress/
 Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 2.0
+Stable tag: 2.1
 Requires at least: 5.3
 Tested up to: 5.8
 Requires PHP: 7.0
@@ -70,7 +70,13 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
-= Version: 2.0 / may 1 2021 =
+= Version: 2.1 / August 3, 2021 =
+* New: tested with the new WordPress 5.8
+* New: built with the updated core libraries
+* New: blocks in editor wrapped in Disabled control
+* New: improved with SVG icons for all blocks
+
+= Version: 2.0 / May 1, 2021 =
 * New: blocks for the gutenberg block editor
 * New: additional wrapper for each index block
 * New: options/attributes to hide posts counts
@@ -81,12 +87,12 @@ The plugin doesn't have any global settings or configuration panels.
 * Edit: several smaller styling improvements
 * Edit: translation strings include extra information
 
-= Version: 1.0 / april 22 2021 =
+= Version: 1.0 / April 22, 2021 =
 * New: first official version
 
 == Upgrade Notice ==
-= 1.0 =
-First official version
+= 2.1 =
+Various improvements and updates
 
 == Screenshots ==
 1. Examples for the Dates Archives Index

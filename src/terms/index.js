@@ -1,6 +1,7 @@
 import ServerSideRender from '@wordpress/server-side-render';
 import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
 import {
+    Disabled,
     FontSizePicker,
     PanelBody,
     RangeControl,
@@ -11,13 +12,15 @@ import {
 import {registerBlockType} from '@wordpress/blocks';
 import {InspectorControls} from "@wordpress/editor";
 import {__} from "@wordpress/i18n";
+import icons from "../icons";
 
 registerBlockType('archivespress/terms', {
     apiVersion: 2,
     name: 'archivespress/terms',
     title: __('Terms Archives Index', 'archivespress'),
     description: __('Display taxonomy terms archives index.', 'archivespress'),
-    icon: 'index-card',
+    icon: icons.terms,
+    category: 'archivespress',
     attributes: {
         'layout': {
             'type': 'string',
@@ -111,10 +114,12 @@ registerBlockType('archivespress/terms', {
 
         return (
             <div {...useBlockProps()}>
-                <ServerSideRender
-                    block="archivespress/terms"
-                    attributes={attributes}
-                />
+                <Disabled>
+                    <ServerSideRender
+                        block="archivespress/terms"
+                        attributes={attributes}
+                    />
+                </Disabled>
                 <InspectorControls key="settings">
                     <PanelBody title={__('Display', 'archivespress')}>
                         <SelectControl

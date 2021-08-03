@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Plugin {
+	private $wp_version;
+
 	public function __construct() {
 	}
 
@@ -26,6 +28,12 @@ class Plugin {
 	}
 
 	private function run() {
+		global $wp_version;
+
+		$this->wp_version = substr( str_replace( '.', '', $wp_version ), 0, 2 );
+
+		define( 'ARCHIVESPRESS_WPV', absint( $this->wp_version ) );
+
 		LoadDates::instance();
 		LoadAuthors::instance();
 		LoadTerms::instance();

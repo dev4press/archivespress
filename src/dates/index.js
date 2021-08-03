@@ -1,16 +1,18 @@
 import ServerSideRender from "@wordpress/server-side-render";
 import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
-import {FontSizePicker, PanelBody, SelectControl, TextControl, ToggleControl} from "@wordpress/components";
+import {Disabled, FontSizePicker, PanelBody, SelectControl, TextControl, ToggleControl} from "@wordpress/components";
 import {registerBlockType} from '@wordpress/blocks';
 import {InspectorControls} from "@wordpress/editor";
 import {__} from "@wordpress/i18n";
+import icons from "../icons";
 
 registerBlockType('archivespress/dates', {
     apiVersion: 2,
     name: 'archivespress/dates',
     title: __('Dates Archives Index', 'archivespress'),
     description: __('Display dates archives index.', 'archivespress'),
-    icon: 'calendar',
+    icon: icons.dates,
+    category: 'archivespress',
     attributes: {
         'layout': {
             'type': 'string',
@@ -128,10 +130,12 @@ registerBlockType('archivespress/dates', {
 
         return (
             <div {...useBlockProps()}>
-                <ServerSideRender
-                    block="archivespress/dates"
-                    attributes={attributes}
-                />
+                <Disabled>
+                    <ServerSideRender
+                        block="archivespress/dates"
+                        attributes={attributes}
+                    />
+                </Disabled>
                 <InspectorControls key="settings">
                     <PanelBody title={__('Display', 'archivespress')}>
                         <SelectControl

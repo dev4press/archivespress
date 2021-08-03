@@ -26,7 +26,12 @@ class Blocks {
 	}
 
 	private function run() {
-		add_filter( 'block_categories', array( $this, 'categories' ) );
+		if ( ARCHIVESPRESS_WPV < 58 ) {
+			add_filter( 'block_categories', array( $this, 'categories' ) );
+		} else {
+			add_filter( 'block_categories_all', array( $this, 'categories' ) );
+		}
+
 		add_action( 'init', array( $this, 'blocks' ), 30 );
 	}
 
@@ -55,12 +60,6 @@ class Blocks {
 		wp_set_script_translations( 'archivespress-blocks-editor', 'archivespress' );
 
 		register_block_type( 'archivespress/authors', array(
-			'apiVersion'      => 2,
-			'name'            => 'archivespress/authors',
-			'title'           => __( "Authors Archives Index", "archivespress" ),
-			'description'     => __( "Display authors archives index.", "archivespress" ),
-			'category'        => 'archivespress',
-			'icon'            => 'id-alt',
 			'render_callback' => array( $this, 'callback_authors' ),
 			'attributes'      => array(
 				'layout'        => array(
@@ -141,12 +140,6 @@ class Blocks {
 		) );
 
 		register_block_type( 'archivespress/dates', array(
-			'apiVersion'      => 2,
-			'name'            => 'archivespress/dates',
-			'title'           => __( "Dates Archives Index", "archivespress" ),
-			'description'     => __( "Display dates archives index.", "archivespress" ),
-			'category'        => 'archivespress',
-			'icon'            => 'calendar',
 			'render_callback' => array( $this, 'callback_dates' ),
 			'attributes'      => array(
 				'layout'             => array(
@@ -241,12 +234,6 @@ class Blocks {
 		) );
 
 		register_block_type( 'archivespress/terms', array(
-			'apiVersion'      => 2,
-			'name'            => 'archivespress/terms',
-			'title'           => __( "Terms Archives Index", "archivespress" ),
-			'description'     => __( "Display taxonomy terms archives index.", "archivespress" ),
-			'category'        => 'archivespress',
-			'icon'            => 'index-card',
 			'render_callback' => array( $this, 'callback_terms' ),
 			'attributes'      => array(
 				'layout'        => array(

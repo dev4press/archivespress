@@ -1,6 +1,6 @@
 {
 	"name": "archivespress",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "WordPress plugin for generating archives indexes using shortcodes and blocks.",
 	"author": "Milan Petrovic",
 	"license": "GPL-3.0-or-later",
@@ -14,14 +14,14 @@
 		"packages-update": "wp-scripts packages-update"
 	},
 	"dependencies": {
-		"@wordpress/block-editor": "^5.3.3",
-		"@wordpress/blocks": "^8.0.3",
-		"@wordpress/components": "^13.0.3",
-		"@wordpress/editor": "^9.26.3",
-		"@wordpress/i18n": "^3.20.0",
-		"@wordpress/server-side-render": "^1.21.3"
+		"@wordpress/block-editor": "^7.0.0",
+		"@wordpress/blocks": "^11.0.0",
+		"@wordpress/components": "^15.0.0",
+		"@wordpress/editor": "^11.0.0",
+		"@wordpress/i18n": "^4.2.1",
+		"@wordpress/server-side-render": "^3.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^15.0.1"
+		"@wordpress/scripts": "^17.1.0"
 	}
 }
