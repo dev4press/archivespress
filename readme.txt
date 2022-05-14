@@ -2,10 +2,10 @@
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/archivespress/
 Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 2.1
-Requires at least: 5.3
-Tested up to: 5.8
-Requires PHP: 7.0
+Stable tag: 2.2
+Requires at least: 5.5
+Tested up to: 6.0
+Requires PHP: 7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,20 +47,20 @@ To learn more about each shortcode, available attributes and get some examples, 
 
 == Installation ==
 = General Requirements =
-* PHP: 7.0 or newer
-* WordPress: 5.0 or newer
+* PHP: 7.2 or newer
+* WordPress: 5.5 or newer
 
 = PHP Notice =
-* The plugin doesn't work with PHP 5.6 or older versions.
+* The plugin doesn't work with PHP 7.1 or older versions.
 
 = WordPress Notice =
-* The plugin doesn't work with WordPress 4.9 or older versions.
+* The plugin doesn't work with WordPress 5.4 or older versions.
 
 = Basic Installation =
 * Plugin folder in the WordPress plugins folder should be `archivespress`.
 * Upload `archivespress` folder to the `/wp-content/plugins/` directory.
 * Activate the plugin through the 'Plugins' menu in WordPress.
-* Plugin doesn't have any settings and it doesn't add any panels to WordPress administration.
+* Plugin doesn't have any settings, and it doesn't add any panels to WordPress administration.
 
 == Frequently Asked Questions ==
 = How can I add blocks to my posts? =
@@ -70,6 +70,10 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 2.2 / May 14, 2022 =
+* New: tested with the new WordPress 6.0
+* New: built with the updated core libraries
+
 = Version: 2.1 / August 3, 2021 =
 * New: tested with the new WordPress 5.8
 * New: built with the updated core libraries
