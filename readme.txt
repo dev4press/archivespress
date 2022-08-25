@@ -2,7 +2,7 @@
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/archivespress/
 Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 2.2
+Stable tag: 2.3
 Requires at least: 5.5
 Tested up to: 6.0
 Requires PHP: 7.2
@@ -70,6 +70,9 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 2.3 / August 25, 2022 =
+* New: built with the updated core libraries
+
 = Version: 2.2 / May 14, 2022 =
 * New: tested with the new WordPress 6.0
 * New: built with the updated core libraries
