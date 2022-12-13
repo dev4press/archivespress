@@ -7,9 +7,9 @@ Description:       Display indexes based on the dates (years, months, and days a
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
 Text Domain:       archivespress
-Version:           2.3
-Requires at least: 5.5
-Tested up to:      6.0
+Version:           2.4
+Requires at least: 5.7
+Tested up to:      6.1
 Requires PHP:      7.2
 License:           GPLv3 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
@@ -33,7 +33,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 
 use Dev4Press\Plugin\ArchivesPress\Basic\Plugin;
 
-const ARCHIVESPRESS_VERSION = '2.3';
+const ARCHIVESPRESS_VERSION = '2.4';
 
 $archivespress_dirname_basic = dirname( __FILE__ ) . '/';
 $archivespress_urlname_basic = plugins_url( '/', __FILE__ );
