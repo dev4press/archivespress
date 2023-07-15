@@ -80,11 +80,11 @@ class Load implements iLoad {
 			'var-color'       => '',
 		);
 
-		$atts                = shortcode_atts( $defaults, $atts );
-		$atts['show-counts'] = is_bool( $atts['show-counts'] ) ? $atts['show-counts'] : $atts['show-counts'] === 'true';
+		$atts                  = shortcode_atts( $defaults, $atts );
+		$atts[ 'show-counts' ] = is_bool( $atts[ 'show-counts' ] ) ? $atts[ 'show-counts' ] : $atts[ 'show-counts' ] === 'true';
 
-		$data = $this->cache()->get( $atts['post_type'] );
-		$data = $this->prepare_data( $data, $atts['orderby'], $atts['order'] );
+		$data = $this->cache()->get( $atts[ 'post_type' ] );
+		$data = $this->prepare_data( $data, $atts[ 'orderby' ], $atts[ 'order' ] );
 
 		if ( ! empty( $data ) ) {
 			wp_enqueue_style( 'archivespress' );

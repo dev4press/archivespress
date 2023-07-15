@@ -50,7 +50,7 @@ class Blocks {
 	public function blocks() {
 		$asset_file = include( ARCHIVESPRESS_PATH . 'build/index.asset.php' );
 
-		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version'] );
+		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', $asset_file[ 'dependencies' ], $asset_file[ 'version' ] );
 
 		wp_localize_script( 'archivespress-blocks-editor', 'archivespress', array(
 			'post_types' => Helpers::instance()->list_post_types( array( 'public' => true ) ),
@@ -337,13 +337,13 @@ class Blocks {
 			$output[ $new_key ] = $value;
 		}
 
-		if ( isset( $output['avatar'] ) && $output['avatar'] == 'true' ) {
-			$output['avatar'] = $output['avatarSize'];
-			unset( $output['avatarSize'] );
+		if ( isset( $output[ 'avatar' ] ) && $output[ 'avatar' ] == 'true' ) {
+			$output[ 'avatar' ] = $output[ 'avatarSize' ];
+			unset( $output[ 'avatarSize' ] );
 		}
 
-		if ( ! empty( $output['var-font-size'] ) ) {
-			$output['var-font-size'] = $output['var-font-size'] . 'px';
+		if ( ! empty( $output[ 'var-font-size' ] ) ) {
+			$output[ 'var-font-size' ] = $output[ 'var-font-size' ] . 'px';
 		}
 
 		return $output;

@@ -1,14 +1,6 @@
 import ServerSideRender from '@wordpress/server-side-render';
 import {ColorPaletteControl, LineHeightControl, useBlockProps} from "@wordpress/block-editor";
-import {
-    Disabled,
-    FontSizePicker,
-    PanelBody,
-    RangeControl,
-    SelectControl,
-    TextControl,
-    ToggleControl
-} from "@wordpress/components";
+import {Disabled, FontSizePicker, PanelBody, RangeControl, SelectControl, TextControl, ToggleControl} from "@wordpress/components";
 import {registerBlockType} from '@wordpress/blocks';
 import {InspectorControls} from "@wordpress/editor";
 import {__} from "@wordpress/i18n";

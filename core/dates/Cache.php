@@ -76,17 +76,17 @@ ORDER BY
 				$data[ $row->year ] = array( 'posts' => 0, 'months' => array() );
 			}
 
-			if ( ! isset( $data[ $row->year ]['months'][ $row->month ] ) ) {
-				$data[ $row->year ]['months'][ $row->month ] = array( 'posts' => 0, 'days' => array() );
+			if ( ! isset( $data[ $row->year ][ 'months' ][ $row->month ] ) ) {
+				$data[ $row->year ][ 'months' ][ $row->month ] = array( 'posts' => 0, 'days' => array() );
 			}
 
-			if ( ! isset( $data[ $row->year ]['months'][ $row->month ]['days'][ $row->day ] ) ) {
-				$data[ $row->year ]['months'][ $row->month ]['days'][ $row->day ] = array( 'posts' => 0 );
+			if ( ! isset( $data[ $row->year ][ 'months' ][ $row->month ][ 'days' ][ $row->day ] ) ) {
+				$data[ $row->year ][ 'months' ][ $row->month ][ 'days' ][ $row->day ] = array( 'posts' => 0 );
 			}
 
-			$data[ $row->year ]['posts']                                               += $row->posts;
-			$data[ $row->year ]['months'][ $row->month ]['posts']                      += $row->posts;
-			$data[ $row->year ]['months'][ $row->month ]['days'][ $row->day ]['posts'] += $row->posts;
+			$data[ $row->year ][ 'posts' ]                                                   += $row->posts;
+			$data[ $row->year ][ 'months' ][ $row->month ][ 'posts' ]                        += $row->posts;
+			$data[ $row->year ][ 'months' ][ $row->month ][ 'days' ][ $row->day ][ 'posts' ] += $row->posts;
 		}
 
 		return $data;

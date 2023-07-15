@@ -25,7 +25,7 @@ class Layouts implements iLayouts {
 	}
 
 	public function render( array $data, array $args = array() ) : string {
-		switch ( $args['layout'] ) {
+		switch ( $args[ 'layout' ] ) {
 			default:
 			case 'basic':
 			case 'compact':
@@ -69,32 +69,32 @@ class Layouts implements iLayouts {
 		$classes = array(
 			'archivespress-wrapper',
 			'archivespress-terms-wrapper',
-			'archivespress-terms-layout-' . $args['layout'],
-			'archivespress-terms-taxonomy-' . $args['taxonomy']
+			'archivespress-terms-layout-' . $args[ 'layout' ],
+			'archivespress-terms-taxonomy-' . $args[ 'taxonomy' ]
 		);
 
-		$columns = $args['columns'] ?? 4;
+		$columns = $args[ 'columns' ] ?? 4;
 		$columns = $columns < 1 ? 1 : $columns;
 		$columns = $columns > 6 ? 6 : $columns;
 
 		$classes[] = 'archivespress-terms-columns-' . $columns;
 
-		if ( ! empty( $args['class'] ) ) {
-			$classes[] = $args['class'];
+		if ( ! empty( $args[ 'class' ] ) ) {
+			$classes[] = $args[ 'class' ];
 		}
 
 		$id = 'archivespress-terms-block-' . ( ++ $this->id );
 
-		$render   = '<div class="wp-' . $args['_source'] . '-archivespress-terms">';
+		$render   = '<div class="wp-' . $args[ '_source' ] . '-archivespress-terms">';
 		$render   .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
-		$taxonomy = get_taxonomy( $args['taxonomy'] );
+		$taxonomy = get_taxonomy( $args[ 'taxonomy' ] );
 
 		foreach ( $data as $term_id => $object ) {
 			$render .= '<div class="archivespress-terms-term">';
 			/* translators: 1. Taxonomy Name, 2. Term Name, 3. Number of Posts */
-			$render .= '<a title="' . sprintf( _nx( '%1$s %2$s: %3$d Post', '%1$s %2$s: %3$d Posts', $object['posts'], 'Taxonomy, term name and posts count', "archivespress" ), $taxonomy->labels->singular_name, $object['name'], $object['posts'] ) . '" class="link-name" href="' . $this->get_term_link( $args['post_type'], $term_id, $object['taxonomy'] ) . '">' . $object['name'] . '</a>';
-			if ( $args['show-counts'] ) {
-				$render .= $this->posts_count( $object['posts'] );
+			$render .= '<a title="' . sprintf( _nx( '%1$s %2$s: %3$d Post', '%1$s %2$s: %3$d Posts', $object[ 'posts' ], 'Taxonomy, term name and posts count', "archivespress" ), $taxonomy->labels->singular_name, $object[ 'name' ], $object[ 'posts' ] ) . '" class="link-name" href="' . $this->get_term_link( $args[ 'post_type' ], $term_id, $object[ 'taxonomy' ] ) . '">' . $object[ 'name' ] . '</a>';
+			if ( $args[ 'show-counts' ] ) {
+				$render .= $this->posts_count( $object[ 'posts' ] );
 			}
 			$render .= '</div>';
 		}

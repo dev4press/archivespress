@@ -75,7 +75,7 @@ ORDER BY
 		$data = array();
 
 		foreach ( $raw as $row ) {
-			$data[ $row['id'] ] = $row;
+			$data[ $row[ 'id' ] ] = $row;
 		}
 
 		return $data;
