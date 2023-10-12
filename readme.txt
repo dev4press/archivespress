@@ -74,6 +74,8 @@ The plugin doesn't have any global settings or configuration panels.
 * New: blocks source uses JSON file format for blocks
 * New: built with the updated core libraries
 * New: requires WordPress 5.8 or newer
+* Edit: few changes to the block controls imports
+* Edit: updated missing default values for blocks
 * Fix: issue with having the colors as CSS variables
 
 = Version: 2.6 / July 15, 2023 =

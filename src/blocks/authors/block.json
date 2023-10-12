@@ -72,7 +72,7 @@
     },
     "varLineHeight": {
       "type": "string",
-      "default": ""
+      "default": "1.5"
     },
     "varBackground": {
       "type": "string",
