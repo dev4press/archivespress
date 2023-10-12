@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "archivespress/terms",
+  "category": "archivespress",
+  "title": "Terms Archives Index",
+  "description": "Display taxonomy terms archives index.",
+  "textdomain": "archivespress",
+  "version": "3.0",
+  "supports": {
+    "customClassName": false
+  },
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "enum": [
+        "basic",
+        "compact"
+      ],
+      "default": "basic"
+    },
+    "taxonomy": {
+      "type": "string",
+      "default": "category"
+    },
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "orderBy": {
+      "type": "string",
+      "enum": [
+        "id",
+        "name",
+        "slug",
+        "posts"
+      ],
+      "default": "posts"
+    },
+    "order": {
+      "type": "string",
+      "enum": [
+        "desc",
+        "asc"
+      ],
+      "default": "desc"
+    },
+    "class": {
+      "type": "string",
+      "default": ""
+    },
+    "showCounts": {
+      "type": "boolean",
+      "default": true
+    },
+    "columns": {
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 6
+    },
+    "varFontSize": {
+      "type": "integer",
+      "default": 16,
+      "minimal": 1
+    },
+    "varLineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "varBackground": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "varColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    }
+  },
+  "editorScript": "archivespress-blocks-editor",
+  "editorStyle": "archivespress"
+}

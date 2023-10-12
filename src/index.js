@@ -1,3 +1,3 @@
-import './authors/index.js';
-import './dates/index.js';
-import './terms/index.js';
+import './blocks/authors/index.js';
+import './blocks/dates/index.js';
+import './blocks/terms/index.js';

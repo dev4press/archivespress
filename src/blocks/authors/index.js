@@ -4,93 +4,11 @@ import {Disabled, FontSizePicker, PanelBody, RangeControl, SelectControl, TextCo
 import {registerBlockType} from '@wordpress/blocks';
 import {InspectorControls} from "@wordpress/editor";
 import {__} from "@wordpress/i18n";
-import icons from "../icons";
+import icons from "../../icons";
+import metadata from './block.json';
 
-registerBlockType('archivespress/authors', {
-    apiVersion: 2,
-    name: 'archivespress/authors',
-    title: __('Authors Archives Index', 'archivespress'),
-    description: __('Display authors archives index.', 'archivespress'),
+registerBlockType(metadata, {
     icon: icons.authors,
-    category: 'archivespress',
-    attributes: {
-        'layout': {
-            'type': 'string',
-            'enum': [
-                'basic',
-                'compact'
-            ],
-            'default': 'basic'
-        },
-        'postType': {
-            'type': 'string',
-            'default': 'post'
-        },
-        'orderBy': {
-            'type': 'string',
-            'enum': [
-                'id',
-                'name',
-                'slug',
-                'email',
-                'posts'
-            ],
-            'default': 'posts'
-        },
-        'order': {
-            'type': 'string',
-            'enum': [
-                'desc',
-                'asc'
-            ],
-            'default': 'desc'
-        },
-        'class': {
-            'type': 'string',
-            'default': ''
-        },
-        'showCounts': {
-            'type': 'boolean',
-            'default': true
-        },
-        'avatar': {
-            'type': 'boolean',
-            'default': true
-        },
-        'avatarSize': {
-            'type': 'integer',
-            'default': 24,
-            'minimum': 0
-        },
-        'columns': {
-            'type': 'integer',
-            'default': 3,
-            'minimum': 1,
-            'maximum': 6
-        },
-        'varFontSize': {
-            'type': 'integer',
-            'default': 16,
-            'minimal': 1
-        },
-        'varLineHeight': {
-            'type': 'string',
-            'default': ''
-        },
-        'varBackground': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        },
-        'varColor': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        }
-    },
-    supports: {
-        customClassName: false,
-    },
     edit: ({attributes, setAttributes}) => {
         const fontSizes = [
             {

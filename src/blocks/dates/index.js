@@ -4,111 +4,11 @@ import {Disabled, FontSizePicker, PanelBody, SelectControl, TextControl, ToggleC
 import {registerBlockType} from '@wordpress/blocks';
 import {InspectorControls} from "@wordpress/editor";
 import {__} from "@wordpress/i18n";
-import icons from "../icons";
+import icons from "../../icons";
+import metadata from './block.json';
 
-registerBlockType('archivespress/dates', {
-    apiVersion: 2,
-    name: 'archivespress/dates',
-    title: __('Dates Archives Index', 'archivespress'),
-    description: __('Display dates archives index.', 'archivespress'),
+registerBlockType(metadata, {
     icon: icons.dates,
-    category: 'archivespress',
-    attributes: {
-        'layout': {
-            'type': 'string',
-            'enum': [
-                'basic',
-                'compact'
-            ],
-            'default': 'basic'
-        },
-        'postType': {
-            'type': 'string',
-            'default': 'post'
-        },
-        'order': {
-            'type': 'string',
-            'enum': [
-                'desc',
-                'asc'
-            ],
-            'default': 'desc'
-        },
-        'year': {
-            'type': 'string',
-            'enum': [
-                'show',
-                'hide'
-            ],
-            'default': 'show'
-        },
-        'month': {
-            'type': 'string',
-            'enum': [
-                'auto',
-                'number'
-            ],
-            'default': 'auto'
-        },
-        'class': {
-            'type': 'string',
-            'default': ''
-        },
-        'showYearCounts': {
-            'type': 'boolean',
-            'default': true
-        },
-        'showMonthCounts': {
-            'type': 'boolean',
-            'default': true
-        },
-        'showDayCounts': {
-            'type': 'boolean',
-            'default': false
-        },
-        'varFontSize': {
-            'type': 'integer',
-            'default': 16,
-            'minimal': 1
-        },
-        'varLineHeight': {
-            'type': 'string',
-            'default': ''
-        },
-        'varYearBackground': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        },
-        'varYearColor': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        },
-        'varMonthBackground': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        },
-        'varMonthColor': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        },
-        'varDayBackground': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        },
-        'varDayColor': {
-            'type': 'string',
-            'format': 'hex-color',
-            'default': ''
-        }
-    },
-    supports: {
-        customClassName: false,
-    },
     edit: ({attributes, setAttributes}) => {
         const fontSizes = [
             {

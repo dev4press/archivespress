@@ -1,0 +1,102 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "archivespress/dates",
+  "category": "archivespress",
+  "title": "Dates Archives Index",
+  "description": "Display dates archives index.",
+  "textdomain": "archivespress",
+  "version": "3.0",
+  "supports": {
+    "customClassName": false
+  },
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "enum": [
+        "basic",
+        "compact"
+      ],
+      "default": "basic"
+    },
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "order": {
+      "type": "string",
+      "enum": [
+        "desc",
+        "asc"
+      ],
+      "default": "desc"
+    },
+    "year": {
+      "type": "string",
+      "enum": [
+        "show",
+        "hide"
+      ],
+      "default": "show"
+    },
+    "month": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "number"
+      ],
+      "default": "auto"
+    },
+    "class": {
+      "type": "string",
+      "default": ""
+    },
+    "showYearCounts": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMonthCounts": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDayCounts": {
+      "type": "boolean",
+      "default": false
+    },
+    "varFontSize": {
+      "type": "integer",
+      "default": 16,
+      "minimal": 1
+    },
+    "varLineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "varYearBackground": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "varYearColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "varMonthBackground": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "varMonthColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "varDayBackground": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "varDayColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    }
+  },
+  "editorScript": "archivespress-blocks-editor",
+  "editorStyle": "archivespress"
+}

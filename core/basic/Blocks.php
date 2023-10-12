@@ -26,11 +26,7 @@ class Blocks {
 	}
 
 	private function run() {
-		if ( ARCHIVESPRESS_WPV < 58 ) {
-			add_filter( 'block_categories', array( $this, 'categories' ) );
-		} else {
-			add_filter( 'block_categories_all', array( $this, 'categories' ) );
-		}
+		add_filter( 'block_categories_all', array( $this, 'categories' ) );
 
 		add_action( 'init', array( $this, 'blocks' ), 30 );
 	}
@@ -59,253 +55,23 @@ class Blocks {
 
 		wp_set_script_translations( 'archivespress-blocks-editor', 'archivespress' );
 
-		register_block_type( 'archivespress/authors', array(
-			'render_callback' => array( $this, 'callback_authors' ),
-			'attributes'      => array(
-				'layout'        => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'basic',
-						'compact'
-					),
-					'default' => 'basic'
-				),
-				'postType'      => array(
-					'type'    => 'string',
-					'default' => 'post'
-				),
-				'orderBy'       => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'id',
-						'name',
-						'slug',
-						'email',
-						'posts'
-					),
-					'default' => 'posts'
-				),
-				'order'         => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'desc',
-						'asc'
-					),
-					'default' => 'desc'
-				),
-				'class'         => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'showCounts'    => array(
-					'type'    => 'boolean',
-					'default' => true
-				),
-				'avatar'        => array(
-					'type'    => 'boolean',
-					'default' => true
-				),
-				'avatarSize'    => array(
-					'type'    => 'integer',
-					'default' => 24,
-					'minimum' => 0
-				),
-				'columns'       => array(
-					'type'    => 'integer',
-					'default' => 3,
-					'minimum' => 1,
-					'maximum' => 6
-				),
-				'varFontSize'   => array(
-					'type'    => 'integer',
-					'default' => 16,
-					'minimal' => 1
-				),
-				'varLineHeight' => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varBackground' => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varColor'      => array(
-					'type'    => 'string',
-					'default' => ''
-				)
-			),
-			'textdomain'      => 'archivespress',
-			'editor_script'   => 'archivespress-blocks-editor',
-			'editor_style'    => 'archivespress'
-		) );
+		register_block_type( ARCHIVESPRESS_BLOCKS_PATH . 'authors',
+			array(
+				'render_callback' => array( $this, 'callback_authors' )
+			)
+		);
 
-		register_block_type( 'archivespress/dates', array(
-			'render_callback' => array( $this, 'callback_dates' ),
-			'attributes'      => array(
-				'layout'             => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'basic',
-						'compact'
-					),
-					'default' => 'basic'
-				),
-				'postType'           => array(
-					'type'    => 'string',
-					'default' => 'post'
-				),
-				'order'              => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'desc',
-						'asc'
-					),
-					'default' => 'desc'
-				),
-				'class'              => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'year'               => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'show',
-						'hide'
-					),
-					'default' => 'show'
-				),
-				'month'              => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'auto',
-						'number'
-					),
-					'default' => 'auto'
-				),
-				'showYearCounts'     => array(
-					'type'    => 'boolean',
-					'default' => true
-				),
-				'showMonthCounts'    => array(
-					'type'    => 'boolean',
-					'default' => true
-				),
-				'showDayCounts'      => array(
-					'type'    => 'boolean',
-					'default' => false
-				),
-				'varFontSize'        => array(
-					'type'    => 'integer',
-					'default' => 16,
-					'minimal' => 1
-				),
-				'varLineHeight'      => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varYearBackground'  => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varYearColor'       => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varMonthBackground' => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varMonthColor'      => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varDayBackground'   => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varDayColor'        => array(
-					'type'    => 'string',
-					'default' => ''
-				)
-			),
-			'textdomain'      => 'archivespress',
-			'editor_script'   => 'archivespress-blocks-editor',
-			'editor_style'    => 'archivespress'
-		) );
+		register_block_type( ARCHIVESPRESS_BLOCKS_PATH . 'dates',
+			array(
+				'render_callback' => array( $this, 'callback_dates' )
+			)
+		);
 
-		register_block_type( 'archivespress/terms', array(
-			'render_callback' => array( $this, 'callback_terms' ),
-			'attributes'      => array(
-				'layout'        => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'basic',
-						'compact'
-					),
-					'default' => 'basic'
-				),
-				'taxonomy'      => array(
-					'type'    => 'string',
-					'default' => 'category'
-				),
-				'postType'      => array(
-					'type'    => 'string',
-					'default' => 'post'
-				),
-				'orderBy'       => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'id',
-						'name',
-						'slug',
-						'posts'
-					),
-					'default' => 'posts'
-				),
-				'order'         => array(
-					'type'    => 'string',
-					'enum'    => array(
-						'desc',
-						'asc'
-					),
-					'default' => 'desc'
-				),
-				'class'         => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'showCounts'    => array(
-					'type'    => 'boolean',
-					'default' => true
-				),
-				'columns'       => array(
-					'type'    => 'integer',
-					'default' => 3,
-					'minimum' => 1,
-					'maximum' => 6
-				),
-				'varFontSize'   => array(
-					'type'    => 'integer',
-					'default' => 16,
-					'minimal' => 1
-				),
-				'varLineHeight' => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varBackground' => array(
-					'type'    => 'string',
-					'default' => ''
-				),
-				'varColor'      => array(
-					'type'    => 'string',
-					'default' => ''
-				)
-			),
-			'textdomain'      => 'archivespress',
-			'editor_script'   => 'archivespress-blocks-editor',
-			'editor_style'    => 'archivespress'
-		) );
+		register_block_type( ARCHIVESPRESS_BLOCKS_PATH . 'terms',
+			array(
+				'render_callback' => array( $this, 'callback_terms' )
+			)
+		);
 	}
 
 	private function normalize_attributes( $attributes ) : array {

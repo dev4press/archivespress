@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Information {
 	public $code = 'archivespress';
 
-	public $version = '2.5';
-	public $build = 25;
+	public $version = '3.0';
+	public $build = 30;
 	public $edition = 'free';
 	public $status = 'stable';
-	public $updated = '2023.02.03';
+	public $updated = '2023.10.12';
 	public $released = '2021.04.22';
 
 	public $author_name = 'Milan Petrovic';

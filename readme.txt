@@ -1,9 +1,9 @@
-=== ArchivesPress ===
+=== ArchivesPress: Index Blocks for WordPress ===
 Contributors: GDragoN
-Donate link: https://plugins.dev4press.com/archivespress/
+Donate link: https://buymeacoffee.com/millan
 Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 2.6
-Requires at least: 5.7
+Stable tag: 3.0
+Requires at least: 5.8
 Tested up to: 6.3
 Requires PHP: 7.3
 License: GPLv3 or later
@@ -30,7 +30,7 @@ All blocks are available under 'ArchivesPress' block category.
 
 To learn more about each shortcode, available attributes and get some examples, make sure to check out the [knowledge base](https://support.dev4press.com/kb/product/archivespress/) for this plugin.
 
-= Other Features Overview =
+= More Plugin Features =
 * SASS based styling
 * CSS using variables and flex
 * Two layouts for every shortcode
@@ -48,13 +48,13 @@ To learn more about each shortcode, available attributes and get some examples, 
 == Installation ==
 = General Requirements =
 * PHP: 7.3 or newer
-* WordPress: 5.7 or newer
+* WordPress: 5.8 or newer
 
 = PHP Notice =
 * The plugin doesn't work with PHP 7.2 or older versions.
 
 = WordPress Notice =
-* The plugin doesn't work with WordPress 5.6 or older versions.
+* The plugin doesn't work with WordPress 5.7 or older versions.
 
 = Basic Installation =
 * Plugin folder in the WordPress plugins folder should be `archivespress`.
@@ -70,6 +70,12 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 3.0 / October 12, 2023 =
+* New: blocks source uses JSON file format for blocks
+* New: built with the updated core libraries
+* New: requires WordPress 5.8 or newer
+* Fix: issue with having the colors as CSS variables
+
 = Version: 2.6 / July 15, 2023 =
 * New: built with the updated core libraries
 
@@ -108,8 +114,11 @@ The plugin doesn't have any global settings or configuration panels.
 * New: first official version
 
 == Upgrade Notice ==
+= 3.0 =
+Block source format updated. Various improvements and updates.
+
 = 2.6 =
-Various improvements and updates
+Various improvements and updates.
 
 == Screenshots ==
 1. Examples for the Dates Archives Index
