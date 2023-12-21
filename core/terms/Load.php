@@ -81,19 +81,19 @@ class Load implements iLoad {
 			'var-color'       => '',
 		);
 
-		$atts                  = shortcode_atts( $defaults, $atts );
-		$atts[ 'columns' ]     = absint( $atts[ 'columns' ] );
-		$atts[ 'show-counts' ] = is_bool( $atts[ 'show-counts' ] ) ? $atts[ 'show-counts' ] : $atts[ 'show-counts' ] === 'true';
+		$atts                = shortcode_atts( $defaults, $atts );
+		$atts['columns']     = absint( $atts['columns'] );
+		$atts['show-counts'] = is_bool( $atts['show-counts'] ) ? $atts['show-counts'] : $atts['show-counts'] === 'true';
 
-		$data  = $this->cache()->get( $atts[ 'post_type' ] );
-		$terms = $data[ $atts[ 'taxonomy' ] ] ?? array();
+		$data  = $this->cache()->get( $atts['post_type'] );
+		$terms = $data[ $atts['taxonomy'] ] ?? array();
 
 		wp_enqueue_style( 'archivespress' );
 
 		if ( ! empty( $terms ) ) {
 			_prime_term_caches( array_keys( $terms ) );
 
-			$terms = $this->prepare_data( $terms, $atts[ 'taxonomy' ], $atts[ 'orderby' ], $atts[ 'order' ] );
+			$terms = $this->prepare_data( $terms, $atts['taxonomy'], $atts['orderby'], $atts['order'] );
 
 			return $this->layouts()->render( $terms, $atts );
 		}
@@ -113,7 +113,7 @@ class Load implements iLoad {
 					'name'     => $term->name,
 					'slug'     => $term->slug,
 					'taxonomy' => $term->taxonomy,
-					'posts'    => $count
+					'posts'    => $count,
 				);
 			}
 		}

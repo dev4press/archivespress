@@ -2,10 +2,10 @@
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
 Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 3.0
+Stable tag: 3.1
 Requires at least: 5.8
-Tested up to: 6.3
-Requires PHP: 7.3
+Tested up to: 6.4
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,11 +47,11 @@ To learn more about each shortcode, available attributes and get some examples, 
 
 == Installation ==
 = General Requirements =
-* PHP: 7.3 or newer
+* PHP: 7.4 or newer
 * WordPress: 5.8 or newer
 
 = PHP Notice =
-* The plugin doesn't work with PHP 7.2 or older versions.
+* The plugin doesn't work with PHP 7.3 or older versions.
 
 = WordPress Notice =
 * The plugin doesn't work with WordPress 5.7 or older versions.
@@ -70,6 +70,10 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 3.1 / December 21, 2023 =
+* New: updated plugin system requirements
+* New: built with the updated core libraries
+
 = Version: 3.0 / October 12, 2023 =
 * New: blocks source uses JSON file format for blocks
 * New: built with the updated core libraries
@@ -116,6 +120,9 @@ The plugin doesn't have any global settings or configuration panels.
 * New: first official version
 
 == Upgrade Notice ==
+= 3.1 =
+Various improvements and updates.
+
 = 3.0 =
 Block source format updated. Various improvements and updates.
 

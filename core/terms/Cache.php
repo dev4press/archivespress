@@ -71,7 +71,7 @@ ORDER BY
     tt.`taxonomy` ASC,
     `posts` DESC", $post_type );
 
-		$raw = $wpdb->get_results( $sql );
+		$raw = $wpdb->get_results( $sql ); // phpcs:ignore WordPress.DB.PreparedSQL
 
 		$data = array();
 

@@ -70,12 +70,12 @@ GROUP BY
 ORDER BY
       `posts` DESC", $post_type );
 
-		$raw = $wpdb->get_results( $sql, ARRAY_A );
+		$raw = $wpdb->get_results( $sql, ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL
 
 		$data = array();
 
 		foreach ( $raw as $row ) {
-			$data[ $row[ 'id' ] ] = $row;
+			$data[ $row['id'] ] = $row;
 		}
 
 		return $data;

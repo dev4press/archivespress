@@ -37,8 +37,8 @@ class Blocks {
 			array(
 				array(
 					'slug'  => 'archivespress',
-					'title' => __( "ArchivesPress", "archivespress" )
-				)
+					'title' => __( 'ArchivesPress', 'archivespress' ),
+				),
 			)
 		);
 	}
@@ -46,37 +46,37 @@ class Blocks {
 	public function blocks() {
 		$asset_file = include( ARCHIVESPRESS_PATH . 'build/index.asset.php' );
 
-		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', $asset_file[ 'dependencies' ], $asset_file[ 'version' ] );
+		wp_register_script( 'archivespress-blocks-editor', ARCHIVESPRESS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version'] );
 
 		wp_localize_script( 'archivespress-blocks-editor', 'archivespress', array(
 			'post_types' => Helpers::instance()->list_post_types( array( 'public' => true ) ),
-			'taxonomies' => Helpers::instance()->list_taxonomies( array( 'public' => true ) )
+			'taxonomies' => Helpers::instance()->list_taxonomies( array( 'public' => true ) ),
 		) );
 
 		wp_set_script_translations( 'archivespress-blocks-editor', 'archivespress' );
 
 		register_block_type( ARCHIVESPRESS_BLOCKS_PATH . 'authors',
 			array(
-				'render_callback' => array( $this, 'callback_authors' )
+				'render_callback' => array( $this, 'callback_authors' ),
 			)
 		);
 
 		register_block_type( ARCHIVESPRESS_BLOCKS_PATH . 'dates',
 			array(
-				'render_callback' => array( $this, 'callback_dates' )
+				'render_callback' => array( $this, 'callback_dates' ),
 			)
 		);
 
 		register_block_type( ARCHIVESPRESS_BLOCKS_PATH . 'terms',
 			array(
-				'render_callback' => array( $this, 'callback_terms' )
+				'render_callback' => array( $this, 'callback_terms' ),
 			)
 		);
 	}
 
 	private function normalize_attributes( $attributes ) : array {
 		$output = array(
-			'_source' => 'block'
+			'_source' => 'block',
 		);
 
 		$map = array(
@@ -95,7 +95,7 @@ class Blocks {
 			'varMonthBackground' => 'var-month-background',
 			'varMonthColor'      => 'var-month-color',
 			'varDayBackground'   => 'var-day-background',
-			'varDayColor'        => 'var-day-color'
+			'varDayColor'        => 'var-day-color',
 		);
 
 		foreach ( $attributes as $key => $value ) {
@@ -103,13 +103,13 @@ class Blocks {
 			$output[ $new_key ] = $value;
 		}
 
-		if ( isset( $output[ 'avatar' ] ) && $output[ 'avatar' ] == 'true' ) {
-			$output[ 'avatar' ] = $output[ 'avatarSize' ];
-			unset( $output[ 'avatarSize' ] );
+		if ( isset( $output['avatar'] ) && $output['avatar'] == 'true' ) {
+			$output['avatar'] = $output['avatarSize'];
+			unset( $output['avatarSize'] );
 		}
 
-		if ( ! empty( $output[ 'var-font-size' ] ) ) {
-			$output[ 'var-font-size' ] = $output[ 'var-font-size' ] . 'px';
+		if ( ! empty( $output['var-font-size'] ) ) {
+			$output['var-font-size'] = $output['var-font-size'] . 'px';
 		}
 
 		return $output;

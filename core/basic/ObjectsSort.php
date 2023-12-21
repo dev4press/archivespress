@@ -27,8 +27,8 @@ class ObjectsSort {
 	}
 
 	public function array_compare( $one, $two, $i = 0 ) : int {
-		$column = $this->properties[ $i ][ 'property' ];
-		$order  = strtolower( $this->properties[ $i ][ 'order' ] );
+		$column = $this->properties[ $i ]['property'];
+		$order  = strtolower( $this->properties[ $i ]['order'] );
 
 		if ( $one->$column == $two->$column ) {
 			if ( $i < count( $this->properties ) - 1 ) {
