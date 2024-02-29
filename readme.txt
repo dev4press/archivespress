@@ -1,10 +1,10 @@
 === ArchivesPress: Index Blocks for WordPress ===
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
-Tags: dev4press, blocks, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 3.1
-Requires at least: 5.8
-Tested up to: 6.4
+Tags: blocks, dev4press, archives, navigation, index, dates, years, months, days, terms, authors
+Stable tag: 3.2
+Requires at least: 6.0
+Tested up to: 6.5
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,11 +17,11 @@ Display indexes based on the dates (years, months and days archives), authors an
 The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling. And, the plugin also includes three blocks for the Gutenberg Block Editor. Each block can be configured via the Block Sidebar.
 
 = Block Editor Blocks =
+All blocks are available under 'ArchivesPress' block category.
+
 * Dates Archives Index
 * Authors Archives Index
 * Terms Archives Index
-
-All blocks are available under 'ArchivesPress' block category.
 
 = Shortcodes =
 * Dates Archives Index: `[archivespress-dates]`
@@ -48,13 +48,13 @@ To learn more about each shortcode, available attributes and get some examples, 
 == Installation ==
 = General Requirements =
 * PHP: 7.4 or newer
-* WordPress: 5.8 or newer
+* WordPress: 6.0 or newer
 
 = PHP Notice =
 * The plugin doesn't work with PHP 7.3 or older versions.
 
 = WordPress Notice =
-* The plugin doesn't work with WordPress 5.7 or older versions.
+* The plugin doesn't work with WordPress 5.9 or older versions.
 
 = Basic Installation =
 * Plugin folder in the WordPress plugins folder should be `archivespress`.
@@ -70,9 +70,13 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 3.2 / March 1, 2024 =
+* New: updated plugin system requirements
+* Edit: built with the updated core libraries
+
 = Version: 3.1 / December 21, 2023 =
 * New: updated plugin system requirements
-* New: built with the updated core libraries
+* Edit: built with the updated core libraries
 
 = Version: 3.0 / October 12, 2023 =
 * New: blocks source uses JSON file format for blocks
@@ -120,14 +124,14 @@ The plugin doesn't have any global settings or configuration panels.
 * New: first official version
 
 == Upgrade Notice ==
+= 3.2 =
+Various improvements and updates.
+
 = 3.1 =
 Various improvements and updates.
 
 = 3.0 =
 Block source format updated. Various improvements and updates.
-
-= 2.6 =
-Various improvements and updates.
 
 == Screenshots ==
 1. Examples for the Dates Archives Index
