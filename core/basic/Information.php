@@ -13,7 +13,7 @@ class Information {
 	public $build = 32;
 	public $edition = 'free';
 	public $status = 'stable';
-	public $updated = '2024.03.01';
+	public $updated = '2024.03.02';
 	public $released = '2021.04.22';
 
 	public $author_name = 'Milan Petrovic';

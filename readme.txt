@@ -70,7 +70,7 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
-= Version: 3.2 / March 1, 2024 =
+= Version: 3.2 / March 2, 2024 =
 * New: updated plugin system requirements
 * Edit: built with the updated core libraries
 
