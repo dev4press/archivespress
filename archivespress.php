@@ -6,9 +6,9 @@
  * Author:            Milan Petrovic
  * Author URI:        https://www.dev4press.com/
  * Text Domain:       archivespress
- * Version:           3.2
- * Requires at least: 5.8
- * Tested up to:      6.5
+ * Version:           3.3
+ * Requires at least: 6.1
+ * Tested up to:      6.6
  * Requires PHP:      7.4
  * License:           GPLv3 or later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
@@ -34,7 +34,7 @@
 
 use Dev4Press\Plugin\ArchivesPress\Basic\Plugin;
 
-const ARCHIVESPRESS_VERSION = '3.2';
+const ARCHIVESPRESS_VERSION = '3.3';
 
 $archivespress_dirname_basic = dirname( __FILE__ ) . '/';
 $archivespress_urlname_basic = plugins_url( '/', __FILE__ );

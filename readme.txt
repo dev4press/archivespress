@@ -1,10 +1,10 @@
 === ArchivesPress: Index Blocks for WordPress ===
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
-Tags: blocks, dev4press, archives, navigation, index, dates, years, months, days, terms, authors
-Stable tag: 3.2
-Requires at least: 6.0
-Tested up to: 6.5
+Tags: blocks, dev4press, archives, navigation, index
+Stable tag: 3.3
+Requires at least: 6.1
+Tested up to: 6.6
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -70,6 +70,12 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 3.3 / June 28, 2024 =
+* New: updated plugin system requirements
+* Edit: reverted blocks packages dependencies and build to WP 6.1
+* Fix: minor issue with duplicated directives for multi block
+* Fix: block dependencies causing blocks to not load
+
 = Version: 3.2 / March 2, 2024 =
 * New: updated plugin system requirements
 * Edit: built with the updated core libraries
@@ -124,6 +130,9 @@ The plugin doesn't have any global settings or configuration panels.
 * New: first official version
 
 == Upgrade Notice ==
+= 3.3 =
+Various improvements and updates.
+
 = 3.2 =
 Various improvements and updates.
 
