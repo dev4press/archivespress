@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### Version: 3.4 / October 1, 2024
+
+
+
 ### Version: 3.3 / June 28, 2024
 
 * **new** updated plugin system requirements
