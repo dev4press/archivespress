@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "archivespress/dates",
   "category": "archivespress",
   "title": "Dates Archives Index",
   "description": "Display dates archives index.",
   "textdomain": "archivespress",
-  "version": "3.0",
+  "version": "3.4",
   "supports": {
     "customClassName": false
   },

@@ -9,18 +9,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Information {
 	public $code = 'archivespress';
 
-	public $version = '3.2';
-	public $build = 32;
+	public $version = '3.4';
+	public $build = 34;
 	public $edition = 'free';
 	public $status = 'stable';
-	public $updated = '2024.03.02';
+	public $updated = '2026.07.19';
 	public $released = '2021.04.22';
 
 	public $author_name = 'Milan Petrovic';
 	public $author_url = 'https://www.dev4press.com/';
 
-	public $php = '7.4';
-	public $wordpress = '6.0';
+	public $php = '8.0';
+	public $wordpress = '6.4';
 
 	public static function instance() : Information {
 		static $instance = null;

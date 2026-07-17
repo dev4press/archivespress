@@ -19,7 +19,7 @@ msgid "ArchivesPress: Index Blocks for WordPress"
 msgstr ""
 
 #. Plugin URI of the plugin
-msgid "https://plugins.dev4press.com/archivespress/"
+msgid "https://www.dev4press.com/plugins/archivespress/"
 msgstr ""
 
 #. Description of the plugin

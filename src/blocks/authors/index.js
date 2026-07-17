@@ -121,7 +121,7 @@ registerBlockType(metadata, {
                             label={__('Font Size', 'archivespress')}
                             value={attributes.varFontSize}
                             onChange={(value) => setAttributes({varFontSize: value})}
-                            fallBackFontSize={16}
+                            fallbackFontSize={16}
                             fontSizes={fontSizes}
                         />
                         <LineHeightControl

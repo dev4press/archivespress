@@ -2,10 +2,10 @@
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
 Tags: blocks, dev4press, archives, navigation, index
-Stable tag: 3.3
-Requires at least: 6.1
-Tested up to: 6.6
-Requires PHP: 7.4
+Stable tag: 3.4
+Requires at least: 6.4
+Tested up to: 7.0
+Requires PHP: 8.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,21 +40,21 @@ To learn more about each shortcode, available attributes and get some examples, 
 * Load styling file only when needed
 
 = Home, Knowledge Base, Support and GitHub =
-* Learn more About the Plugin: [ArchivesPress Website](https://plugins.dev4press.com/archivespress/)
-* Shortcodes Configuration: [ArchivesPress Knowledge Base](https://support.dev4press.com/kb/product/archivespress/)
+* Learn more About the Plugin: [ArchivesPress Website](https://www.dev4press.com/plugins/archivespress/)
+* Shortcodes Configuration: [ArchivesPress Knowledge Base](https://www.dev4press.com/kb/product/archivespress/)
 * Support Forum: [Dev4Press Support](https://support.dev4press.com/forums/forum/plugins-free/archivespress/)
 * Contribute to Plugin Development: [ArchivesPress on GitHub](https://github.com/dev4press/archivespress)
 
 == Installation ==
 = General Requirements =
-* PHP: 7.4 or newer
-* WordPress: 6.0 or newer
+* PHP: 8.0 or newer
+* WordPress: 6.4 or newer
 
 = PHP Notice =
-* The plugin doesn't work with PHP 7.3 or older versions.
+* The plugin doesn't work with PHP 7.4 or older versions.
 
 = WordPress Notice =
-* The plugin doesn't work with WordPress 5.9 or older versions.
+* The plugin doesn't work with WordPress 6.3 or older versions.
 
 = Basic Installation =
 * Plugin folder in the WordPress plugins folder should be `archivespress`.
@@ -70,6 +70,10 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 3.4 / July 19, 2026 =
+* Edit: updated blocks to API version 3
+* Edit: updated blocks packages dependencies to WP 6.4
+
 = Version: 3.3 / June 28, 2024 =
 * New: updated plugin system requirements
 * Edit: reverted blocks packages dependencies and build to WP 6.1
@@ -130,6 +134,9 @@ The plugin doesn't have any global settings or configuration panels.
 * New: first official version
 
 == Upgrade Notice ==
+= 3.4 =
+Block source format updated. Various improvements and updates.
+
 = 3.3 =
 Various improvements and updates.
 
@@ -138,9 +145,6 @@ Various improvements and updates.
 
 = 3.1 =
 Various improvements and updates.
-
-= 3.0 =
-Block source format updated. Various improvements and updates.
 
 == Screenshots ==
 1. Examples for the Dates Archives Index
