@@ -6,7 +6,7 @@
   "title": "Dates Archives Index",
   "description": "Display dates archives index.",
   "textdomain": "archivespress",
-  "version": "3.4",
+  "version": "3.5",
   "supports": {
     "customClassName": false
   },
