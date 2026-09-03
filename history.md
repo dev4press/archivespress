@@ -2,6 +2,15 @@
 
 ## Changelog
 
+### Version: 3.0 / October 12, 2023
+
+* **new** blocks source uses JSON file format for blocks
+* **new** built with the updated core libraries
+* **new** requires WordPress 5.8 or newer
+* **edit** few changes to the block controls imports
+* **edit** updated missing default values for blocks
+* **fix** issue with having the colors as CSS variables
+
 ### Version: 2.6 / July 15, 2023
 
 * **new** built with the updated core libraries
