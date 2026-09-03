@@ -2,9 +2,9 @@
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
 Tags: blocks, dev4press, archives, navigation, index
-Stable tag: 3.4
-Requires at least: 6.4
-Tested up to: 7.0
+Stable tag: 3.5
+Requires at least: 6.7
+Tested up to: 7.1
 Requires PHP: 8.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,12 +12,12 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts.
 
 == Description ==
-Display indexes based on the dates (years, months and days archives), authors and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode or block used.
+Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode or block used.
 
 The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling. And, the plugin also includes three blocks for the Gutenberg Block Editor. Each block can be configured via the Block Sidebar.
 
 = Block Editor Blocks =
-All blocks are available under 'ArchivesPress' block category.
+All blocks are available under the 'ArchivesPress' block category.
 
 * Dates Archives Index
 * Authors Archives Index
@@ -48,13 +48,13 @@ To learn more about each shortcode, available attributes and get some examples, 
 == Installation ==
 = General Requirements =
 * PHP: 8.0 or newer
-* WordPress: 6.4 or newer
+* WordPress: 6.7 or newer
 
 = PHP Notice =
 * The plugin doesn't work with PHP 7.4 or older versions.
 
 = WordPress Notice =
-* The plugin doesn't work with WordPress 6.3 or older versions.
+* The plugin doesn't work with WordPress 6.6 or older versions.
 
 = Basic Installation =
 * Plugin folder in the WordPress plugins folder should be `archivespress`.
@@ -70,6 +70,10 @@ All three blocks registered by this plugin are listed under 'ArchivesPress' bloc
 The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
+= Version: 3.5 / September 3, 2026 =
+
+* Edit: updated various dependencies
+
 = Version: 3.4 / July 19, 2026 =
 * Edit: updated blocks to API version 3
 * Edit: updated blocks packages dependencies to WP 6.4

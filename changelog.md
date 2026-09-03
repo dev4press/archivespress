@@ -2,6 +2,11 @@
 
 ## Changelog
 
+### Version: 3.5 / September 3, 2026
+
+* **edit** updated various dependencies
+* **edit** updated blocks packages dependencies to WP 6.7
+
 ### Version: 3.4 / July 19, 2026
 
 * **edit** updated blocks to API version 3
