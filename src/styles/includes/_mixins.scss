@@ -1,0 +1,59 @@
+@use "direction" as *;
+
+@mixin button-link-year {
+    background: var(--archivespress-dates-year-background);
+    color: var(--archivespress-dates-year-color);
+    padding: .33em .66em;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 10em;
+    @include ltr {
+        text-align: left;
+    }
+    @include rtl {
+        text-align: right;
+    }
+
+    a {
+        color: var(--archivespress-dates-year-color);
+    }
+}
+
+@mixin button-link-month {
+    background: var(--archivespress-dates-month-background);
+    color: var(--archivespress-dates-month-color);
+    padding: .33em .66em;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 15em;
+    @include ltr {
+        text-align: left;
+    }
+    @include rtl {
+        text-align: right;
+    }
+
+    a {
+        color: var(--archivespress-dates-month-color);
+    }
+}
+
+@mixin button-link-day {
+    background: var(--archivespress-dates-day-background);
+    color: var(--archivespress-dates-day-color);
+    padding: .33em .66em;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 2.5em;
+    text-align: center;
+    @include ltr {
+        margin: 0 .66em .66em 0;
+    }
+    @include rtl {
+        margin: 0 0 .66em .66em;
+    }
+
+    a {
+        color: var(--archivespress-dates-day-color);
+    }
+}

@@ -6,6 +6,7 @@ use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
 use Dev4Press\Plugin\ArchivesPress\Basic\ObjectsSort;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 use WP_Term;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Load implements iLoad {
 	protected $post_type;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Load {
@@ -82,6 +83,13 @@ class Load implements iLoad {
 		);
 
 		$atts                = shortcode_atts( $defaults, $atts );
+		if ( ! Helpers::instance()->public_post_type( $atts['post_type'] ) || ! is_string( $atts['taxonomy'] ) ) {
+			return '';
+		}
+		$taxonomy = get_taxonomy( $atts['taxonomy'] );
+		if ( ! $taxonomy || ! $taxonomy->public || ! is_object_in_taxonomy( $atts['post_type'], $atts['taxonomy'] ) ) {
+			return '';
+		}
 		$atts['columns']     = absint( $atts['columns'] );
 		$atts['show-counts'] = is_bool( $atts['show-counts'] ) ? $atts['show-counts'] : $atts['show-counts'] === 'true';
 

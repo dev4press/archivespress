@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Blocks {
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Blocks {

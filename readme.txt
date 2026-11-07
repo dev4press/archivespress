@@ -2,10 +2,10 @@
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
 Tags: blocks, dev4press, archives, navigation, index
-Stable tag: 3.5
+Stable tag: 4.0
 Requires at least: 6.7
-Tested up to: 7.1
-Requires PHP: 8.0
+Tested up to: 7.2
+Requires PHP: 8.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -71,7 +71,6 @@ The plugin doesn't have any global settings or configuration panels.
 
 == Changelog ==
 = Version: 3.5 / September 3, 2026 =
-
 * Edit: updated various dependencies
 
 = Version: 3.4 / July 19, 2026 =

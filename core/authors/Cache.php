@@ -9,10 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Cache implements iCache {
-	protected $key = 'archivespress-authors-data-' . ARCHIVESPRESS_VERSION;
-	protected $period = WEEK_IN_SECONDS;
+	protected string $key = 'archivespress-authors-public-data-' . ARCHIVESPRESS_VERSION;
+	protected int|float $period = WEEK_IN_SECONDS;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Cache {
@@ -64,7 +64,7 @@ FROM
     INNER JOIN $wpdb->users u ON u.`ID` = p.`post_author`
 WHERE
       p.`post_type` = %s AND
-      p.`post_status` = 'publish'
+      p.`post_status` = 'publish' AND p.`post_password` = ''
 GROUP BY
       `id`
 ORDER BY

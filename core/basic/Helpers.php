@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Helpers {
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Helpers {
@@ -40,5 +40,34 @@ class Helpers {
 		}
 
 		return $list;
+	}
+
+	/** Return only CSS values that are safe in an inline style element. */
+	public function css_value( $key, $value ) : string {
+		if ( ! is_scalar( $value ) ) {
+			return '';
+		}
+
+		$value = trim( (string) $value );
+
+		if ( $key === 'font-size' ) {
+			return preg_match( '/^(?:0|(?:\d+(?:\.\d+)?|\.\d+)(?:px|em|rem|%|vh|vw))$/i', $value ) ? $value : '';
+		}
+
+		if ( $key === 'line-height' ) {
+			return preg_match( '/^(?:\d+(?:\.\d+)?|\.\d+)(?:px|em|rem|%)?$/i', $value ) ? $value : '';
+		}
+
+		return preg_match( '/^(?:#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]+)$/i', $value ) ? $value : '';
+	}
+
+	public function public_post_type( $post_type ) : bool {
+		if ( ! is_string( $post_type ) ) {
+			return false;
+		}
+
+		$object = get_post_type_object( $post_type );
+
+		return $object && $object->public;
 	}
 }

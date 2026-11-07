@@ -9,10 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Cache implements iCache {
-	protected $key = 'archivespress-dates-data-' . ARCHIVESPRESS_VERSION;
+	protected $key = 'archivespress-dates-public-data-' . ARCHIVESPRESS_VERSION;
 	protected $period = WEEK_IN_SECONDS;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Cache {
@@ -62,7 +62,7 @@ FROM
     $wpdb->posts
 WHERE
     `post_type` = %s AND
-    `post_status` = 'publish'
+    `post_status` = 'publish' AND `post_password` = ''
 GROUP BY
     `year`, `month`, `day`
 ORDER BY

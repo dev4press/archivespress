@@ -5,6 +5,7 @@ namespace Dev4Press\Plugin\ArchivesPress\Dates;
 use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -13,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Load implements iLoad {
 	protected $post_type;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Load {
@@ -86,6 +87,9 @@ class Load implements iLoad {
 		);
 
 		$atts                      = shortcode_atts( $defaults, $atts );
+		if ( ! Helpers::instance()->public_post_type( $atts['post_type'] ) ) {
+			return '';
+		}
 		$atts['show-year-counts']  = is_bool( $atts['show-year-counts'] ) ? $atts['show-year-counts'] : $atts['show-year-counts'] === 'true';
 		$atts['show-month-counts'] = is_bool( $atts['show-month-counts'] ) ? $atts['show-month-counts'] : $atts['show-month-counts'] === 'true';
 		$atts['show-day-counts']   = is_bool( $atts['show-day-counts'] ) ? $atts['show-day-counts'] : $atts['show-day-counts'] === 'true';
