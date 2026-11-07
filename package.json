@@ -1,6 +1,6 @@
 {
 	"name": "archivespress",
-	"version": "3.5.0",
+	"version": "4.0.0",
 	"description": "WordPress plugin for generating archives indexes using shortcodes and blocks.",
 	"author": "Milan Petrovic",
 	"license": "GPL-3.0-or-later",

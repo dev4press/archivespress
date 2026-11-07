@@ -25,7 +25,7 @@ class Cache implements iCache {
 		return $instance;
 	}
 
-	public function clear( $post_type = 'post' ) {
+	public function clear( $post_type = 'post' ) : void {
 		delete_transient( $this->key( $post_type ) );
 	}
 

@@ -58,7 +58,7 @@ class Helpers {
 			return preg_match( '/^(?:\d+(?:\.\d+)?|\.\d+)(?:px|em|rem|%)?$/i', $value ) ? $value : '';
 		}
 
-		return preg_match( '/^(?:#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]+)$/i', $value ) ? $value : '';
+		return preg_match( '/^(?:#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]+|(?:rgba?|hsla?)\([0-9.,%+\-\/\s]+\))$/i', $value ) ? $value : '';
 	}
 
 	public function public_post_type( $post_type ) : bool {

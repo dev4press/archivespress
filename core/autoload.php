@@ -4,11 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function d4p_plugin_archivespress_autoload( $class ) {
+function d4p_plugin_archivespress_autoload( $class ) : void {
 	$path = dirname( __FILE__ ) . '/';
 	$base = 'Dev4Press\\Plugin\\ArchivesPress\\';
 
-	if ( substr( $class, 0, strlen( $base ) ) == $base ) {
+	if ( str_starts_with( $class, $base ) ) {
 		$clean = substr( $class, strlen( $base ) );
 
 		$parts = explode( '\\', $clean );

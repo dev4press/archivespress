@@ -34,13 +34,13 @@ class Load implements iLoad {
 		add_action( 'archivespress-clear-cache', array( $this, 'clear_cache' ) );
 	}
 
-	public function init() {
+	public function init() : void {
 		$this->post_type = apply_filters( 'archivespress-authors-post-types', 'post' );
 
 		add_shortcode( 'archivespress-authors', array( $this, 'shortcode' ) );
 	}
 
-	public function clear_cache( $post_type ) {
+	public function clear_cache( $post_type ) : void {
 		$this->cache()->clear( $post_type );
 	}
 

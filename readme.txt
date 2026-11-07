@@ -1,7 +1,7 @@
 === ArchivesPress: Index Blocks for WordPress ===
 Contributors: GDragoN
 Donate link: https://buymeacoffee.com/millan
-Tags: blocks, dev4press, archives, navigation, index
+Tags: archives, navigation, index, blocks, elementor
 Stable tag: 4.0
 Requires at least: 6.7
 Tested up to: 7.2
@@ -15,6 +15,8 @@ Display indexes based on the dates (years, months, and days archives), authors, 
 Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode or block used.
 
 The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling. And, the plugin also includes three blocks for the Gutenberg Block Editor. Each block can be configured via the Block Sidebar.
+
+When Elementor 3.1 or newer is active, the plugin also provides Dates, Authors, and Terms Archives Index widgets. Their content settings use the same archive data and layouts as the blocks, while Elementor's Style tab provides typography, colors, spacing, and borders.
 
 = Block Editor Blocks =
 All blocks are available under the 'ArchivesPress' block category.
@@ -47,11 +49,11 @@ To learn more about each shortcode, available attributes and get some examples, 
 
 == Installation ==
 = General Requirements =
-* PHP: 8.0 or newer
+* PHP: 8.1 or newer
 * WordPress: 6.7 or newer
 
 = PHP Notice =
-* The plugin doesn't work with PHP 7.4 or older versions.
+* The plugin doesn't work with PHP 8.0 or older versions.
 
 = WordPress Notice =
 * The plugin doesn't work with WordPress 6.6 or older versions.

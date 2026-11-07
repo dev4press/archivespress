@@ -80,7 +80,6 @@ registerBlockType(metadata, {
                                 {label: __("ID"), value: 'id'},
                                 {label: __("Name"), value: 'name'},
                                 {label: __("Slug"), value: 'slug'},
-                                {label: __("Email"), value: 'email'},
                                 {label: __("Posts"), value: 'posts'}
                             ]}
                             onChange={(value) => setAttributes({orderBy: value})}

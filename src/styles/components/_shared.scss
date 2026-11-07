@@ -2,7 +2,7 @@
 
 .archivespress-wrapper {
     .info-counts {
-        font-weight: 300;
+        font-weight: var(--archivespress-count-weight, 300);
         @include ltr {
             float: right;
             margin: 0 0 0 1em;

@@ -59,13 +59,13 @@ class Layouts implements iLayouts {
 	}
 
 	protected function get_month_link( $post_type, $year, $month ) : string {
-		$url = apply_filters( 'archivespress-dates-get-month-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-month-link-' . $post_type, null, $year, $month );
 
 		return is_null( $url ) && ! is_string( $url ) ? get_month_link( $year, $month ) : $url;
 	}
 
 	protected function get_day_link( $post_type, $year, $month, $day ) : string {
-		$url = apply_filters( 'archivespress-dates-get-day-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-day-link-' . $post_type, null, $year, $month, $day );
 
 		return is_null( $url ) && ! is_string( $url ) ? get_day_link( $year, $month, $day ) : $url;
 	}

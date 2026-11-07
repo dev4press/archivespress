@@ -93,11 +93,21 @@
         .archivespress-terms-term {
             background: var(--archivespress-terms-background);
             color: var(--archivespress-terms-color);
-            padding: .33em .66em;
-            font-weight: bold;
+            padding: var(--archivespress-terms-item-padding, .33em .66em);
+            border-radius: var(--archivespress-terms-item-radius, 0);
+            font-weight: var(--archivespress-terms-item-weight, bold);
 
             .link-name {
                 color: var(--archivespress-terms-color);
+            }
+
+            :where(.wp-elementor-archivespress-terms) &:hover {
+                background: var(--archivespress-terms-hover-background, var(--archivespress-terms-background));
+                color: var(--archivespress-terms-hover-color, var(--archivespress-terms-color));
+
+                .link-name {
+                    color: var(--archivespress-terms-hover-color, var(--archivespress-terms-color));
+                }
             }
         }
     }

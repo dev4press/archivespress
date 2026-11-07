@@ -3,8 +3,9 @@
 @mixin button-link-year {
     background: var(--archivespress-dates-year-background);
     color: var(--archivespress-dates-year-color);
-    padding: .33em .66em;
-    font-weight: bold;
+    padding: var(--archivespress-dates-year-padding, .33em .66em);
+    border-radius: var(--archivespress-dates-year-radius, 0);
+    font-weight: var(--archivespress-dates-year-weight, bold);
     display: inline-block;
     min-width: 10em;
     @include ltr {
@@ -17,13 +18,20 @@
     a {
         color: var(--archivespress-dates-year-color);
     }
+
+    :where(.wp-elementor-archivespress-dates) &:hover {
+        background: var(--archivespress-dates-year-hover-background, var(--archivespress-dates-year-background));
+        color: var(--archivespress-dates-year-hover-color, var(--archivespress-dates-year-color));
+        a { color: var(--archivespress-dates-year-hover-color, var(--archivespress-dates-year-color)); }
+    }
 }
 
 @mixin button-link-month {
     background: var(--archivespress-dates-month-background);
     color: var(--archivespress-dates-month-color);
-    padding: .33em .66em;
-    font-weight: bold;
+    padding: var(--archivespress-dates-month-padding, .33em .66em);
+    border-radius: var(--archivespress-dates-month-radius, 0);
+    font-weight: var(--archivespress-dates-month-weight, bold);
     display: inline-block;
     min-width: 15em;
     @include ltr {
@@ -36,13 +44,20 @@
     a {
         color: var(--archivespress-dates-month-color);
     }
+
+    :where(.wp-elementor-archivespress-dates) &:hover {
+        background: var(--archivespress-dates-month-hover-background, var(--archivespress-dates-month-background));
+        color: var(--archivespress-dates-month-hover-color, var(--archivespress-dates-month-color));
+        a { color: var(--archivespress-dates-month-hover-color, var(--archivespress-dates-month-color)); }
+    }
 }
 
 @mixin button-link-day {
     background: var(--archivespress-dates-day-background);
     color: var(--archivespress-dates-day-color);
-    padding: .33em .66em;
-    font-weight: bold;
+    padding: var(--archivespress-dates-day-padding, .33em .66em);
+    border-radius: var(--archivespress-dates-day-radius, 0);
+    font-weight: var(--archivespress-dates-day-weight, bold);
     display: inline-block;
     min-width: 2.5em;
     text-align: center;
@@ -55,5 +70,11 @@
 
     a {
         color: var(--archivespress-dates-day-color);
+    }
+
+    :where(.wp-elementor-archivespress-dates) &:hover {
+        background: var(--archivespress-dates-day-hover-background, var(--archivespress-dates-day-background));
+        color: var(--archivespress-dates-day-hover-color, var(--archivespress-dates-day-color));
+        a { color: var(--archivespress-dates-day-hover-color, var(--archivespress-dates-day-color)); }
     }
 }

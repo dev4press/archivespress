@@ -105,8 +105,9 @@
         .archivespress-authors-author {
             background: var(--archivespress-authors-background);
             color: var(--archivespress-authors-color);
-            padding: .66em;
-            font-weight: bold;
+            padding: var(--archivespress-authors-item-padding, .66em);
+            border-radius: var(--archivespress-authors-item-radius, 0);
+            font-weight: var(--archivespress-authors-item-weight, bold);
 
             .link-avatar {
                 display: block;
@@ -126,6 +127,15 @@
 
             .link-name {
                 color: var(--archivespress-authors-color);
+            }
+
+            :where(.wp-elementor-archivespress-authors) &:hover {
+                background: var(--archivespress-authors-hover-background, var(--archivespress-authors-background));
+                color: var(--archivespress-authors-hover-color, var(--archivespress-authors-color));
+
+                .link-name {
+                    color: var(--archivespress-authors-hover-color, var(--archivespress-authors-color));
+                }
             }
         }
     }

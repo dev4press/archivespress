@@ -4,6 +4,7 @@ namespace Dev4Press\Plugin\ArchivesPress\Basic;
 
 use Dev4Press\Plugin\ArchivesPress\Authors\Load as LoadAuthors;
 use Dev4Press\Plugin\ArchivesPress\Dates\Load as LoadDates;
+use Dev4Press\Plugin\ArchivesPress\Elementor\Loader;
 use Dev4Press\Plugin\ArchivesPress\Terms\Load as LoadTerms;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -11,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Plugin {
+	public bool $elementor_available = false;
 	private function __construct() {
 	}
 
@@ -30,6 +32,8 @@ class Plugin {
 		LoadAuthors::instance();
 		LoadTerms::instance();
 
+		add_action( 'plugins_loaded', array( $this, 'load_elementor' ) );
+
 		if ( function_exists( 'register_block_type' ) ) {
 			Blocks::instance();
 		}
@@ -41,6 +45,14 @@ class Plugin {
 		add_action( 'save_post', array( $this, 'post_saved' ), 10, 2 );
 		add_action( 'set_object_terms', array( $this, 'terms_changed' ), 10, 1 );
 		add_action( 'profile_update', array( $this, 'profile_updated' ) );
+	}
+
+	public function load_elementor() : void {
+		$this->elementor_available = did_action( 'elementor/loaded' ) > 0 && defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.1.0', '>=' );
+
+		if ( $this->elementor_available ) {
+			Loader::instance();
+		}
 	}
 
 	public function styles() : void {
