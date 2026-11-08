@@ -1,0 +1,24 @@
+<!-- post-title: archivespress-authors-post-types filter -->
+
+<!-- wp:gdkob/source {"type":"filter","show_code_line":false,"hide_default":true} -->
+<div class="wp-block-gdkob-source gdkob-source gdkob-source-filter"><div class="gdkob-source-inner"><div class="_definition"><h5 class="_title">Definition</h5><div class="_format"><span class="_prefix">apply_filters( </span><span class="_wrapper">&quot;</span><span class="_name">archivespress-authors-post-types</span><span class="_wrapper">&quot;</span><span class="_divider">, </span><span class="_attributes">$post_type</span><span class="_suffix"> );</span></div></div><div class="_arguments"><h5 class="_title">Arguments</h5><div class="_header"><div class="_inner"><div class="_element _el-argument">Name</div><div class="_element _el-type">Type</div><div class="_element _el-description">Description</div></div></div><div class="_the-list">
+<!-- wp:gdkob/argument {"hide_default":true} -->
+<div class="wp-block-gdkob-argument gdkob-source-argument"><div class="_inner"><div class="_element _el-argument">$post_type</div><div class="_element _el-type">string</div><div class="_element _el-description">Default public post type for the shortcode; initially post.</div></div></div>
+<!-- /wp:gdkob/argument -->
+</div></div><div class="_returns"><h5 class="_title">Returns</h5><div class="_result">Return a public post type slug.</div></div></div></div>
+<!-- /wp:gdkob/source -->
+
+<!-- wp:paragraph -->
+<p>Filters the default post type when the authors shortcode is initialized. It does not override a post_type attribute supplied by a shortcode, block, or widget.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Example</h2>
+<!-- /wp:heading -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>add_filter( 'archivespress-authors-post-types', function ( $post_type ) {
+    return 'post';
+} );</code></pre>
+<!-- /wp:code -->
+

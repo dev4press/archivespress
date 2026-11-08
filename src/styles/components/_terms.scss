@@ -1,0 +1,73 @@
+@use "../includes/variables" as *;
+
+.archivespress-terms-wrapper {
+    &.archivespress-terms-layout-basic {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 1em;
+
+        .archivespress-terms-term {
+            box-sizing: border-box;
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        @for $columns from 1 through 6 {
+            &.archivespress-terms-columns-#{$columns} {
+                .archivespress-terms-term {
+                    flex: 0 0 calc((100% - #{ $columns - 1 }em) / #{$columns});
+                }
+
+                :is(.editor-styles-wrapper, .block-editor-block-list__layout) & .archivespress-terms-term {
+                    flex-basis: calc((100% - #{ $columns - 1 }em) / #{$columns});
+                }
+            }
+        }
+
+        &.archivespress-terms-columns-3,
+        &.archivespress-terms-columns-4,
+        &.archivespress-terms-columns-5,
+        &.archivespress-terms-columns-6 {
+            .archivespress-terms-term {
+                @media screen and (max-width: #{$responsive-break-large}) {
+                    flex-basis: calc((100% - 1em) / 2);
+                }
+
+                @media screen and (max-width: #{$responsive-break-small}) {
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+
+    &.archivespress-terms-layout-compact {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    &.archivespress-terms-layout-compact,
+    &.archivespress-terms-layout-basic {
+        .archivespress-terms-term {
+            background: var(--archivespress-terms-background);
+            color: var(--archivespress-terms-color);
+            padding: var(--archivespress-terms-item-padding, .33em .66em);
+            border-radius: var(--archivespress-terms-item-radius, 0);
+            font-weight: var(--archivespress-terms-item-weight, bold);
+
+            .link-name {
+                color: var(--archivespress-terms-color);
+            }
+
+            :where(.wp-elementor-archivespress-terms) &:hover {
+                background: var(--archivespress-terms-hover-background, var(--archivespress-terms-background));
+                color: var(--archivespress-terms-hover-color, var(--archivespress-terms-color));
+
+                .link-name {
+                    color: var(--archivespress-terms-hover-color, var(--archivespress-terms-color));
+                }
+            }
+        }
+    }
+}

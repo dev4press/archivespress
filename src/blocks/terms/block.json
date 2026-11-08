@@ -6,7 +6,7 @@
   "title": "Terms Archives Index",
   "description": "Display taxonomy terms archives index.",
   "textdomain": "archivespress",
-  "version": "3.5",
+  "version": "4.0",
   "supports": {
     "customClassName": false
   },
@@ -47,7 +47,7 @@
     },
     "class": {
       "type": "string",
-      "default": "1.5"
+      "default": ""
     },
     "showCounts": {
       "type": "boolean",

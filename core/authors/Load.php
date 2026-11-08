@@ -5,6 +5,7 @@ namespace Dev4Press\Plugin\ArchivesPress\Authors;
 use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 use Dev4Press\Plugin\ArchivesPress\Basic\ObjectsSort;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Load implements iLoad {
 	protected $post_type;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Load {
@@ -33,13 +34,13 @@ class Load implements iLoad {
 		add_action( 'archivespress-clear-cache', array( $this, 'clear_cache' ) );
 	}
 
-	public function init() {
+	public function init() : void {
 		$this->post_type = apply_filters( 'archivespress-authors-post-types', 'post' );
 
 		add_shortcode( 'archivespress-authors', array( $this, 'shortcode' ) );
 	}
 
-	public function clear_cache( $post_type ) {
+	public function clear_cache( $post_type ) : void {
 		$this->cache()->clear( $post_type );
 	}
 
@@ -80,7 +81,12 @@ class Load implements iLoad {
 			'var-color'       => '',
 		);
 
-		$atts                = shortcode_atts( $defaults, $atts );
+		$atts = shortcode_atts( $defaults, $atts );
+
+		if ( ! Helpers::instance()->public_post_type( $atts['post_type'] ) ) {
+			return '';
+		}
+
 		$atts['show-counts'] = is_bool( $atts['show-counts'] ) ? $atts['show-counts'] : $atts['show-counts'] === 'true';
 
 		$data = $this->cache()->get( $atts['post_type'] );

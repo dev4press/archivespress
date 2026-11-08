@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 interface iCache {
-	public function clear( $post_type = 'post' );
+	public function clear( $post_type = 'post' ) : void;
 
-	public function get( $post_type = 'post' );
+	public function get( $post_type = 'post' ) : array;
 }

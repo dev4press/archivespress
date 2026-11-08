@@ -3,6 +3,7 @@
 namespace Dev4Press\Plugin\ArchivesPress\Terms;
 
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -11,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Layouts implements iLayouts {
 	protected $id = 0;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Layouts {
@@ -43,8 +44,9 @@ class Layouts implements iLayouts {
 		);
 
 		foreach ( $supported as $key ) {
-			if ( isset( $args[ 'var-' . $key ] ) && ! empty( $args[ 'var-' . $key ] ) ) {
-				$vars[] = '--archivespress-terms-' . $key . ': ' . $args[ 'var-' . $key ] . ';';
+			$value = Helpers::instance()->css_value( $key, $args[ 'var-' . $key ] ?? '' );
+			if ( $value !== '' ) {
+				$vars[] = '--archivespress-terms-' . $key . ': ' . $value . ';';
 			}
 		}
 
@@ -56,13 +58,14 @@ class Layouts implements iLayouts {
 	}
 
 	protected function posts_count( $count ) : string {
-		return '<span class="info-counts">' . $count . '</span>';
+		return '<span class="info-counts">' . esc_html( $count ) . '</span>';
 	}
 
 	protected function get_term_link( $post_type, $term, $taxonomy ) : string {
 		$url = apply_filters( 'archivespress-terms-get-term-link-' . $post_type, null, $term );
 
-		return is_null( $url ) && ! is_string( $url ) ? get_term_link( $term, $taxonomy ) : $url;
+		$url = is_null( $url ) ? get_term_link( $term, $taxonomy ) : $url;
+		return is_string( $url ) ? $url : '';
 	}
 
 	protected function basic( $data, $args = array() ) : string {
@@ -85,14 +88,14 @@ class Layouts implements iLayouts {
 
 		$id = 'archivespress-terms-block-' . ( ++ $this->id );
 
-		$render   = '<div class="wp-' . $args['_source'] . '-archivespress-terms">';
-		$render   .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render   = '<div class="wp-' . esc_attr( $args['_source'] ) . '-archivespress-terms">';
+		$render   .= '<div id="' . esc_attr( $id ) . '" class="' . esc_attr( join( ' ', $classes ) ) . '">';
 		$taxonomy = get_taxonomy( $args['taxonomy'] );
 
 		foreach ( $data as $term_id => $object ) {
 			$render .= '<div class="archivespress-terms-term">';
 			/* translators: 1. Taxonomy Name, 2. Term Name, 3. Number of Posts */
-			$render .= '<a title="' . sprintf( _nx( '%1$s %2$s: %3$d Post', '%1$s %2$s: %3$d Posts', $object['posts'], 'Taxonomy, term name and posts count', 'archivespress' ), $taxonomy->labels->singular_name, $object['name'], $object['posts'] ) . '" class="link-name" href="' . $this->get_term_link( $args['post_type'], $term_id, $object['taxonomy'] ) . '">' . $object['name'] . '</a>';
+			$render .= '<a title="' . esc_attr( sprintf( _nx( '%1$s %2$s: %3$d Post', '%1$s %2$s: %3$d Posts', $object['posts'], 'Taxonomy, term name and posts count', 'archivespress' ), $taxonomy->labels->singular_name, $object['name'], $object['posts'] ) ) . '" class="link-name" href="' . esc_url( $this->get_term_link( $args['post_type'], $term_id, $object['taxonomy'] ) ) . '">' . esc_html( $object['name'] ) . '</a>';
 			if ( $args['show-counts'] ) {
 				$render .= $this->posts_count( $object['posts'] );
 			}

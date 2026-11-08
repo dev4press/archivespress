@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 interface iLoad {
-	public function init();
+	public function init() : void;
 
-	public function clear_cache( $post_type );
+	public function clear_cache( $post_type ) : void;
 
 	public function cache() : iCache;
 

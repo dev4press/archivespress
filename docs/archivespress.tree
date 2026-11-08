@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="archivespress" name="ArchivesPress" start-page="getting-started.md">
+    <toc-element topic="getting-started.md">
+        <toc-element topic="install-and-update.md"/>
+        <toc-element topic="ultimate-guide-to-archivespress.md"/>
+    </toc-element>
+    <toc-element topic="features.md">
+        <toc-element topic="dates-index.md"/>
+        <toc-element topic="authors-index.md"/>
+        <toc-element topic="terms-index.md"/>
+        <toc-element topic="blocks-support.md"/>
+        <toc-element topic="elementor-support.md"/>
+    </toc-element>
+    <toc-element topic="faq.md">
+        <toc-element topic="faq-require-elementor.md"/>
+        <toc-element topic="faq-plugin-settings.md"/>
+        <toc-element topic="faq-custom-post-types-and-taxonomies.md"/>
+    </toc-element>
+    <toc-element topic="troubleshooting.md"/>
+</instance-profile>

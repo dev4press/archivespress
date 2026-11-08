@@ -3,6 +3,7 @@
 namespace Dev4Press\Plugin\ArchivesPress\Authors;
 
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -11,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Layouts implements iLayouts {
 	protected $id = 0;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Layouts {
@@ -43,8 +44,10 @@ class Layouts implements iLayouts {
 		);
 
 		foreach ( $supported as $key ) {
-			if ( isset( $args[ 'var-' . $key ] ) && ! empty( $args[ 'var-' . $key ] ) ) {
-				$vars[] = '--archivespress-authors-' . $key . ': ' . $args[ 'var-' . $key ] . ';';
+			$value = Helpers::instance()->css_value( $key, $args[ 'var-' . $key ] ?? '' );
+
+			if ( $value !== '' ) {
+				$vars[] = '--archivespress-authors-' . $key . ': ' . $value . ';';
 			}
 		}
 
@@ -75,7 +78,7 @@ class Layouts implements iLayouts {
 	}
 
 	protected function posts_count( $count ) : string {
-		return '<span class="info-counts">' . $count . '</span>';
+		return '<span class="info-counts">' . esc_html( $count ) . '</span>';
 	}
 
 	protected function get_author_link( $post_type, $author_id, $author_nicename ) : string {
@@ -103,8 +106,8 @@ class Layouts implements iLayouts {
 
 		$id = 'archivespress-authors-block-' . ( ++ $this->id );
 
-		$render = '<div class="wp-' . $args['_source'] . '-archivespress-authors">';
-		$render .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render = '<div class="wp-' . esc_attr( $args['_source'] ) . '-archivespress-authors">';
+		$render .= '<div id="' . esc_attr( $id ) . '" class="' . esc_attr( join( ' ', $classes ) ) . '">';
 
 		foreach ( $data as $user_id => $info ) {
 			$_count   = $info['posts'];
@@ -119,7 +122,7 @@ class Layouts implements iLayouts {
 			$render .= '<div class="' . $_class . '">';
 			if ( ! empty( $_avatar ) ) {
 				/* translators: 1. Author Name, 2. Number of Posts */
-				$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, 'Author name and posts count', 'archivespress' ), $info['name'], $_count ) . '" class="link-avatar" href="' . $_archive . '">' . $_avatar . '</a>';
+				$render .= '<a title="' . esc_attr( sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, 'Author name and posts count', 'archivespress' ), $info['name'], $_count ) ) . '" class="link-avatar" href="' . esc_url( $_archive ) . '">' . $_avatar . '</a>';
 			}
 
 			if ( $args['show-counts'] ) {
@@ -127,7 +130,7 @@ class Layouts implements iLayouts {
 			}
 
 			/* translators: 1. Author Name, 2. Number of Posts */
-			$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, 'Author name and posts count', 'archivespress' ), $info['name'], $_count ) . '" class="link-name" href="' . $_archive . '">' . $info['name'] . '</a>';
+			$render .= '<a title="' . esc_attr( sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $_count, 'Author name and posts count', 'archivespress' ), $info['name'], $_count ) ) . '" class="link-name" href="' . esc_url( $_archive ) . '">' . esc_html( $info['name'] ) . '</a>';
 			$render .= '</div>';
 		}
 

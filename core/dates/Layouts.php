@@ -3,6 +3,7 @@
 namespace Dev4Press\Plugin\ArchivesPress\Dates;
 
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -11,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Layouts implements iLayouts {
 	protected $id = 0;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Layouts {
@@ -48,7 +49,7 @@ class Layouts implements iLayouts {
 	}
 
 	protected function posts_count( $count ) : string {
-		return '<span class="info-counts">' . $count . '</span>';
+		return '<span class="info-counts">' . esc_html( $count ) . '</span>';
 	}
 
 	protected function get_year_link( $post_type, $year ) : string {
@@ -58,13 +59,13 @@ class Layouts implements iLayouts {
 	}
 
 	protected function get_month_link( $post_type, $year, $month ) : string {
-		$url = apply_filters( 'archivespress-dates-get-month-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-month-link-' . $post_type, null, $year, $month );
 
 		return is_null( $url ) && ! is_string( $url ) ? get_month_link( $year, $month ) : $url;
 	}
 
 	protected function get_day_link( $post_type, $year, $month, $day ) : string {
-		$url = apply_filters( 'archivespress-dates-get-day-link-' . $post_type, null, $year );
+		$url = apply_filters( 'archivespress-dates-get-day-link-' . $post_type, null, $year, $month, $day );
 
 		return is_null( $url ) && ! is_string( $url ) ? get_day_link( $year, $month, $day ) : $url;
 	}
@@ -83,8 +84,10 @@ class Layouts implements iLayouts {
 		);
 
 		foreach ( $supported as $key ) {
-			if ( isset( $args[ 'var-' . $key ] ) && ! empty( $args[ 'var-' . $key ] ) ) {
-				$vars[] = '--archivespress-dates-' . $key . ': ' . $args[ 'var-' . $key ] . ';';
+			$value = Helpers::instance()->css_value( $key, $args[ 'var-' . $key ] ?? '' );
+
+			if ( $value !== '' ) {
+				$vars[] = '--archivespress-dates-' . $key . ': ' . $value . ';';
 			}
 		}
 
@@ -111,8 +114,8 @@ class Layouts implements iLayouts {
 		$id    = 'archivespress-dates-block-' . ( ++ $this->id );
 		$order = isset( $args['order'] ) && $args['order'] === 'asc' ? 'asc' : 'desc';
 
-		$render = '<div class="wp-' . $args['_source'] . '-archivespress-dates">';
-		$render .= '<div id="' . $id . '" class="' . join( ' ', $classes ) . '">';
+		$render = '<div class="wp-' . esc_attr( $args['_source'] ) . '-archivespress-dates">';
+		$render .= '<div id="' . esc_attr( $id ) . '" class="' . esc_attr( join( ' ', $classes ) ) . '">';
 
 		$_years = $order === 'asc' ? array_reverse( $data, true ) : $data;
 
@@ -125,7 +128,7 @@ class Layouts implements iLayouts {
 					$render .= '<div class="archivespress-dates-year">';
 					$render .= '<div class="inner-year">';
 					/* translators: 1. Year, 2. Number of Posts */
-					$render .= '<a title="' . sprintf( _nx( 'Year %1$s: %2$d Post', 'Year %1$s: %2$d Posts', $count, 'Year and posts count', 'archivespress' ), $year, $count ) . '" class="link-year" href="' . $this->get_year_link( $args['post_type'], $year ) . '">' . $year . '</a>';
+					$render .= '<a title="' . esc_attr( sprintf( _nx( 'Year %1$s: %2$d Post', 'Year %1$s: %2$d Posts', $count, 'Year and posts count', 'archivespress' ), $year, $count ) ) . '" class="link-year" href="' . esc_url( $this->get_year_link( $args['post_type'], $year ) ) . '">' . esc_html( $year ) . '</a>';
 
 					if ( $args['show-year-counts'] ) {
 						$render .= $this->posts_count( $count );
@@ -147,7 +150,7 @@ class Layouts implements iLayouts {
 					$render .= '<div class="archivespress-dates-month">';
 					$render .= '<div class="inner-month">';
 					/* translators: 1. Month, 2. Number of Posts */
-					$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, 'Month and posts count', 'archivespress' ), $this->full_month_title( $year, $month, 1 ), $count ) . '" class="link-month" href="' . $this->get_month_link( $args['post_type'], $year, $month ) . '">' . $_month_title . '</a>';
+					$render .= '<a title="' . esc_attr( sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, 'Month and posts count', 'archivespress' ), $this->full_month_title( $year, $month, 1 ), $count ) ) . '" class="link-month" href="' . esc_url( $this->get_month_link( $args['post_type'], $year, $month ) ) . '">' . esc_html( $_month_title ) . '</a>';
 
 					if ( $args['show-month-counts'] ) {
 						$render .= $this->posts_count( $count );
@@ -164,7 +167,7 @@ class Layouts implements iLayouts {
 						$render .= '<div class="archivespress-dates-day-wrapper">';
 						$render .= '<div class="inner-day">';
 						/* translators: 1. Date, 2. Number of Posts */
-						$render .= '<a title="' . sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, 'Date and posts count', 'archivespress' ), $this->full_day_title( $year, $month, $day ), $count ) . '" class="link-day" href="' . $this->get_day_link( $args['post_type'], $year, $month, $day ) . '">' . $day . '</a>';
+						$render .= '<a title="' . esc_attr( sprintf( _nx( '%1$s: %2$d Post', '%1$s: %2$d Posts', $count, 'Date and posts count', 'archivespress' ), $this->full_day_title( $year, $month, $day ), $count ) ) . '" class="link-day" href="' . esc_url( $this->get_day_link( $args['post_type'], $year, $month, $day ) ) . '">' . esc_html( $day ) . '</a>';
 
 						if ( $args['show-day-counts'] ) {
 							$render .= $this->posts_count( $count );

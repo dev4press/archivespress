@@ -6,6 +6,7 @@ use Dev4Press\Plugin\ArchivesPress\Base\iCache;
 use Dev4Press\Plugin\ArchivesPress\Base\iLayouts;
 use Dev4Press\Plugin\ArchivesPress\Base\iLoad;
 use Dev4Press\Plugin\ArchivesPress\Basic\ObjectsSort;
+use Dev4Press\Plugin\ArchivesPress\Basic\Helpers;
 use WP_Term;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Load implements iLoad {
 	protected $post_type;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Load {
@@ -34,13 +35,13 @@ class Load implements iLoad {
 		add_action( 'archivespress-clear-cache', array( $this, 'clear_cache' ) );
 	}
 
-	public function init() {
+	public function init() : void {
 		$this->post_type = apply_filters( 'archivespress-terms-post-types', 'post' );
 
 		add_shortcode( 'archivespress-terms', array( $this, 'shortcode' ) );
 	}
 
-	public function clear_cache( $post_type ) {
+	public function clear_cache( $post_type ) : void {
 		$this->cache()->clear( $post_type );
 	}
 
@@ -82,6 +83,13 @@ class Load implements iLoad {
 		);
 
 		$atts                = shortcode_atts( $defaults, $atts );
+		if ( ! Helpers::instance()->public_post_type( $atts['post_type'] ) || ! is_string( $atts['taxonomy'] ) ) {
+			return '';
+		}
+		$taxonomy = get_taxonomy( $atts['taxonomy'] );
+		if ( ! $taxonomy || ! $taxonomy->public || ! is_object_in_taxonomy( $atts['post_type'], $atts['taxonomy'] ) ) {
+			return '';
+		}
 		$atts['columns']     = absint( $atts['columns'] );
 		$atts['show-counts'] = is_bool( $atts['show-counts'] ) ? $atts['show-counts'] : $atts['show-counts'] === 'true';
 
@@ -103,6 +111,8 @@ class Load implements iLoad {
 
 	private function prepare_data( $data, $taxonomy, $orderby, $order ) : array {
 		$input = array();
+		$valid = array( 'id', 'name', 'slug', 'posts' );
+		$orderby = in_array( $orderby, $valid, true ) ? $orderby : 'posts';
 
 		foreach ( $data as $term_id => $count ) {
 			$term = get_term_by( 'id', $term_id, $taxonomy );
@@ -118,20 +128,14 @@ class Load implements iLoad {
 			}
 		}
 
-		$valid = array( 'id', 'name', 'slug', 'posts' );
+		$output = array();
 
-		if ( in_array( $orderby, $valid ) ) {
-			$output = array();
+		$sort = new ObjectsSort( $input, array( array( 'property' => $orderby, 'order' => $order ) ), true );
 
-			$sort = new ObjectsSort( $input, array( array( 'property' => $orderby, 'order' => $order ) ), true );
-
-			foreach ( $sort->sorted as $key => $item ) {
-				$output[ $key ] = (array) $item;
-			}
-
-			return $output;
+		foreach ( $sort->sorted as $key => $item ) {
+			$output[ $key ] = (array) $item;
 		}
 
-		return $input;
+		return $output;
 	}
 }

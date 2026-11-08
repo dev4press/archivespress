@@ -1,6 +1,6 @@
 {
 	"name": "archivespress",
-	"version": "3.5.0",
+	"version": "4.0.0",
 	"description": "WordPress plugin for generating archives indexes using shortcodes and blocks.",
 	"author": "Milan Petrovic",
 	"license": "GPL-3.0-or-later",
@@ -8,6 +8,7 @@
 	"scripts": {
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
+		"i18n:pot": "npm run build && wp i18n make-pot . archivespress.pot --include=archivespress.php,core,src,build --exclude=vendor,node_modules,tests --domain=archivespress",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"start": "wp-scripts start",
@@ -27,6 +28,7 @@
 		"lodash": "^4.18.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.0.6"
+		"@wordpress/scripts": "^30.0.6",
+		"sass": "^1.103.1"
 	}
 }

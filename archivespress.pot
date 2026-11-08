@@ -1,42 +1,48 @@
-# Copyright (C) 2023 Milan Petrovic
+# Copyright (C) 2026 Milan Petrovic
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ArchivesPress: Index Blocks for WordPress 3.1\n"
+"Project-Id-Version: ArchivesPress: Index Blocks for WordPress 4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/archivespress\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-12-21T08:05:53+00:00\n"
+"POT-Creation-Date: 2026-11-08T16:10:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: archivespress\n"
 
 #. Plugin Name of the plugin
+#: archivespress.php
 msgid "ArchivesPress: Index Blocks for WordPress"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: archivespress.php
 msgid "https://www.dev4press.com/plugins/archivespress/"
 msgstr ""
 
 #. Description of the plugin
+#: archivespress.php
 msgid "Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts."
 msgstr ""
 
 #. Author of the plugin
+#: archivespress.php
 msgid "Milan Petrovic"
 msgstr ""
 
 #. Author URI of the plugin
+#: archivespress.php
 msgid "https://www.dev4press.com/"
 msgstr ""
 
 #. translators: 1. Author Name, 2. Number of Posts
-#: core/authors/Layouts.php:122
-#: core/authors/Layouts.php:130
+#: core/authors/Layouts.php:125
+#: core/authors/Layouts.php:133
+#, php-format
 msgctxt "Author name and posts count"
 msgid "%1$s: %2$d Post"
 msgid_plural "%1$s: %2$d Posts"
@@ -44,11 +50,13 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/basic/Blocks.php:40
+#: core/elementor/Loader.php:32
 msgid "ArchivesPress"
 msgstr ""
 
 #. translators: 1. Year, 2. Number of Posts
-#: core/dates/Layouts.php:128
+#: core/dates/Layouts.php:131
+#, php-format
 msgctxt "Year and posts count"
 msgid "Year %1$s: %2$d Post"
 msgid_plural "Year %1$s: %2$d Posts"
@@ -56,7 +64,8 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1. Month, 2. Number of Posts
-#: core/dates/Layouts.php:150
+#: core/dates/Layouts.php:153
+#, php-format
 msgctxt "Month and posts count"
 msgid "%1$s: %2$d Post"
 msgid_plural "%1$s: %2$d Posts"
@@ -64,10 +73,254 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1. Date, 2. Number of Posts
-#: core/dates/Layouts.php:167
+#: core/dates/Layouts.php:170
+#, php-format
 msgctxt "Date and posts count"
 msgid "%1$s: %2$d Post"
 msgid_plural "%1$s: %2$d Posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/elementor/Authors.php:13
+msgid "Authors Archives Index"
+msgstr ""
+
+#: core/elementor/Dates.php:13
+msgid "Dates Archives Index"
+msgstr ""
+
+#: core/elementor/Terms.php:13
+msgid "Terms Archives Index"
+msgstr ""
+
+#: core/elementor/Widget.php:42
+msgid "Archive"
+msgstr ""
+
+#: core/elementor/Widget.php:44
+#: build/index.js:1
+#: src/blocks/authors/index.js:65
+#: src/blocks/dates/index.js:70
+#: src/blocks/terms/index.js:71
+msgid "Post Type"
+msgstr ""
+
+#: core/elementor/Widget.php:51
+#: build/index.js:1
+#: src/blocks/terms/index.js:50
+msgid "Taxonomy"
+msgstr ""
+
+#: core/elementor/Widget.php:55
+msgid "Choose a taxonomy registered for the selected post type."
+msgstr ""
+
+#: core/elementor/Widget.php:59
+#: build/index.js:1
+#: src/blocks/authors/index.js:41
+#: src/blocks/dates/index.js:41
+#: src/blocks/terms/index.js:41
+msgid "Layout"
+msgstr ""
+
+#: core/elementor/Widget.php:61
+#: build/index.js:1
+#: src/blocks/authors/index.js:44
+#: src/blocks/dates/index.js:44
+#: src/blocks/terms/index.js:44
+msgid "Basic"
+msgstr ""
+
+#: core/elementor/Widget.php:61
+#: build/index.js:1
+#: src/blocks/authors/index.js:45
+#: src/blocks/dates/index.js:45
+#: src/blocks/terms/index.js:45
+msgid "Compact"
+msgstr ""
+
+#: core/elementor/Widget.php:66
+msgid "Posts"
+msgstr ""
+
+#: core/elementor/Widget.php:67
+msgid "ID"
+msgstr ""
+
+#: core/elementor/Widget.php:68
+msgid "Name"
+msgstr ""
+
+#: core/elementor/Widget.php:69
+msgid "Slug"
+msgstr ""
+
+#: core/elementor/Widget.php:72
+msgid "Email"
+msgstr ""
+
+#: core/elementor/Widget.php:74
+#: build/index.js:1
+#: src/blocks/authors/index.js:71
+#: src/blocks/terms/index.js:77
+msgid "Order By"
+msgstr ""
+
+#: core/elementor/Widget.php:76
+#: build/index.js:1
+#: src/blocks/authors/index.js:50
+#: src/blocks/terms/index.js:56
+msgid "Columns"
+msgstr ""
+
+#: core/elementor/Widget.php:86
+#: build/index.js:1
+#: src/blocks/authors/index.js:83
+#: src/blocks/dates/index.js:76
+#: src/blocks/terms/index.js:88
+msgid "Order"
+msgstr ""
+
+#: core/elementor/Widget.php:88
+#: build/index.js:1
+#: src/blocks/authors/index.js:87
+#: src/blocks/dates/index.js:80
+#: src/blocks/terms/index.js:92
+msgid "Descending"
+msgstr ""
+
+#: core/elementor/Widget.php:88
+#: build/index.js:1
+#: src/blocks/authors/index.js:86
+#: src/blocks/dates/index.js:79
+#: src/blocks/terms/index.js:91
+msgid "Ascending"
+msgstr ""
+
+#: core/elementor/Widget.php:93
+#: core/elementor/Widget.php:162
+#: build/index.js:1
+#: src/blocks/dates/index.js:50
+msgid "Years"
+msgstr ""
+
+#: core/elementor/Widget.php:95
+#: build/index.js:1
+#: src/blocks/dates/index.js:53
+msgid "Show"
+msgstr ""
+
+#: core/elementor/Widget.php:95
+#: build/index.js:1
+#: src/blocks/dates/index.js:54
+msgid "Hide"
+msgstr ""
+
+#: core/elementor/Widget.php:99
+#: core/elementor/Widget.php:162
+#: build/index.js:1
+#: src/blocks/dates/index.js:59
+msgid "Months"
+msgstr ""
+
+#: core/elementor/Widget.php:101
+msgid "Names"
+msgstr ""
+
+#: core/elementor/Widget.php:101
+msgid "Numbers"
+msgstr ""
+
+#: core/elementor/Widget.php:104
+#: build/index.js:1
+#: src/blocks/dates/index.js:87
+msgid "Show Year Counts"
+msgstr ""
+
+#: core/elementor/Widget.php:105
+#: build/index.js:1
+#: src/blocks/dates/index.js:92
+msgid "Show Month Counts"
+msgstr ""
+
+#: core/elementor/Widget.php:106
+#: build/index.js:1
+#: src/blocks/dates/index.js:97
+msgid "Show Day Counts"
+msgstr ""
+
+#: core/elementor/Widget.php:108
+#: build/index.js:1
+#: src/blocks/authors/index.js:114
+#: src/blocks/terms/index.js:99
+msgid "Show Counts"
+msgstr ""
+
+#: core/elementor/Widget.php:110
+msgid "Show Avatar"
+msgstr ""
+
+#: core/elementor/Widget.php:112
+#: build/index.js:1
+#: src/blocks/authors/index.js:99
+msgid "Avatar Size"
+msgstr ""
+
+#: core/elementor/Widget.php:148
+#: build/index.js:1
+#: src/blocks/authors/index.js:119
+#: src/blocks/dates/index.js:102
+#: src/blocks/terms/index.js:104
+msgid "Typography"
+msgstr ""
+
+#: core/elementor/Widget.php:151
+#: core/elementor/Widget.php:163
+msgid "Items"
+msgstr ""
+
+#: core/elementor/Widget.php:156
+msgid "Counts"
+msgstr ""
+
+#: core/elementor/Widget.php:162
+msgid "Days"
+msgstr ""
+
+#: core/elementor/Widget.php:171
+msgid "Text Color"
+msgstr ""
+
+#: core/elementor/Widget.php:172
+msgid "Background Color"
+msgstr ""
+
+#: core/elementor/Widget.php:173
+msgid "Hover Text Color"
+msgstr ""
+
+#: core/elementor/Widget.php:174
+msgid "Hover Background Color"
+msgstr ""
+
+#: core/elementor/Widget.php:184
+msgid "Padding"
+msgstr ""
+
+#: core/elementor/Widget.php:190
+msgid "Border Radius"
+msgstr ""
+
+#: core/elementor/Widget.php:213
+msgid "No archive entries found for these settings."
+msgstr ""
+
+#. translators: 1. Taxonomy Name, 2. Term Name, 3. Number of Posts
+#: core/terms/Layouts.php:98
+#, php-format
+msgctxt "Taxonomy, term name and posts count"
+msgid "%1$s %2$s: %3$d Post"
+msgid_plural "%1$s %2$s: %3$d Posts"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -100,71 +353,10 @@ msgid "Display"
 msgstr ""
 
 #: build/index.js:1
-#: src/blocks/authors/index.js:41
-#: src/blocks/dates/index.js:41
-#: src/blocks/terms/index.js:41
-msgid "Layout"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:44
-#: src/blocks/dates/index.js:44
-#: src/blocks/terms/index.js:44
-msgid "Basic"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:45
-#: src/blocks/dates/index.js:45
-#: src/blocks/terms/index.js:45
-msgid "Compact"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:50
-#: src/blocks/terms/index.js:56
-msgid "Columns"
-msgstr ""
-
-#: build/index.js:1
 #: src/blocks/authors/index.js:63
 #: src/blocks/dates/index.js:68
 #: src/blocks/terms/index.js:69
 msgid "Data"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:65
-#: src/blocks/dates/index.js:70
-#: src/blocks/terms/index.js:71
-msgid "Post Type"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:71
-#: src/blocks/terms/index.js:77
-msgid "Order By"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:83
-#: src/blocks/dates/index.js:76
-#: src/blocks/terms/index.js:89
-msgid "Order"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:86
-#: src/blocks/dates/index.js:79
-#: src/blocks/terms/index.js:92
-msgid "Ascending"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:87
-#: src/blocks/dates/index.js:80
-#: src/blocks/terms/index.js:93
-msgid "Descending"
 msgstr ""
 
 #: build/index.js:1
@@ -178,95 +370,57 @@ msgid "Show Author Avatar"
 msgstr ""
 
 #: build/index.js:1
-#: src/blocks/authors/index.js:99
-msgid "Avatar Size"
-msgstr ""
-
-#: build/index.js:1
 #: src/blocks/authors/index.js:112
 #: src/blocks/dates/index.js:85
-#: src/blocks/terms/index.js:98
+#: src/blocks/terms/index.js:97
 msgid "Posts Counts"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:114
-#: src/blocks/terms/index.js:100
-msgid "Show Counts"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/authors/index.js:119
-#: src/blocks/dates/index.js:102
-#: src/blocks/terms/index.js:105
-msgid "Typography"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:121
 #: src/blocks/dates/index.js:104
-#: src/blocks/terms/index.js:107
+#: src/blocks/terms/index.js:106
 msgid "Font Size"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:128
 #: src/blocks/dates/index.js:111
-#: src/blocks/terms/index.js:114
+#: src/blocks/terms/index.js:113
 msgid "Line Height"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:133
 #: src/blocks/dates/index.js:116
-#: src/blocks/terms/index.js:119
+#: src/blocks/terms/index.js:118
 msgid "Colors"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:135
-#: src/blocks/terms/index.js:121
+#: src/blocks/terms/index.js:120
 msgid "Background"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:140
-#: src/blocks/terms/index.js:126
+#: src/blocks/terms/index.js:125
 msgid "Text"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:145
 #: src/blocks/dates/index.js:148
-#: src/blocks/terms/index.js:131
+#: src/blocks/terms/index.js:130
 msgid "Advanced"
 msgstr ""
 
 #: build/index.js:1
 #: src/blocks/authors/index.js:147
 #: src/blocks/dates/index.js:150
-#: src/blocks/terms/index.js:133
+#: src/blocks/terms/index.js:132
 msgid "Additional CSS Class"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:50
-msgid "Years"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:53
-msgid "Show"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:54
-msgid "Hide"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:59
-msgid "Months"
 msgstr ""
 
 #: build/index.js:1
@@ -277,21 +431,6 @@ msgstr ""
 #: build/index.js:1
 #: src/blocks/dates/index.js:63
 msgid "Number only"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:87
-msgid "Show Year Counts"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:92
-msgid "Show Month Counts"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/dates/index.js:97
-msgid "Show Day Counts"
 msgstr ""
 
 #: build/index.js:1
@@ -322,11 +461,6 @@ msgstr ""
 #: build/index.js:1
 #: src/blocks/dates/index.js:143
 msgid "Days Text"
-msgstr ""
-
-#: build/index.js:1
-#: src/blocks/terms/index.js:50
-msgid "Taxonomy"
 msgstr ""
 
 #: build/blocks/authors/block.json

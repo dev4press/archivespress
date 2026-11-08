@@ -9,10 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Cache implements iCache {
-	protected $key = 'archivespress-terms-data-' . ARCHIVESPRESS_VERSION;
+	protected $key = 'archivespress-terms-public-data-' . ARCHIVESPRESS_VERSION;
 	protected $period = WEEK_IN_SECONDS;
 
-	public function __construct() {
+	private function __construct() {
 	}
 
 	public static function instance() : Cache {
@@ -25,7 +25,7 @@ class Cache implements iCache {
 		return $instance;
 	}
 
-	public function clear( $post_type = 'post' ) {
+	public function clear( $post_type = 'post' ) : void {
 		delete_transient( $this->key( $post_type ) );
 	}
 
@@ -63,7 +63,7 @@ FROM
 	INNER JOIN $wpdb->posts p ON p.`ID` = tr.`object_id`
 WHERE
     p.`post_type` = %s AND
-    p.`post_status` = 'publish'
+    p.`post_status` = 'publish' AND p.`post_password` = ''
 GROUP BY
     tt.`taxonomy`,
     tt.`term_id`
