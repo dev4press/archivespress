@@ -9,69 +9,91 @@ Requires PHP: 8.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts.
+Help visitors explore your content with archive indexes for dates, authors, categories, tags, and other taxonomy terms.
 
 == Description ==
-Display indexes based on the dates (years, months, and days archives), authors, and taxonomy terms for quick navigation and filtering of posts with various customization options available for each shortcode or block used.
+ArchivesPress helps visitors browse your website through indexes that link to archive pages. Add an index to a page or post using a block, a shortcode, or an Elementor widget.
 
-The plugin uses shortcodes for each of the archive indexes. This includes three shortcodes, each one with various attributes to configure the index and styling. And, the plugin also includes three blocks for the Gutenberg Block Editor. Each block can be configured via the Block Sidebar.
+Choose from three types of index:
 
-When Elementor 3.1 or newer is active, the plugin also provides Dates, Authors, and Terms Archives Index widgets. Their content settings use the same archive data and layouts as the blocks, while Elementor's Style tab provides typography, colors, spacing, and borders.
+* **Dates:** Organize published content by year, month, and day.
+* **Authors:** List authors with published content, with optional avatars and post counts.
+* **Terms:** List categories, tags, or terms from another public taxonomy, with optional post counts.
 
-= Block Editor Blocks =
-All blocks are available under the 'ArchivesPress' block category.
+Each index can use a basic or compact layout. Depending on the index, you can choose a public post type, change the order, show or hide counts, and customize its appearance. Layouts adapt to smaller screens and support right-to-left languages.
+
+= Blocks =
+In the WordPress block editor, find these blocks in the ArchivesPress category:
 
 * Dates Archives Index
 * Authors Archives Index
 * Terms Archives Index
 
+Select a block to configure it in the block settings sidebar.
+
+= Elementor Widgets =
+With Elementor 3.1 or newer active, the same three indexes are available as widgets in the ArchivesPress category. Use the widget's Content tab to choose its data and layout, and the Style tab to adjust typography, colors, padding, and borders.
+
 = Shortcodes =
-* Dates Archives Index: `[archivespress-dates]`
-* Authors Archives Index: `[archivespress-authors]`
-* Terms Archives Index: `[archivespress-terms]`
+Use these shortcodes in content that supports WordPress shortcodes:
 
-To learn more about each shortcode, available attributes and get some examples, make sure to check out the [knowledge base](https://support.dev4press.com/kb/product/archivespress/) for this plugin.
+* Dates: `[archivespress-dates]`
+* Authors: `[archivespress-authors]`
+* Terms: `[archivespress-terms]`
 
-= More Plugin Features =
-* SASS based styling
-* CSS using variables and flex
-* Two layouts for every shortcode
-* Change colors and font via shortcode
-* Support for RTL orientation
-* Fully responsive styling
-* Load styling file only when needed
+Shortcode attributes control the data, layout, and styling. For available attributes and examples, visit the [ArchivesPress knowledge base](https://support.dev4press.com/kb/product/archivespress/).
 
 = Home, Knowledge Base, Support and GitHub =
-* Learn more About the Plugin: [ArchivesPress Website](https://www.dev4press.com/plugins/archivespress/)
-* Shortcodes Configuration: [ArchivesPress Knowledge Base](https://www.dev4press.com/kb/product/archivespress/)
-* Support Forum: [Dev4Press Support](https://support.dev4press.com/forums/forum/plugins-free/archivespress/)
-* Contribute to Plugin Development: [ArchivesPress on GitHub](https://github.com/dev4press/archivespress)
+* [ArchivesPress website](https://www.dev4press.com/plugins/archivespress/)
+* [Knowledge base and shortcode documentation](https://www.dev4press.com/kb/product/archivespress/)
+* [Support forum](https://support.dev4press.com/forums/forum/plugins-free/archivespress/)
+* [ArchivesPress on GitHub](https://github.com/dev4press/archivespress)
 
 == Installation ==
-= General Requirements =
-* PHP: 8.1 or newer
-* WordPress: 6.7 or newer
+= Requirements =
+* WordPress 6.7 or newer
+* PHP 8.1 or newer
 
-= PHP Notice =
-* The plugin doesn't work with PHP 8.0 or older versions.
-
-= WordPress Notice =
-* The plugin doesn't work with WordPress 6.6 or older versions.
-
-= Basic Installation =
-* Plugin folder in the WordPress plugins folder should be `archivespress`.
-* Upload `archivespress` folder to the `/wp-content/plugins/` directory.
-* Activate the plugin through the 'Plugins' menu in WordPress.
-* Plugin doesn't have any settings, and it doesn't add any panels to WordPress administration.
+= Installation =
+1. Upload the `archivespress` folder to the `/wp-content/plugins/` directory.
+2. Activate ArchivesPress through the Plugins screen in WordPress.
+3. Add an ArchivesPress block, shortcode, or Elementor widget to a page or post.
 
 == Frequently Asked Questions ==
-= How can I add blocks to my posts? =
-All three blocks registered by this plugin are listed under 'ArchivesPress' block category.
+= Do I need Elementor to use ArchivesPress? =
+No. The blocks and shortcodes work without Elementor. The Elementor widgets are available when Elementor 3.1 or newer is active.
 
-= Where can I configure the plugin? =
-The plugin doesn't have any global settings or configuration panels.
+= Where can I find the blocks and Elementor widgets? =
+Look for the ArchivesPress category in the WordPress block inserter or the Elementor widget panel. Both provide Dates, Authors, and Terms Archives Index options.
+
+= Where can I configure an index? =
+Configure each block in the block settings sidebar, each Elementor widget in its Content and Style tabs, or each shortcode through its attributes. ArchivesPress does not add a global settings page.
+
+= Can I use custom post types and taxonomies? =
+Yes. Choose a public post type for the index. For a terms index, choose a public taxonomy registered for that post type. Date and author links use the site's standard archive URLs by default; custom post type archives may require site-specific link handling.
+
+= Why is my index empty or missing entries? =
+Indexes count published posts without passwords for the selected post type. Make sure matching posts exist. For a terms index, also check that the selected taxonomy belongs to the post type and that matching posts have terms assigned.
+
+= Can I show post counts or author avatars? =
+Yes. Each index has count options, and the authors index can display avatars. Use the relevant block or widget controls, or configure the shortcode attributes.
 
 == Changelog ==
+= Version: 4.0 / November 8, 2026 =
+* New: support for `Elementor` 3.1+
+* New: elementor widget: for dates indexes
+* New: elementor widget: for authors indexes
+* New: elementor widget: for terms indexes
+* New: requires `PHP` 8.1 or newer
+* Edit: replaced the asset build tooling and updated index styles
+* Edit: added a build command for the translation template
+* Edit: exclude password-protected posts from archive indexes and counts
+* Edit: improvements to the default styling
+* Fix: clear cached index data when published posts
+* Fix: problem with date archive link filters missing arguments
+* Fix: handle term sorting and term archive links more safely
+* Fix: remove the wrong CSS class from the terms block
+
 = Version: 3.5 / September 3, 2026 =
 * Edit: updated various dependencies
 
@@ -89,56 +111,12 @@ The plugin doesn't have any global settings or configuration panels.
 * New: updated plugin system requirements
 * Edit: built with the updated core libraries
 
-= Version: 3.1 / December 21, 2023 =
-* New: updated plugin system requirements
-* Edit: built with the updated core libraries
-
-= Version: 3.0 / October 12, 2023 =
-* New: blocks source uses JSON file format for blocks
-* New: built with the updated core libraries
-* New: requires WordPress 5.8 or newer
-* Edit: few changes to the block controls imports
-* Edit: updated missing default values for blocks
-* Fix: issue with having the colors as CSS variables
-
-= Version: 2.6 / July 15, 2023 =
-* New: built with the updated core libraries
-
-= Version: 2.5 / February 3, 2023 =
-* New: built with the updated core libraries
-
-= Version: 2.4 / December 13, 2022 =
-* New: tested with the new WordPress 6.1
-* New: built with the updated core libraries
-
-= Version: 2.3 / August 25, 2022 =
-* New: built with the updated core libraries
-
-= Version: 2.2 / May 14, 2022 =
-* New: tested with the new WordPress 6.0
-* New: built with the updated core libraries
-
-= Version: 2.1 / August 3, 2021 =
-* New: tested with the new WordPress 5.8
-* New: built with the updated core libraries
-* New: blocks in editor wrapped in Disabled control
-* New: improved with SVG icons for all blocks
-
-= Version: 2.0 / May 1, 2021 =
-* New: blocks for the gutenberg block editor
-* New: additional wrapper for each index block
-* New: options/attributes to hide posts counts
-* New: show post counts for the dates index days
-* New: show months using names or numbers only
-* New: requires WordPress 5.3 or newer
-* Edit: various tweaks and improvements to rendering
-* Edit: several smaller styling improvements
-* Edit: translation strings include extra information
-
-= Version: 1.0 / April 22, 2021 =
-* New: first official version
+Full changelog: [ArchivesPress Changelog](https://www.dev4press.com/plugins/archivespress/changelog/)
 
 == Upgrade Notice ==
+= 4.0 =
+Requires PHP 8.1 or newer. Adds Elementor widgets and fixes several issues. Improves build process.
+
 = 3.4 =
 Block source format updated. Various improvements and updates.
 
@@ -146,9 +124,6 @@ Block source format updated. Various improvements and updates.
 Various improvements and updates.
 
 = 3.2 =
-Various improvements and updates.
-
-= 3.1 =
 Various improvements and updates.
 
 == Screenshots ==

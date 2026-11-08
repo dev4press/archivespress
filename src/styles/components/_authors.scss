@@ -5,21 +5,13 @@
     &.archivespress-authors-layout-basic {
         display: inline-flex;
         flex-wrap: wrap;
-        width: calc(100% + 1em);
-        @include ltr {
-            margin: 0 0 0 -1em;
-        }
-        @include rtl {
-            margin: 0 -1em 0 0;
-        }
+        width: 100%;
+        gap: 1em;
 
         .archivespress-authors-author {
-            @include ltr {
-                margin: 0 0 1em 1em;
-            }
-            @include rtl {
-                margin: 0 1em 1em 0;
-            }
+            box-sizing: border-box;
+            min-width: 0;
+            overflow-wrap: anywhere;
 
             &.has-avatar {
                 .link-name {
@@ -34,39 +26,15 @@
             }
         }
 
-        &.archivespress-authors-columns-1 {
-            .archivespress-authors-author {
-                flex: 0 0 calc(100% - 1em);
-            }
-        }
+        @for $columns from 1 through 6 {
+            &.archivespress-authors-columns-#{$columns} {
+                .archivespress-authors-author {
+                    flex: 0 0 calc((100% - #{ $columns - 1 }em) / #{$columns});
+                }
 
-        &.archivespress-authors-columns-2 {
-            .archivespress-authors-author {
-                flex: 0 0 calc(50% - 1em);
-            }
-        }
-
-        &.archivespress-authors-columns-3 {
-            .archivespress-authors-author {
-                flex: 0 0 calc(33.3333% - 1em);
-            }
-        }
-
-        &.archivespress-authors-columns-4 {
-            .archivespress-authors-author {
-                flex: 0 0 calc(25% - 1em);
-            }
-        }
-
-        &.archivespress-authors-columns-5 {
-            .archivespress-authors-author {
-                flex: 0 0 calc(20% - 1em);
-            }
-        }
-
-        &.archivespress-authors-columns-6 {
-            .archivespress-authors-author {
-                flex: 0 0 calc(16.6666% - 1em);
+                :is(.editor-styles-wrapper, .block-editor-block-list__layout) & .archivespress-authors-author {
+                    flex-basis: calc((100% - #{ $columns - 1 }em) / #{$columns});
+                }
             }
         }
 
@@ -76,11 +44,11 @@
         &.archivespress-authors-columns-6 {
             .archivespress-authors-author {
                 @media screen and (max-width: #{$responsive-break-large}) {
-                    flex: 0 0 calc(50% - 1em);
+                    flex-basis: calc((100% - 1em) / 2);
                 }
 
                 @media screen and (max-width: #{$responsive-break-small}) {
-                    flex: 0 0 calc(100% - 1em);
+                    flex-basis: 100%;
                 }
             }
         }
@@ -89,15 +57,7 @@
     &.archivespress-authors-layout-compact {
         display: inline-flex;
         flex-wrap: wrap;
-
-        .archivespress-authors-author {
-            @include ltr {
-                margin: 0 1em 1em 0;
-            }
-            @include rtl {
-                margin: 0 0 1em 1em;
-            }
-        }
+        gap: 1em;
     }
 
     &.archivespress-authors-layout-compact,

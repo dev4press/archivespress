@@ -47,7 +47,7 @@
     },
     "class": {
       "type": "string",
-      "default": "1.5"
+      "default": ""
     },
     "showCounts": {
       "type": "boolean",

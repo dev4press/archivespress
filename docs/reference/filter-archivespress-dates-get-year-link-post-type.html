@@ -1,0 +1,18 @@
+<!-- post-title: archivespress-dates-get-year-link-{post_type} filter -->
+
+<!-- wp:gdkob/source {"type":"filter","show_code_line":false,"hide_default":true} -->
+<div class="wp-block-gdkob-source gdkob-source gdkob-source-filter"><div class="gdkob-source-inner"><div class="_definition"><h5 class="_title">Definition</h5><div class="_format"><span class="_prefix">apply_filters( </span><span class="_wrapper">&quot;</span><span class="_name">archivespress-dates-get-year-link-{post_type}</span><span class="_wrapper">&quot;</span><span class="_divider">, </span><span class="_attributes">$url, $year</span><span class="_suffix"> );</span></div></div><div class="_arguments"><h5 class="_title">Arguments</h5><div class="_header"><div class="_inner"><div class="_element _el-argument">Name</div><div class="_element _el-type">Type</div><div class="_element _el-description">Description</div></div></div><div class="_the-list">
+<!-- wp:gdkob/argument {"hide_default":true} -->
+<div class="wp-block-gdkob-argument gdkob-source-argument"><div class="_inner"><div class="_element _el-argument">$url</div><div class="_element _el-type">null|string</div><div class="_element _el-description">Initially null; optional replacement archive URL.</div></div></div>
+<!-- /wp:gdkob/argument -->
+<!-- wp:gdkob/argument {"hide_default":true} -->
+<div class="wp-block-gdkob-argument gdkob-source-argument"><div class="_inner"><div class="_element _el-argument">$year</div><div class="_element _el-type">int|string</div><div class="_element _el-description">Archive year.</div></div></div>
+<!-- /wp:gdkob/argument -->
+</div></div><div class="_returns"><h5 class="_title">Returns</h5><div class="_result">Return an archive URL string or null to use the WordPress fallback.</div></div></div></div>
+<!-- /wp:gdkob/source -->
+
+<!-- wp:paragraph -->
+<p>The {post_type} placeholder is replaced by the selected post type slug; for example, use archivespress-dates-get-year-link-post. Return null to use get_year_link(). The hook does not receive the post type as a separate argument.</p>
+<!-- /wp:paragraph -->
+
+

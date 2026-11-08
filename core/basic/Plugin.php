@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Plugin {
 	public bool $elementor_available = false;
+
 	private function __construct() {
 	}
 
