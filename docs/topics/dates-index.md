@@ -1,7 +1,6 @@
 # Dates archives index
 
 <!-- category: features -->
-<!-- prefix: archivespress -->
 <!-- tag: dates,archives -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Configure a dates archive index with ArchivesPress. -->

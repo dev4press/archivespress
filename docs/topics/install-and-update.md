@@ -1,7 +1,7 @@
 # Install and update ArchivesPress
 
 <!-- category: plugin-setup -->
-<!-- prefix: archivespress-setup -->
+<!-- prefix: setup -->
 <!-- tag: install,update -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Install and update ArchivesPress on your WordPress site. -->

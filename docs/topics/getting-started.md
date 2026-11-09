@@ -1,11 +1,6 @@
 # Getting started with ArchivesPress
 
-<!-- category: getting-started -->
-<!-- prefix: archivespress -->
-<!-- tag: archives,index -->
-<!-- seo-title: %%post_title%% - %%sitetitle%% -->
-<!-- seo-description: Start building archive indexes with ArchivesPress. -->
-<!-- seo-keywords: archivespress,archive indexes -->
+<!-- import: skip -->
 
 ArchivesPress creates indexes that help visitors navigate to date, author, and taxonomy archives. Choose a block, shortcode, or Elementor widget and configure each index where you insert it. There is no global settings page.
 

@@ -1,7 +1,6 @@
 # Terms archives index
 
 <!-- category: features -->
-<!-- prefix: archivespress -->
 <!-- tag: taxonomy,archives -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Configure a taxonomy terms index with ArchivesPress. -->

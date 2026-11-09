@@ -8,10 +8,10 @@ Create one HTML file per documented item in the plugin's `docs/reference` direct
 
 Name the file with the item type first, followed by its name, using lowercase, URL-friendly words separated by hyphens. For example, a shortcode named `example_current` would use `shortcode-example-current.html`. Preserve the actual identifier, including underscores, in the post itself. Use distinct, clear names for methods if the same method name occurs in more than one class.
 
-Put the intended WordPress post title in an HTML comment on the first line, followed by a blank line:
+Put the intended WordPress post title in an HTML comment on the first line, followed by a blank line. Use only the actual identifier as the title; do not append labels such as `filter`, `action`, `shortcode`, `function`, or `method`. Preserve any necessary class qualification and dynamic name components:
 
 ```html
-<!-- post-title: example_current shortcode -->
+<!-- post-title: example_current -->
 ```
 
 This comment is file metadata, not a WordPress title field and not part of the pasteable post body. Tell the maintainer to enter the title separately, then paste everything after the comment into the block editor's **Code editor**. Do not assume pasting the comment creates the post title. Avoid adding an H1 to the body just to hold the title.

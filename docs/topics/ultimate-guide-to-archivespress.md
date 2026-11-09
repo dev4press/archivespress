@@ -2,7 +2,6 @@
 
 <!-- type: user-guide -->
 <!-- category: getting-started -->
-<!-- prefix: archivespress -->
 <!-- tag: ultimate -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Learn how to create and configure date, author, and taxonomy archive indexes with ArchivesPress. -->

@@ -1,7 +1,6 @@
 # Using blocks
 
 <!-- category: features -->
-<!-- prefix: archivespress -->
 <!-- tag: blocks,editor -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Add ArchivesPress indexes in the WordPress block editor. -->

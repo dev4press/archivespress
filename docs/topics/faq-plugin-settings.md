@@ -2,7 +2,6 @@
 
 <!-- type: faq -->
 <!-- category: getting-started -->
-<!-- prefix: archivespress -->
 <!-- tag: settings,configuration -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Find where to configure ArchivesPress indexes. -->

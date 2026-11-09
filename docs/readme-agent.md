@@ -30,21 +30,21 @@ The two common patterns are:
 # Article title
 
 <!-- category: plugin-setup -->
-<!-- prefix: plugin-slug-setup -->
+<!-- prefix: setup -->
 <!-- tag: install,update -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: A description of this article. -->
 <!-- seo-keywords: install,update -->
 ```
 
-The second example is illustrative: replace `plugin-slug-setup` with a prefix appropriate to the current plugin, and choose the other values for the topic. Most metadata tags are required for imported topics, but the exact required fields by topic type remain to be confirmed. A topic marked `import: skip` needs no other metadata tags. For FAQ topics, use `type: faq` and choose a relevant category, such as `getting-started`, `common-issues`, or `troubleshooting`.
+The second example is illustrative: `setup` is an additional prefix, not a plugin name. Omit the `prefix` comment when the default plugin-name prefix is sufficient; otherwise use only the additional portion and choose the other values for the topic. Most metadata tags are required for imported topics, but the exact required fields by topic type remain to be confirmed. A topic marked `import: skip` needs no other metadata tags. For FAQ topics, use `type: faq` and choose a relevant category, such as `getting-started`, `common-issues`, or `troubleshooting`.
 
 | Comment | Purpose and guidance | What still needs confirmation |
 | --- | --- | --- |
 | `import: skip` | Marks a topic to be skipped by the import system. No other metadata tags are needed for a skipped topic. | Whether other values are supported. |
 | `type` | Document type: `article`, `user-guide`, or `faq`. If omitted, it defaults to `article`. | Any additional rules for choosing a type. |
 | `category` | Categorizes the imported topic. Use a value appropriate to its place in the current documentation. | Allowed values, whether multiple categories are possible, and whether required. |
-| `prefix` | Usually the plugin name or slug; it can include additional words but must always include the plugin name. Derive it from the current plugin and its existing conventions. | What it prefixes and when it is required. |
+| `prefix` | The plugin name is the default prefix. Omit this comment when only the default is needed. For an extended prefix, include only the additional portion: for example, a plugin-name prefix extended with `setup` is written as `<!-- prefix: setup -->`. Do not repeat the plugin name or slug. | What the prefix affects. |
 | `tag` | Comma-separated topic tags. | Allowed values, whether to reuse or create tags, and whether required. |
 | `banner` | Banner identifier for selected topics. The maintainer assigns banners manually; do not invent or assign one. | How the identifier is resolved and which topics need one. |
 | `seo-title` | SEO title, which may include supported placeholders. | Required status. |

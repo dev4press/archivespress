@@ -2,7 +2,6 @@
 
 <!-- type: faq -->
 <!-- category: getting-started -->
-<!-- prefix: archivespress -->
 <!-- tag: post-types,taxonomies -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Use custom post types and taxonomies in ArchivesPress indexes. -->

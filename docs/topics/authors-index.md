@@ -1,7 +1,6 @@
 # Authors archives index
 
 <!-- category: features -->
-<!-- prefix: archivespress -->
 <!-- tag: authors,archives -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Configure an authors archive index with ArchivesPress. -->

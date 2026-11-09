@@ -2,7 +2,6 @@
 
 <!-- type: faq -->
 <!-- category: getting-started -->
-<!-- prefix: archivespress -->
 <!-- tag: elementor,blocks -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Find out whether ArchivesPress requires Elementor. -->

@@ -1,7 +1,6 @@
 # Troubleshooting
 
 <!-- category: troubleshooting -->
-<!-- prefix: archivespress -->
 <!-- tag: troubleshooting,archives -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Troubleshoot missing indexes and archive links in ArchivesPress. -->

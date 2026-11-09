@@ -1,7 +1,6 @@
 # Using Elementor widgets
 
 <!-- category: features -->
-<!-- prefix: archivespress -->
 <!-- tag: elementor,widgets -->
 <!-- seo-title: %%post_title%% - %%sitetitle%% -->
 <!-- seo-description: Add archive indexes using ArchivesPress Elementor widgets. -->
