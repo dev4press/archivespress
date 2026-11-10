@@ -8,6 +8,8 @@ Create one HTML file per documented item in the plugin's `docs/reference` direct
 
 Name the file with the item type first, followed by its name, using lowercase, URL-friendly words separated by hyphens. For example, a shortcode named `example_current` would use `shortcode-example-current.html`. Preserve the actual identifier, including underscores, in the post itself. Use distinct, clear names for methods if the same method name occurs in more than one class.
 
+When a Markdown topic benefits from a reference link, use `https://www.dev4press.com/kb/reference/` followed by the reference filename without `.html`, for example `https://www.dev4press.com/kb/reference/filter-example-hook`. These URLs depend on the corresponding posts being published; do not assume that a local reference file is already live.
+
 Put the intended WordPress post title in an HTML comment on the first line, followed by a blank line. Use only the actual identifier as the title; do not append labels such as `filter`, `action`, `shortcode`, `function`, or `method`. Preserve any necessary class qualification and dynamic name components:
 
 ```html
